@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.USER.homeuser.fragment.notifications.NotificationsFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/btn_Pesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_btn_lapisanabu">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_baseline_keyboard_" />
+
+        <ImageView
+            android:id="@+id/imvPesanan"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_baseline_tambahrek" />
+
+        <TextView
+            android:id="@+id/LabelPesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/imvPesanan"
+            android:text="Pesanan"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LabelPesanan"
+            android:layout_toEndOf="@+id/imvPesanan"
+            android:text="Pesanan Yang Anda Minta"
+            android:textColor="@color/biru" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_keranjang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_btn_lapisanabu">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_baseline_keyboard_" />
+
+        <ImageView
+            android:id="@+id/imvkeranjang"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_baseline_keyboard_" />
+
+        <TextView
+            android:id="@+id/labelkeranjang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/imvkeranjang"
+            android:text="Keranjang"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/labelkeranjang"
+            android:layout_toEndOf="@+id/imvkeranjang"
+            android:text="Pesanan Yang Anda Simpan"
+            android:textColor="@color/biru" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

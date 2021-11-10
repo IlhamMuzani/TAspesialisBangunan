@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ilham.taspesialisbangunan">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TAspesialisBangunan"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.loginuser.Masuk.MasukActivity"></activity>
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.profiljasa.tambahrek.TambahRekActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.notifpelanggan.NotifikasiPelangganActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.pengajuan.PengajuanActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.produkuser_materialuser.tabs.material.materialdetail.MaterialDetailActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.homeuser.fragment.Akun.profil.updateprofil.UbahProfilActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.Aduanjasa.ReportActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.material.update.MaterialUpdateActivity" />
+        <activity android:name=".ui.USER.loginuser.RegisterPelangganActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.material.create.MaterialCreateActivity" />
+        <activity android:name=".ui.USERJASA.loginjasa.RegisterActivity" />
+        <activity
+            android:name="com.ilham.taspesialisbangunan.ui.USERJASA.produk_materialjasa.tabs.ProdukJasa.ProdukMapsActivity"
+            android:label="@string/title_activity_produk_maps" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.produk_materialjasa.create.ProdukCreateActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.home.JasaActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.loginuser.LoginuserActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.produk_materialjasa.update.ProdukUpdateActivity" />
+        <activity android:name=".ui.USERJASA.profiljasa.AkunActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.loginjasa.LoginjasaActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.material.MaterialActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.notifikasi.NotifikasiActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.homeuser.UserActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ilham.taspesialisjasabangunan.ui.produkuser.MatrialprodukActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.profiljasa.tambahrek.create.TambahrekCreateActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.profiljasa.tambahrek.update.TambahrekUpdateActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.notifjasa.NotifikasiJasaActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USER.notifpelanggan.detail.DetailPelangganActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.notifjasa.detail.DetailPengajuanActivity" />
+        <activity android:name="com.ilham.taspesialisjasabangunan.ui.produkuser.ProdukMaterialJasaActivity" />
+    </application>
+
+</manifest>
