@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable-v24/ic_notifications_black_24dp.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_baseline_home_active.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_baseline_keyboard_.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_baseline_location_black.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_baseline_notifications_active_24.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_round_account_profill.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/drawable/ic_round_notifications_active_24.xml" value="0.2169230769230769" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_akun.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_loginuser.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_user.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_materialuser.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_produkuser.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_akun.xml" value="0.22" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_material.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_produk.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18425925925925926" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/menu/bottom_nav_menujasa.xml" value="0.18425925925925926" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
