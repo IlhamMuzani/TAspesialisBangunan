@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/biru"
-    tools:context=".ui.USER.produkuser_materialuser.tabs.material.materialdetail.MaterialDetailActivity">
+    tools:context=".ui.home.fragment.home.produkuser_materialuser.tabs.material.materialdetail.MaterialDetailActivity">
 
     <ScrollView
         android:layout_width="match_parent"

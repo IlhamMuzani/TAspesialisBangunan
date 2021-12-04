@@ -16,8 +16,9 @@ import com.ilham.taspesialisbangunan.data.model.saran.ResponseSaranList
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekDetail
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekList
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekUpdate
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.data.model.userpelanggan.ResponsePelangganUpdate
-import com.ilham.taspesialisbangunan.data.model.userpelanggan.ResponsePelanggandetail
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -25,11 +26,11 @@ import retrofit2.http.*
 interface ApiEndpoint {
 
 
-//    REGISTRASI DAN LOGIN JASA
+//    REGISTRASI DAN LOGIN PELANGGAN
 
     @FormUrlEncoded
-    @POST("registerjasauser")
-    fun registerjasauser(
+    @POST("register_pelanggan")
+    fun register_pelanggan(
         @Field("username") username :String,
         @Field("email") email :String,
         @Field("alamat") alamat :String,
@@ -38,17 +39,17 @@ interface ApiEndpoint {
     ): Call<ResponseModel>
 
     @FormUrlEncoded
-    @POST("login_jasauser")
-    fun loginJasauser(
+    @POST("login_pelanggan")
+    fun login_pelanggan(
         @Field("email") email: String,
         @Field("password") password: String
-    ) : Call<ResponseLogin>
+    ) : Call<ResponseUser>
 
-//    REGISTRASI DAN LOGIN USERPELANGGAN
+//    REGISTRASI DAN LOGIN JASA
 //
     @FormUrlEncoded
-    @POST("registeruserpelanggan")
-    fun registerpelanggan(
+    @POST("register_jasa")
+    fun register_jasa(
         @Field("username") username :String,
         @Field("email") email :String,
         @Field("alamat") alamat :String,
@@ -57,18 +58,23 @@ interface ApiEndpoint {
     ): Call<ResponseModel>
 
     @FormUrlEncoded
-    @POST("login_userpelanggan")
-    fun loginUserpelanggan(
+    @POST("login_jasa")
+    fun login_jasa(
         @Field("email") email: String,
         @Field("password") password: String
-    ) : Call<ResponseLoginuser>
+    ) : Call<ResponseUser>
+
+    @GET("user_detail/{id}")
+    fun userDetail(
+        @Path("id") id: String
+    ) : Call<ResponseUserdetail>
 
 //    UBAH PROFIL PELANGGAN
 //
     @GET("userpelanggan/{id}")
     fun getPelangganDetail(
         @Path("id") id: Long
-    ) : Call<ResponsePelanggandetail>
+    ) : Call<ResponseUserdetail>
 
     @POST("userpelanggan/{id}")
     fun updatePelanggan (

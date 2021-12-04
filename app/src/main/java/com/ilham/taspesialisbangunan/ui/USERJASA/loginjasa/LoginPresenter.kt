@@ -3,6 +3,8 @@ package com.ilham.taspesialisbangunan.ui.USERJASA.loginjasa
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.loginjasa.DataLogin
 import com.ilham.taspesialisbangunan.data.model.loginjasa.ResponseLogin
+import com.ilham.taspesialisbangunan.data.model.user.DataUser
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,37 +20,37 @@ class LoginPresenter (val view:LoginContract.View): LoginContract.Presenter {
 
     override fun doLogin(email: String, password: String) {
         view.onLoading(true)
-        ApiConfig.endpoint.loginJasauser(email, password)
-            .enqueue(object : Callback<ResponseLogin> {
+        ApiConfig.endpoint.login_jasa(email, password)
+            .enqueue(object : Callback<ResponseUser> {
                 override fun onResponse(
-                    call: Call<ResponseLogin>,
-                    response: Response<ResponseLogin>
+                    call: Call<ResponseUser>,
+                    response: Response<ResponseUser>
                 ) {
                     view.onLoading(false)
                     if (response.isSuccessful){
-                        val responseLogin: ResponseLogin? = response.body()
-                        view.showMessage(responseLogin!!.msg)
+                        val responseUser: ResponseUser? = response.body()
+                        view.showMessage(responseUser!!.msg)
 
-                        if (responseLogin!!.status) {
-                            view.onResult(responseLogin)
+                        if (responseUser!!.status) {
+                            view.onResult(responseUser)
                         }
                     }
                 }
 
-                override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
+                override fun onFailure(call: Call<ResponseUser>, t: Throwable) {
                     view.onLoading(false)
                 }
 
             })
     }
 
-    override fun setPrefs(prefsManager: PrefsManager, dataLogin: DataLogin) {
+    override fun setPrefs(prefsManager: PrefsManager, dataUser: DataUser) {
         prefsManager.prefsIsLogin = true
-        prefsManager.prefsId = dataLogin.id!!
-        prefsManager.prefsUsername = dataLogin.username!!
-        prefsManager.prefsEmail = dataLogin.email!!
-        prefsManager.prefsPassword = dataLogin.password!!
-        prefsManager.prefsAlamat = dataLogin.alamat!!
-        prefsManager.prefsPhone = dataLogin.phone!!
+        prefsManager.prefsId = dataUser.id.toString()!!
+        prefsManager.prefsUsername = dataUser.username!!
+        prefsManager.prefsEmail = dataUser.email!!
+        prefsManager.prefsPassword = dataUser.password!!
+        prefsManager.prefsAlamat = dataUser.alamat!!
+        prefsManager.prefsPhone = dataUser.phone!!
     }
 }

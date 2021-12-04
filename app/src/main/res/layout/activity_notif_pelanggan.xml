@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.USER.notifpelanggan.tabs.notiflama.NotifPelangganActivity">
+    tools:context=".ui.pelanggan.notifpelanggan.tabs.notiflama.NotifPelangganActivity">
 
 
     <include layout="@layout/content_pelanggan" />

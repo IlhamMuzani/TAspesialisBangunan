@@ -1,205 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.USER.homeuser.UserActivity"
-    android:background="@color/biru">
+    android:orientation="vertical">
 
-
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/layout_pelanggan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-<!--        android:layout_above="@+id/btn_loginuser"-->
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn_lapisanbiru">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/btn_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    app:tabGravity="fill"
+                    app:tabMode="fixed"/>`
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/btn_viepager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_jasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:background="@color/white">
 
-            <RelativeLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-                <ImageView
+                android:layout_height="match_parent"
+                android:layout_above="@+id/btn_loginjasa">
+
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/menuuser"
-                    android:scaleType="centerCrop"
-                    />
-            </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    >
 
-            <RelativeLayout
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/menuuser"
+                            android:scaleType="centerCrop"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crv_Usahajasa"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="10dp"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="142dp"
+                                android:backgroundTint="@color/biru"
+                                android:background="@drawable/ic_round_daftarjasa"
+                                />
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="144dp"
+                                >
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableTint="@color/black"
+                                    android:text="Jasa Dan Material"
+                                    android:layout_marginStart="25dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crv_notifikasi"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_toEndOf="@+id/crv_Usahajasa"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="10dp"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="142dp"
+                                android:backgroundTint="@color/biru"
+                                android:background="@drawable/ic_round_notifications_active_24"
+                                />
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="144dp"
+                                >
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableTint="@color/black"
+                                    android:text="Notifikasi"
+                                    android:layout_marginStart="50dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crv_Laporkan"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="10dp"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="142dp"
+                                android:backgroundTint="@color/biru"
+                                android:background="@drawable/ic_round_app_registration_24"
+                                />
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="144dp"
+                                >
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableTint="@color/black"
+                                    android:text="Laporkan Jasa"
+                                    android:layout_marginStart="33dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crv_profil"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_toEndOf="@+id/crv_Laporkan"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="10dp"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="142dp"
+                                android:backgroundTint="@color/biru"
+                                android:background="@drawable/ic_round_account_profill"
+                                />
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="144dp"
+                                >
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableTint="@color/black"
+                                    android:text="Profil"
+                                    android:layout_marginStart="65dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_loginjasa"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                >
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crv_lihatproduk"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="10dp"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="142dp"
-                        android:background="@drawable/ic_round_daftarjasa"
-                        />
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="144dp"
-                        >
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/black"
-                            android:text="Jasa Dan Material"
-                            android:layout_marginStart="25dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crv_notifpelanggan"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_toEndOf="@+id/crv_lihatproduk"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="10dp"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="142dp"
-                        android:background="@drawable/ic_round_notifications_active_24"
-                        />
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="144dp"
-                        >
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/black"
-                            android:text="Notifikasi"
-                            android:layout_marginStart="50dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_btn_lapisanbiru"
+                android:text="LOGIN"
+                android:textColor="@color/black"
+                app:backgroundTint="#FFFFFF" />
 
 
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                >
+    </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crv_Laporkan"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="10dp"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="142dp"
-                        android:background="@drawable/ic_round_app_registration_24"
-                        />
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="144dp"
-                        >
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/black"
-                            android:text="Laporkan Jasa"
-                            android:layout_marginStart="33dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/crv_profiluser"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
-                    android:layout_toEndOf="@+id/crv_Laporkan"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="10dp"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="142dp"
-                        android:background="@drawable/ic_round_account_profill"
-                        />
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="144dp"
-                        >
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/black"
-                            android:text="Profil"
-                            android:layout_marginStart="65dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_loginuser"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:background="@drawable/button_corner_white"-->
-<!--        android:text="LOGIN"-->
-<!--        android:textColor="@color/black"-->
-<!--        app:backgroundTint="#FFFFFF" />-->
-
-
-
-</RelativeLayout>
+</LinearLayout>

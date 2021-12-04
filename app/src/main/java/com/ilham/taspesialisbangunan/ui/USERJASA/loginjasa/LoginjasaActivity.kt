@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Toast
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
-import com.ilham.taspesialisbangunan.data.model.loginjasa.ResponseLogin
-import com.ilham.taspesialisbangunan.ui.USER.homeuser.UserActivity
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
+import com.ilham.taspesialisbangunan.ui.home.UserActivity
 import kotlinx.android.synthetic.main.activity_loginjasa.*
 import kotlinx.android.synthetic.main.activity_loginuser.progress
 
@@ -32,7 +32,7 @@ class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
 
     override fun initListener() {
         btnLoginjasa.setOnClickListener {
-            presenter.doLogin( edtEmail.text.toString(), edtPassword.text.toString())
+            presenter.doLogin(edtEmail.text.toString(), edtPassword.text.toString())
         }
         btn_daftarakun.setOnClickListener{
             startActivity(Intent(this, RegisterActivity::class.java))
@@ -42,9 +42,9 @@ class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
         }
     }
 
-    override fun onResult(responseLogin: ResponseLogin) {
-        presenter.setPrefs(prefsManager, responseLogin.jasauser!!)
-        finish()
+    override fun onResult(responseUser: ResponseUser) {
+        presenter.setPrefs(prefsManager, responseUser.user!!)
+        startActivity(Intent(this, UserActivity::class.java))
     }
 
 

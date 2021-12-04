@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/biru"
-    tools:context=".ui.USER.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity">
+    android:background="@color/white"
+    tools:context=".ui.home.fragment.home.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity">
 
 
     <ScrollView
@@ -20,7 +20,7 @@
 
             <ImageView
                 android:id="@+id/imvgambardetail"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:src="@drawable/img_no_image"/>
@@ -33,7 +33,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -88,7 +88,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -143,7 +143,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -197,7 +197,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -252,7 +252,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -306,7 +306,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <TextView
                     android:layout_marginTop="5dp"

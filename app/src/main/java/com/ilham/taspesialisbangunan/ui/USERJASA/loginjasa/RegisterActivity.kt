@@ -61,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         pb.visibility = View.VISIBLE
-        ApiConfig.endpoint.registerjasauser(edt_username.text.toString(), edt_email.text.toString(), edt_alamat.text.toString(), edt_phone.text.toString(),
+        ApiConfig.endpoint.register_jasa(edt_username.text.toString(), edt_email.text.toString(), edt_alamat.text.toString(), edt_phone.text.toString(),
         edt_password.text.toString()).enqueue(object : Callback<ResponseModel>{
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
                 pb.visibility = View.VISIBLE

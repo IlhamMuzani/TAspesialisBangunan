@@ -5,7 +5,7 @@
     android:id="@+id/txv_semua"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.USER.notifpelanggan.detail.DetailPelangganActivity">
+    tools:context=".ui.pelanggan.notifpelanggan.detail.DetailPelangganActivity">
 
     <ScrollView
         android:layout_width="match_parent"
