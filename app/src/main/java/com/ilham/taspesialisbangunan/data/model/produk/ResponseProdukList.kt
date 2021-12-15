@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 
 data class ResponseProdukList (
-
     @SerializedName("status") val status : Boolean,
-    @SerializedName("data") val dataProduk : List<DataProduk>
+    @SerializedName("msg") val msg: String,
+    @SerializedName("produk") val dataProduk: List<DataProduk>
 )

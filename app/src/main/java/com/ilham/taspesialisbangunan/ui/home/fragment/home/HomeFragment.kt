@@ -1,20 +1,25 @@
 package com.ilham.taspesialisbangunan.ui.home.fragment.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.NotifikasiJasaActivity
 import com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.ViewPagerAdapter
 import com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.material.MaterialuserFragment
 import com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.produk.ProdukuserFragment
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.ilham.taspesialisjasabangunan.ui.produkuser.ProdukMaterialJasaActivity
 
 class HomeFragment : Fragment(), HomeContract.View {
 
@@ -24,6 +29,21 @@ class HomeFragment : Fragment(), HomeContract.View {
     lateinit var btnviewpager: ViewPager
     lateinit var btntabs: TabLayout
 
+    lateinit var layoutPelanggan: LinearLayout
+    lateinit var layoutJasa: LinearLayout
+
+    lateinit var Namatoko: TextView
+    lateinit var CrvUsaha: CardView
+    lateinit var Laporkanjasa: CardView
+    lateinit var Notif: CardView
+    lateinit var Profil: CardView
+
+//    lateinit var Namatoko: TextView
+//    lateinit var Lokasi: TextView
+//    lateinit var Jenispembuatan: TextView
+//    lateinit var Harga: TextView
+//    lateinit var Detail: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +51,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-       presenter = HomePresenter(this)
+        presenter = HomePresenter(this)
         prefsManager = PrefsManager(requireActivity())
 
         initFragment(view)
@@ -39,13 +59,12 @@ class HomeFragment : Fragment(), HomeContract.View {
         return view
     }
 
-
-
     override fun initFragment(view: View) {
 
         btnviewpager = view.findViewById(R.id.btn_viepager)
         btntabs = view.findViewById(R.id.btn_tabs)
-
+        layoutPelanggan = view.findViewById(R.id.layout_pelanggan)
+        layoutJasa = view.findViewById(R.id.layout_jasa)
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
         adapter.addFragment(ProdukuserFragment(), "Produk")
@@ -53,12 +72,21 @@ class HomeFragment : Fragment(), HomeContract.View {
         btnviewpager.adapter = adapter
         btntabs.setupWithViewPager(btnviewpager)
 
+        CrvUsaha = view.findViewById(R.id.crv_Usahajasa)
+        Notif = view.findViewById(R.id.crv_notifikasi)
+        Laporkanjasa = view.findViewById(R.id.crv_Laporkan)
+        Profil = view.findViewById(R.id.crv_profil)
+
+//        Namatoko = view.findViewById(R.id.txvNamaToko)
+//        Lokasi = view.findViewById(R.id.btn_tabs)
+//        Jenispembuatan = view.findViewById(R.id.layout_pelanggan)
+//        Harga = view.findViewById(R.id.layout_jasa)
+//        Detail = view.findViewById(R.id.layout_jasa)
     }
 
-
-        override fun onStart() {
+    override fun onStart() {
         super.onStart()
-            presenter.userDetail(prefsManager.prefsId)
+        presenter.userDetail(prefsManager.prefsId)
 
     }
 
@@ -71,12 +99,20 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun onResult(responseUserdetail: ResponseUserdetail) {
-        if (responseUserdetail.user.status == "pelanggan"){
-            layout_pelanggan.visibility = View.VISIBLE
-            layout_jasa.visibility = View.GONE
+        if (responseUserdetail.user.status == "pelanggan") {
+            layoutPelanggan.visibility = View.VISIBLE
+            layoutJasa.visibility = View.GONE
         } else {
-            layout_pelanggan.visibility = View.GONE
-            layout_jasa.visibility = View.VISIBLE
+            layoutPelanggan.visibility = View.GONE
+            layoutJasa.visibility = View.VISIBLE
+
+            CrvUsaha.setOnClickListener {
+                startActivity(Intent(requireActivity(), ProdukMaterialJasaActivity::class.java))
+            }
+
+            Notif.setOnClickListener {
+                startActivity(Intent(requireActivity(), NotifikasiJasaActivity::class.java))
+            }
         }
     }
 }

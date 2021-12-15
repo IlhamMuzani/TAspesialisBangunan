@@ -30,7 +30,7 @@ class SelesaiAdapter (val context: Context, var dataPengajuan: ArrayList<DataPen
         holder.bing(dataPengajuan[position])
 
         holder.view.crv_selesai.setOnClickListener {
-            Constant.PENGAJUAN_ID = dataPengajuan[position].kd_pengajuan!!
+            Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
             context.startActivity(Intent(context, DetailPelangganActivity::class.java ))
         }
         GlideHelper.setImage(context, Constant.IP_IMAGE + "uploads/" + dataPengajuan[position].gambar, holder.imvPengajuanSelesai)
@@ -41,7 +41,7 @@ class SelesaiAdapter (val context: Context, var dataPengajuan: ArrayList<DataPen
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
             view.txvDeskripsiselesai.text = datapengajuan.deskripsi
-            view.txvNamaselesai.text = datapengajuan.jasa.username
+            view.txvNamaselesai.text = datapengajuan.user.username
             view.txv__Statusselesai.text = datapengajuan.status
         }
         val imvPengajuanSelesai = view.findViewById<ImageView>(R.id.imvPengajuanselesaiPel)

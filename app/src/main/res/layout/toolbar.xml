@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.USERJASA.profiljasa.AkunActivity">
+    tools:context=".ui.userjasa.profiljasa.AkunActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

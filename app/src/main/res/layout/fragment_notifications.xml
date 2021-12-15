@@ -25,26 +25,26 @@
             android:src="@drawable/ic_baseline_keyboard_" />
 
         <ImageView
-            android:id="@+id/imvPesanan"
+            android:id="@+id/imvPesananjasa"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginEnd="15dp"
             android:src="@drawable/ic_baseline_tambahrek" />
 
         <TextView
-            android:id="@+id/LabelPesanan"
+            android:id="@+id/LabelPesananjasa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:layout_toEndOf="@+id/imvPesanan"
+            android:layout_toEndOf="@+id/imvPesananjasa"
             android:text="Pesanan"
             android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/LabelPesanan"
-            android:layout_toEndOf="@+id/imvPesanan"
+            android:layout_below="@+id/LabelPesananjasa"
+            android:layout_toEndOf="@+id/imvPesananjasa"
             android:text="Pesanan Yang Anda Minta"
             android:textColor="@color/biru" />
 

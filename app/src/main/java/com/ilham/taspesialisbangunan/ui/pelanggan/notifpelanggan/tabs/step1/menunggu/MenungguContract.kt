@@ -6,7 +6,7 @@ import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 interface MenungguContract {
 
     interface Presenter {
-        fun getPengajuanmenunggu(kd_userpelenggan : Long)
+        fun getPengajuanmenunggu(kd_user : Long)
     }
 
     interface View {

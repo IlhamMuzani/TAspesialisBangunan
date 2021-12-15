@@ -58,7 +58,7 @@ class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnM
     override fun initListener() {
         btnpengajuann.setOnClickListener {
             if (prefsManager.prefsIsLogin) {
-                Constant.PRODUK_ID = produkdetail.kd_produkjasa!!
+                Constant.PRODUK_ID = produkdetail.id!!
                 startActivity(Intent(this, PengajuanActivity::class.java))
             } else {
                 showMessage("Silakan Login Terlebih Dahulu")
@@ -108,7 +108,7 @@ class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnM
                 showMessage("Deskripsi harus diisi")
             } else {
                 presenter.insertPengajuan(
-                    dataProduk.jasausers_id!!,
+                    dataProduk.kd_user!!,
                     prefsManager.prefsId,
                     FileUtils.getFile(this, uriImage),
                     pengajuan.toString(),
@@ -137,7 +137,7 @@ class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnM
                 showMessage("Deskripsi harus diisi")
             } else {
                 presenter.insertSaran(
-                    dataProduk.jasausers_id!!,
+                    dataProduk.kd_user!!,
                     prefsManager.prefsId,
                     saran.toString()
                 )

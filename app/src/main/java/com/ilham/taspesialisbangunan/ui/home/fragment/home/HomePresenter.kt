@@ -22,7 +22,7 @@ class HomePresenter(val view : HomeContract.View): HomeContract.Presenter {
             }
 
             override fun onFailure(call: Call<ResponseUserdetail>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })

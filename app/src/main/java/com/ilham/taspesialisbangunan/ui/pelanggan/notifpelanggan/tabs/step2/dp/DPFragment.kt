@@ -55,7 +55,7 @@ class DPFragment : Fragment(), DPContract.View {
 
         dpAdapter = DPAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
-            Constant.PENGAJUAN_ID = datapengajuan.kd_pengajuan!!
+            Constant.PENGAJUAN_ID = datapengajuan.id!!
 
             datapengajuan = dataPengajuan
 

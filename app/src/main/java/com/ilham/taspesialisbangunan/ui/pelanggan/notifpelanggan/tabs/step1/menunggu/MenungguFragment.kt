@@ -55,7 +55,7 @@ class MenungguFragment : Fragment(), MenungguContract.View {
 
         menungguAdapter = MenungguAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
-            Constant.PENGAJUAN_ID = datapengajuan.kd_pengajuan!!
+            Constant.PENGAJUAN_ID = datapengajuan.id!!
 
             datapengajuan = dataPengajuan
 

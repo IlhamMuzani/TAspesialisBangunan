@@ -23,14 +23,12 @@
         android:theme="@style/Theme.TAspesialisBangunan"
         android:usesCleartextTraffic="true">
         <activity android:name="com.ilham.taspesialisbangunan.ui.MasukActivity"></activity>
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.profiljasa.tambahrek.TambahRekActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.profiljasa.tambahrek.TambahRekActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.NotifikasiPelangganActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.pengajuan.PengajuanActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.material.materialdetail.MaterialDetailActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.fragment.Akun.profil.updateprofil.UbahProfilActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.Aduanjasa.ReportActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.material.update.MaterialUpdateActivity" />
         <activity android:name=".ui.pelanggan.register.RegisterPelangganActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -44,20 +42,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.material.create.MaterialCreateActivity" />
-        <activity android:name=".ui.USERJASA.loginjasa.RegisterActivity" />
+        <activity android:name=".ui.userjasa.loginjasa.RegisterActivity" />
         <activity
-            android:name="com.ilham.taspesialisbangunan.ui.USERJASA.produk_materialjasa.tabs.ProdukJasa.ProdukMapsActivity"
+            android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.ProdukMapsActivity"
             android:label="@string/title_activity_produk_maps" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.produk_materialjasa.create.ProdukCreateActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create.ProdukCreateActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.home.JasaActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.home.JasaActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.produk_materialjasa.update.ProdukUpdateActivity" />
-        <activity android:name=".ui.USERJASA.profiljasa.AkunActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.loginjasa.LoginjasaActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.material.MaterialActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.cadangan.notifikasi.NotifikasiActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity" />
+        <activity android:name=".ui.userjasa.profiljasa.AkunActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.loginjasa.LoginjasaActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.UserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,12 +60,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ilham.taspesialisjasabangunan.ui.produkuser.MatrialprodukActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.profiljasa.tambahrek.create.TambahrekCreateActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.profiljasa.tambahrek.update.TambahrekUpdateActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.notifjasa.NotifikasiJasaActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.profiljasa.tambahrek.create.TambahrekCreateActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.profiljasa.tambahrek.update.TambahrekUpdateActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.NotifikasiJasaActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.detail.DetailPelangganActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.USERJASA.notifjasa.detail.DetailPengajuanActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.detail.DetailPengajuanActivity" />
         <activity android:name="com.ilham.taspesialisjasabangunan.ui.produkuser.ProdukMaterialJasaActivity" />
     </application>
 

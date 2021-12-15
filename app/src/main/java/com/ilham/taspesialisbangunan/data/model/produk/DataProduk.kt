@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class DataProduk (
 
-    @SerializedName( "kd_produkjasa") val kd_produkjasa: Long?,
-    @SerializedName( "jasausers_id") val jasausers_id: String?,
+    @SerializedName( "id") val id: Long?,
+    @SerializedName( "kd_user") val kd_user: String?,
     @SerializedName( "nama_toko") val nama_toko: String?,
-    @SerializedName( "jenis_pembuatan") val jenis_pembuatan: String?,
-    @SerializedName( "alamat") val alamat: String?,
+    @SerializedName("jenis_pembuatan") val jenis_pembuatan: String?,
+    @SerializedName("alamat") val alamat: String?,
     @SerializedName("phone") val phone: String?,
     @SerializedName( "latitude") val latitude: String?,
     @SerializedName( "longitude") val longitude: String?,

@@ -30,7 +30,7 @@ class MenungguAdapter (val context: Context, var dataPengajuan: ArrayList<DataPe
         holder.bing(dataPengajuan[position])
 
         holder.view.crv_menunggu.setOnClickListener {
-            Constant.PENGAJUAN_ID = dataPengajuan[position].kd_pengajuan!!
+            Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
             context.startActivity(Intent(context, DetailPelangganActivity::class.java ))
         }
         GlideHelper.setImage(context, Constant.IP_IMAGE + "uploads/" + dataPengajuan[position].gambar, holder.imvPengajuanM)
@@ -41,7 +41,7 @@ class MenungguAdapter (val context: Context, var dataPengajuan: ArrayList<DataPe
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
             view.txvDeskripsimenunggu.text = datapengajuan.deskripsi
-            view.txvNama.text = datapengajuan.jasa.username
+            view.txvNama.text = datapengajuan.user.username
             view.txv__Status.text = datapengajuan.status
         }
         val imvPengajuanM = view.findViewById<ImageView>(R.id.imvPengajuanmenunggu)

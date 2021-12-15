@@ -15,6 +15,7 @@ class PrefsManager(context: Context) : Krate {
     private val PREFS_PASSWORD: String = "prefs_is_password"
     private val PREFS_ALAMAT: String = "prefs_is_alamat"
     private val PREFS_PHONE: String = "prefs_is_phone"
+    private val PREFS_STATUS: String = "prefs_is_status"
 
     override val sharedPreferences: SharedPreferences
 
@@ -31,6 +32,7 @@ class PrefsManager(context: Context) : Krate {
     var prefsPassword by stringPref(PREFS_PASSWORD, "")
     var prefsAlamat by stringPref(PREFS_ALAMAT, "")
     var prefsPhone by stringPref(PREFS_PHONE, "")
+    var prefsStatus by stringPref(PREFS_STATUS, "")
 
     fun logout(){
         sharedPreferences.edit().clear().apply()

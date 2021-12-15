@@ -1,19 +1,16 @@
 package com.ilham.taspesialisbangunan.data.model.pengajuan
 
 import com.google.gson.annotations.SerializedName
-import com.ilham.taspesialisbangunan.data.model.loginjasa.DataLogin
-import com.ilham.taspesialisbangunan.data.model.loginuser.DataLoginuser
+import com.ilham.taspesialisbangunan.data.model.user.DataUser
 
 data class DataPengajuan(
-    @SerializedName("kd_pengajuan") val kd_pengajuan: Long?,
-    @SerializedName("kd_jasa") val kd_jasa: String?,
-    @SerializedName("kd_userpelanggan") val kd_userpelanggan: String?,
+    @SerializedName("id") val id: Long?,
+    @SerializedName("kd_produk") val kd_produk: String?,
+    @SerializedName("kd_user") val kd_user: String?,
     @SerializedName("gambar") val gambar: String,
     @SerializedName("deskripsi") val deskripsi: String,
     @SerializedName("harga") val harga: String,
     @SerializedName("bukti") val bukti: String,
     @SerializedName("status") val status: String,
-    @SerializedName("jasa") val jasa: DataLogin,
-    @SerializedName("userpelanggan") val userpelanggan: DataLoginuser,
-
+    @SerializedName("user") val user: DataUser,
 )

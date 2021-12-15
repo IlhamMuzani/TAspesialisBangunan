@@ -7,8 +7,8 @@ interface PengajuanContract {
 
     interface Presenter {
         fun insertPengajuan(
-            kd_jasa: String,
-            kd_userpelanggan: String,
+            kd_produk: String,
+            kd_user: String,
             gambar: File,
             deskripsi: String,
             status: String,

@@ -20,9 +20,9 @@ class ProdukdetailPresenter  (var view: ProdukdetailContract.View) : Produkdetai
         view.onLoadingProdukdetail(false)
     }
 
-    override fun getProdukdetail(kd_produkjasa: Long) {
+    override fun getProdukdetail(id: Long) {
         view.onLoadingProdukdetail(true)
-        ApiConfig.endpoint.getProdukDetail(kd_produkjasa).enqueue(object : Callback<ResponseProdukDetail>{
+        ApiConfig.endpoint.produkDetail(id).enqueue(object : Callback<ResponseProdukDetail>{
             override fun onResponse(
                 call: Call<ResponseProdukDetail>,
                 response: Response<ResponseProdukDetail>

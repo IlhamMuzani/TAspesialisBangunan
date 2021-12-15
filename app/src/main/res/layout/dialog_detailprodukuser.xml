@@ -57,7 +57,7 @@
             />
 
         <TextView
-            android:id="@+id/txvName"
+            android:id="@+id/txvNamejasa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -103,7 +103,7 @@
             />
 
         <TextView
-            android:id="@+id/txvAlamat"
+            android:id="@+id/txvAlamatjasa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

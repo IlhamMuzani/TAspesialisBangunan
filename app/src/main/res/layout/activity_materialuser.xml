@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.USERJASA.cadangan.materialuser.MaterialuserActivity">
+    tools:context=".ui.userjasa.cadangan.materialuser.MaterialuserActivity">
 
 
     <RelativeLayout

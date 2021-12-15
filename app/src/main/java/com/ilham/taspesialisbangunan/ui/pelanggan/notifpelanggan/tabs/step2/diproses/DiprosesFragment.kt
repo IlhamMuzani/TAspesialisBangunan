@@ -54,7 +54,7 @@ class DiprosesFragment : Fragment(), DiprosesContract.View {
 
         diprosesAdapter = DiprosesAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
-            Constant.PENGAJUAN_ID = datapengajuan.kd_pengajuan!!
+            Constant.PENGAJUAN_ID = datapengajuan.id!!
 
             datapengajuan = dataPengajuan
 

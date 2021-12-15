@@ -9,7 +9,7 @@ import java.io.File
 interface ProdukdetailContract {
 
     interface Presenter {
-        fun getProdukdetail(kd_produkjasa: Long)
+        fun getProdukdetail(id: Long)
         fun insertPengajuan(
             kd_jasa: String,
             kd_userpelanggan: String,

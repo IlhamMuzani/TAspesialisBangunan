@@ -17,18 +17,10 @@
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/profiluser"
-            />
-
-
-    </LinearLayout>
+        android:background="@color/white"/>
 
     <LinearLayout
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -39,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Silakan Login Sebagai User"
             android:textStyle="bold"/>
 
@@ -51,8 +43,7 @@
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="15dp"
         android:orientation="vertical"
-        android:paddingHorizontal="15dp"
-        android:background="@drawable/bg_btn_lapisanabu">
+        android:paddingHorizontal="15dp">
 
         <LinearLayout
             android:layout_marginTop="10dp"
@@ -144,15 +135,14 @@
 
         </LinearLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLoginuser"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/button_corner_color"
             android:text="Login"
             android:textColor="@color/dark"
-            app:backgroundTint="#03A9F4" />
+            android:backgroundTint="#00BCD4"/>
 
     </LinearLayout>
 
@@ -190,61 +180,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"/>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white">
-
-
-        <RelativeLayout
-            android:id="@+id/btnloginuserjasa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/bg_btn_lapisanorange"
-            >
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginEnd="15dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_baseline_keyboard_kuning"
-                />
-
-            <ImageView
-                android:id="@+id/imvloginjasa"
-                android:layout_marginTop="2dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/profil"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_toEndOf="@+id/imvloginjasa"
-                android:text="Login Sebagai Jasa"
-                android:textColor="@color/colorAccent"
-                android:textSize="20dp" />
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-
-
 
 
 </LinearLayout>

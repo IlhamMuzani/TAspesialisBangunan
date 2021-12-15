@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.ui.home.UserActivity
 import com.ilham.taspesialisbangunan.ui.home.fragment.Akun.profil.updateprofil.UbahProfilActivity
 
@@ -28,6 +29,8 @@ class AkunFragment : Fragment(), AkunuserContract.View {
     lateinit var Txvphoneuser : TextView
     lateinit var TxvLogoutUser : TextView
 
+    lateinit var layoutprofilpelanggan: RelativeLayout
+    lateinit var layoutprofiljasa: RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +58,8 @@ class AkunFragment : Fragment(), AkunuserContract.View {
         TxvAlamatuser = view.findViewById(R.id.txvAlamatuser)
         Txvphoneuser = view.findViewById(R.id.txvPhoneuser)
         TxvLogoutUser = view.findViewById(R.id.txvLogoutuser)
+        layoutprofilpelanggan = view.findViewById(R.id.layout_profiluser)
+
 
         BtnUbahProfil.setOnClickListener{
             Constant.USERPELANGGAN_ID = prefsManager.prefsId.toLong()
@@ -77,6 +82,16 @@ class AkunFragment : Fragment(), AkunuserContract.View {
     override fun onResultLogout() {
 //        requireActivity().finish()
         startActivity(Intent(requireActivity(), UserActivity::class.java))
+    }
+
+    override fun onResult(responseUserdetail: ResponseUserdetail) {
+        if (responseUserdetail.user.status == "pelanggan"){
+            layoutprofilpelanggan.visibility = View.VISIBLE
+            layoutprofiljasa.visibility = View.GONE
+        } else {
+            layoutprofilpelanggan.visibility = View.GONE
+            layoutprofiljasa.visibility = View.VISIBLE
+        }
     }
 
     override fun showMessage(message: String) {

@@ -9,7 +9,7 @@
     android:layout_marginRight="30dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".ui.USERJASA.loginjasa.RegisterActivity">
+    tools:context=".ui.userjasa.loginjasa.RegisterActivity">
 
     <TextView
         android:layout_width="wrap_content"

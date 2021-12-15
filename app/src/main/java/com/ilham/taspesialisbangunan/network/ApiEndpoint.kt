@@ -1,8 +1,6 @@
 package com.ilham.taspesialisbangunan.network
 
 import com.ilham.taspesialisbangunan.data.model.aduanjasa.ResponseAduanInsert
-import com.ilham.taspesialisbangunan.data.model.loginjasa.ResponseLogin
-import com.ilham.taspesialisbangunan.data.model.loginuser.ResponseLoginuser
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialDetail
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialList
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialUpdate
@@ -64,7 +62,7 @@ interface ApiEndpoint {
         @Field("password") password: String
     ) : Call<ResponseUser>
 
-    @GET("user_detail/{id}")
+    @GET("userDetail/{id}")
     fun userDetail(
         @Path("id") id: String
     ) : Call<ResponseUserdetail>
@@ -86,6 +84,10 @@ interface ApiEndpoint {
         @Query("_method") _method: String
     ): Call<ResponsePelangganUpdate>
 
+    @GET("ProfilDetail/{id}")
+    fun ProfilDetail(
+        @Path("id") id: String
+    ) : Call<ResponseUserdetail>
 //    PRODUK JASA
 //
     @GET("produkjasa")
@@ -93,13 +95,13 @@ interface ApiEndpoint {
 
     @POST("myproduct")
     fun myproduct(
-        @Query("jasausers_id") jasausers_id: String,
+        @Query("kd_user") kd_user: String,
     ) : Call<ResponseProdukList>
 
     @Multipart
     @POST("produkjasa")
     fun insertProduk(
-        @Query("jasausers_id") jasausers_id: String,
+        @Query("kd_user") kd_user: String,
         @Query("nama_toko") nama_toko: String,
         @Query("jenis_pembuatan") jenis_pembuatan: String,
         @Query("alamat") alamat: String,
@@ -111,9 +113,10 @@ interface ApiEndpoint {
         @Query("deskripsi") deskripsi: String
     ) : Call<ResponseProdukUpdate>
 
-    @GET("produkjasa/{kd_produkjasa}")
-    fun getProdukDetail(
-        @Path("kd_produkjasa") kd_produkjasa: Long
+
+    @GET("produk_detail/{id}")
+    fun produkDetail(
+        @Path("id") id: Long
     ) : Call<ResponseProdukDetail>
 
     @Multipart
@@ -239,8 +242,8 @@ interface ApiEndpoint {
     @Multipart
     @POST("pengajuan")
     fun insertPengajuan(
-        @Query("kd_jasa") kd_jasa: String,
-        @Query("kd_userpelanggan") kd_userpelanggan: String,
+        @Query("kd_produk") kd_produk: String,
+        @Query("kd_user") kd_user: String,
         @Part gambar: MultipartBody.Part,
         @Query("deskripsi") deskripsi: String,
         @Query("status") status: String
@@ -251,14 +254,14 @@ interface ApiEndpoint {
         @Query("kd_jasa") kd_jasa: String
     ) : Call<ResponsePengajuanList>
 
-    @GET("detailpengajuan/{kd_pengajuan}")
+    @GET("detailpengajuan/{id}")
     fun detailPengajuan(
-        @Path("kd_pengajuan") kd_pengajuan: Long
+        @Path("id") id: Long
     ) : Call<ResponsePengajuanDetail>
 
-    @POST("hargaPengajuan/{kd_pengajuan}")
+    @POST("hargaPengajuan/{id}")
     fun hargaPengajuan(
-        @Path("kd_pengajuan") kd_pengajuan: Long,
+        @Path("id") id: Long,
         @Query("harga") harga: String,
         @Query("_method") method: String,
     ) : Call<ResponsePengajuanUpdate>

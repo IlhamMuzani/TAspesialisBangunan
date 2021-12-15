@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity
-import com.ilham.taspesialisbangunan.ui.USERJASA.loginjasa.LoginjasaActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.loginjasa.LoginjasaActivity
 import kotlinx.android.synthetic.main.activity_masuk.*
 
 class MasukActivity : AppCompatActivity() {

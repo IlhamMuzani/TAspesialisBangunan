@@ -34,7 +34,7 @@ class ProdukuserAdapter (val context: Context, var dataProduk: ArrayList<DataPro
         GlideHelper.setImage(context, Constant.IP_IMAGE +  dataProduk[position].gambar!!, holder.view.imvImage)
 
         holder.view.txvDetailuser.setOnClickListener {
-            Constant.PRODUK_ID = dataProduk[position].kd_produkjasa!!
+            Constant.PRODUK_ID = dataProduk[position].id!!
             context.startActivity(Intent(context, ProdukdetailActivity::class.java ))
         }
 

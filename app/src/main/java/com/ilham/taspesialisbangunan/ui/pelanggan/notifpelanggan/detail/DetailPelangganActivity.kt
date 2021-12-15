@@ -70,7 +70,7 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
             if (uriImage == null) {
                 Toast.makeText(applicationContext, "Masukan bukti pembayaran", Toast.LENGTH_SHORT).show()
             } else {
-                presenter.buktiPengajuan(pengajuan.kd_pengajuan!!, FileUtils.getFile(this, uriImage))
+                presenter.buktiPengajuan(pengajuan.id!!, FileUtils.getFile(this, uriImage))
             }
         }
         imvBukti.setOnClickListener {
@@ -89,7 +89,7 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
         hargaDp.text = (Integer.valueOf(pengajuan.harga) * 30 / 100).toString()
         txtstatus2.text = pengajuan.status
 
-        presenter.getTampilprodukrekening(pengajuan.kd_jasa!!)
+        presenter.getTampilprodukrekening(pengajuan.kd_produk!!)
 
         when (pengajuan.status) {
             "Menunggu" -> {

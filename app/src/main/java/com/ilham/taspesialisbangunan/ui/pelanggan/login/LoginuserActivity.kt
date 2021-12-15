@@ -9,9 +9,7 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.ui.pelanggan.register.RegisterPelangganActivity
-import com.ilham.taspesialisbangunan.ui.USERJASA.home.JasaActivity
 import kotlinx.android.synthetic.main.activity_loginuser.*
-import kotlinx.android.synthetic.main.activity_loginuser.btnloginuserjasa
 import kotlinx.android.synthetic.main.activity_loginuser.progress
 
 class LoginuserActivity : AppCompatActivity(), LoginuserContract.View {
@@ -41,9 +39,6 @@ class LoginuserActivity : AppCompatActivity(), LoginuserContract.View {
             startActivity(Intent(this, RegisterPelangganActivity::class.java))
         }
 
-        btnloginuserjasa.setOnClickListener{
-            startActivity(Intent(this, JasaActivity::class.java))
-        }
     }
 
     override fun onResult(responseUser: ResponseUser) {

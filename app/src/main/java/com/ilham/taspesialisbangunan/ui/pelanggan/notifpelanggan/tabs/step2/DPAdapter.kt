@@ -31,7 +31,7 @@ class DPAdapter (val context: Context, var dataPengajuan: ArrayList<DataPengajua
         holder.bing(dataPengajuan[position])
 
         holder.view.crvPelanggan.setOnClickListener {
-            Constant.PENGAJUAN_ID = dataPengajuan[position].kd_pengajuan!!
+            Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
             context.startActivity(Intent(context, DetailPelangganActivity::class.java ))
         }
               GlideHelper.setImage(context, Constant.IP_IMAGE + "uploads/" + dataPengajuan[position].gambar, holder.imvPengajuanDP)
@@ -42,7 +42,7 @@ class DPAdapter (val context: Context, var dataPengajuan: ArrayList<DataPengajua
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
             view.txvDeskripsiDP.text = datapengajuan.deskripsi
-            view.txvNamaDP.text = datapengajuan.jasa.username
+            view.txvNamaDP.text = datapengajuan.user.username
             view.btn_statusDPproses.text = datapengajuan.status
         }
         val imvPengajuanDP = view.findViewById<ImageView>(R.id.imvPengajuanDP)

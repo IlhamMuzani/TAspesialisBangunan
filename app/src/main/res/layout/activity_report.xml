@@ -9,7 +9,7 @@
     android:layout_marginRight="30dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".ui.USERJASA.cadangan.Aduanjasa.ReportActivity">
+    tools:context=".ui.userjasa.cadangan.Aduanjasa.ReportActivity">
 
     <TextView
         android:layout_width="wrap_content"

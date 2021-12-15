@@ -31,8 +31,6 @@ class PengajuanActivity : AppCompatActivity(), PengajuanContract.View {
         prefsManager = PrefsManager(this)
     }
 
-
-
     override fun initActivity() {
         supportActionBar!!.title = "Pengajuan"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

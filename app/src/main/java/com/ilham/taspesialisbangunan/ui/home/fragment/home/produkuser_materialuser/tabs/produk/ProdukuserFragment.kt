@@ -63,7 +63,7 @@ class ProdukuserFragment : Fragment(), ProdukuserContract.View, OnMapReadyCallba
 
         produkuserAdapter = ProdukuserAdapter(requireActivity(), arrayListOf()){
                 dataProduk: DataProduk, position: Int, type: String ->
-            Constant.PRODUK_ID = dataProduk.kd_produkjasa!!
+            Constant.PRODUK_ID = dataProduk.id!!
 
             produk = dataProduk
 

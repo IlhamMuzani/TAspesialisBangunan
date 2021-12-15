@@ -103,7 +103,7 @@ class MaterialDetailActivity : AppCompatActivity(), MaterialDetailContract.View,
                 showMessage("Deskripsi harus diisi")
             } else {
                 presenter.insertPengajuan(
-                    dataProduk.jasausers_id!!,
+                    dataProduk.kd_user!!,
                     prefsManager.prefsId,
                     FileUtils.getFile(this, uriImage),
                     pengajuan.toString(),
