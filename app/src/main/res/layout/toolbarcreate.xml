@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.userjasa.produk_materialjasa.create.ProdukCreateActivity">
+    tools:context=".ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

@@ -20,7 +20,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_btn_lapisanbiru">
+                android:background="@drawable/bg_btn_lapisanabu">
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/btn_tabs"

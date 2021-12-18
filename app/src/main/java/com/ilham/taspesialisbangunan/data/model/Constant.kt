@@ -3,7 +3,7 @@ package com.ilham.taspesialisbangunan.data.model
 class Constant {
     companion object {
         var IP: String = "http://192.168.43.224/api_spesialisJB/"
-        var IP_IMAGE: String = IP + "public/"
+        var IP_IMAGE: String = IP + "public/uploads/"
 
         var LATITUDE: String = ""
         var LONGITUDE: String = ""

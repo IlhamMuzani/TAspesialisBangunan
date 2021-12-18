@@ -10,8 +10,7 @@ class MapsHelper {
     companion object {
 
         fun permissionMap(context: Context, activity: Activity) {
-            if (ActivityCompat.checkSelfPermission(
-                    context,
+            if (ActivityCompat.checkSelfPermission(context,
                     android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
                 ActivityCompat.requestPermissions(activity,

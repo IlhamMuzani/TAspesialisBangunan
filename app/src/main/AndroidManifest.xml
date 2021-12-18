@@ -29,7 +29,7 @@
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.material.materialdetail.MaterialDetailActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.fragment.Akun.profil.updateprofil.UbahProfilActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity" />
-        <activity android:name=".ui.pelanggan.register.RegisterPelangganActivity" />
+        <activity android:name=".ui.pelanggan.login.RegisterPelangganActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -46,7 +46,7 @@
         <activity
             android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.ProdukMapsActivity"
             android:label="@string/title_activity_produk_maps" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create.ProdukCreateActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.home.JasaActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity" />

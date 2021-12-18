@@ -63,8 +63,8 @@ class MaterialuserFragment : Fragment(), MaterialuserContract.View, OnMapReadyCa
     override fun initFragment(view: View) {
         (activity as AppCompatActivity).supportActionBar!!.hide()
 
-        rcvMaterial = view.findViewById(R.id.rcvMaterial)
-        swipe = view.findViewById(R.id.swipe)
+        rcvMaterial = view.findViewById(R.id.rcvMaterialM)
+        swipe = view.findViewById(R.id.swipeM)
         EdtSearchMaterial = view.findViewById(R.id.edtSearchMaterial)
 
         materialuserAdapter = MaterialuserAdapter(requireActivity(), arrayListOf()){

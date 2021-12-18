@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.register
+package com.ilham.taspesialisbangunan.ui.pelanggan.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,6 @@ import android.widget.Toast
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.register.ResponseModel
 import com.ilham.taspesialisbangunan.network.ApiConfig
-import com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register_pelanggan.*
 import retrofit2.Call

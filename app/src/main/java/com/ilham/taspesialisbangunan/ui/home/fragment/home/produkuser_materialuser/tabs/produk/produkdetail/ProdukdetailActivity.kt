@@ -28,6 +28,8 @@ import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_pengajuan.view.*
 import kotlinx.android.synthetic.main.activity_produkdetail.*
 import kotlinx.android.synthetic.main.activity_saran.view.*
+import java.text.NumberFormat
+import java.util.*
 
 class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnMapReadyCallback {
 
@@ -82,7 +84,7 @@ class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnM
         jenispembuatandetail.text = produkdetail.jenis_pembuatan
         alamatdetail.text = produkdetail.alamat
         phonedetail.text = produkdetail.phone
-        hargadetail.text = produkdetail.harga
+        hargadetail.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(produkdetail.harga))
         deskripsidetail.text = produkdetail.deskripsi
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.mapdetail) as SupportMapFragment

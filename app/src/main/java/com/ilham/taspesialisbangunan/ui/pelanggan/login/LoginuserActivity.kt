@@ -8,7 +8,6 @@ import android.widget.Toast
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
-import com.ilham.taspesialisbangunan.ui.pelanggan.register.RegisterPelangganActivity
 import kotlinx.android.synthetic.main.activity_loginuser.*
 import kotlinx.android.synthetic.main.activity_loginuser.progress
 

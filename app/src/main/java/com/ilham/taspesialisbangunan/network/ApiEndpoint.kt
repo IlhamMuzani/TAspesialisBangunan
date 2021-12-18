@@ -152,7 +152,7 @@ interface ApiEndpoint {
 
     @POST("myproductmaterial")
     fun myproductmaterial(
-        @Query("jasausers_id") jasausers_id: String,
+        @Query("kd_user") kd_user: String,
     ) : Call<ResponseMaterialList>
 
 

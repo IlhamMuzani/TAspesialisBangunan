@@ -44,7 +44,6 @@ class ProdukuserAdapter (val context: Context, var dataProduk: ArrayList<DataPro
         val view = view
         fun bing(dataproduk: DataProduk) {
             view.txvNameTokouser.text = dataproduk.nama_toko
-            view.txvLokasiuser.text = dataproduk.alamat
             view.txvJenispembuatanuser.text = dataproduk.jenis_pembuatan
             view.txvHargauser.text =NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(dataproduk.harga))
 //            view.txvHargauser.text ="Rp."+dataproduk.harga

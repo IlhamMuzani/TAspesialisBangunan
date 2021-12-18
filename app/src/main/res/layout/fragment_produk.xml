@@ -22,15 +22,15 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginRight="8dp">
+            android:layout_height="35dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/bg_btn_lapisanbiru"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:background="@drawable/bg_btn_lapisanabu">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -39,19 +39,19 @@
                     android:src="@drawable/ic_baseline_search_24" />
 
                 <EditText
-                    android:imeOptions="actionSearch"
-                    android:inputType="text"
-                    android:maxLines="1"
-
                     android:id="@+id/edtSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="10dp"
+
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
                     android:hint="Cari Jasa"
-                    android:textStyle="bold"/>
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
