@@ -2,6 +2,7 @@ package com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialu
 
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukDetail
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -20,21 +21,21 @@ class MaterialDetailPresenter  (var view: MaterialDetailContract.View) : Materia
     }
 
 
-    override fun getMaterialdetail(kd_material: Long) {
+    override fun getMaterialdetail(id: Long) {
         view.onLoadingMaterialdetail(true)
-        ApiConfig.endpoint.getMaterialDetail(kd_material).enqueue(object : Callback<ResponseMaterialDetail>{
+        ApiConfig.endpoint.produkDetail(id).enqueue(object : Callback<ResponseProdukDetail>{
             override fun onResponse(
-                call: Call<ResponseMaterialDetail>,
-                response: Response<ResponseMaterialDetail>
+                call: Call<ResponseProdukDetail>,
+                response: Response<ResponseProdukDetail>
             ) {
                 view.onLoadingMaterialdetail(false)
                 if (response.isSuccessful) {
-                    val responseMaterialDetail: ResponseMaterialDetail? = response.body()
-                    view.onResultMaterialdetail( responseMaterialDetail!!)
+                    val responseProdukDetail: ResponseProdukDetail? = response.body()
+                    view.onResultMaterialdetail( responseProdukDetail!!)
                 }
             }
 
-            override fun onFailure(call: Call<ResponseMaterialDetail>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseProdukDetail>, t: Throwable) {
                 view.onLoadingMaterialdetail(false)
             }
         } )

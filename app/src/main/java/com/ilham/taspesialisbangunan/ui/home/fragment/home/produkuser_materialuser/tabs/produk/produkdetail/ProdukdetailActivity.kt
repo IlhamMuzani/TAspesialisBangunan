@@ -79,7 +79,7 @@ class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnM
     override fun onResultProdukdetail(responseProdukDetail: ResponseProdukDetail) {
         produkdetail = responseProdukDetail.dataProduk
 
-        GlideHelper.setImage( applicationContext,"http://192.168.43.224/api_spesialisJB/public/"+ produkdetail.gambar!!, imvgambardetail)
+        GlideHelper.setImage( applicationContext,Constant.IP_IMAGE + produkdetail.gambar!!, imvgambardetail)
         namadetail.text = produkdetail.nama_toko
         jenispembuatandetail.text = produkdetail.jenis_pembuatan
         alamatdetail.text = produkdetail.alamat

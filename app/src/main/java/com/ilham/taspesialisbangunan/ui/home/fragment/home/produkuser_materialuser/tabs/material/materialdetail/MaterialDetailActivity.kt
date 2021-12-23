@@ -22,18 +22,21 @@ import com.ilham.taspesialisbangunan.data.model.material.DataMaterial
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukDetail
 import com.ilham.taspesialisbangunan.ui.utils.FileUtils
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_material_detail1.*
+import kotlinx.android.synthetic.main.activity_material_detail1.view.*
 import kotlinx.android.synthetic.main.activity_pengajuan.view.*
+import kotlinx.android.synthetic.main.activity_pengajuan.view.btn_pengajuann
 
 class MaterialDetailActivity : AppCompatActivity(), MaterialDetailContract.View, OnMapReadyCallback {
 
     private var uriImage: Uri? = null
     private var pickImage = 1
     lateinit var presenter: MaterialDetailPresenter
-    lateinit var materialdetail: DataMaterial
+    lateinit var materialdetail: DataProduk
     lateinit var prefsManager: PrefsManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,23 +67,23 @@ class MaterialDetailActivity : AppCompatActivity(), MaterialDetailContract.View,
 
     override fun onLoadingMaterialdetail(loading: Boolean) {
         when (loading) {
-            true -> progressdetailM.visibility = View.VISIBLE
-            false -> progressdetailM.visibility = View.GONE
+            true -> progressdetailmat.visibility = View.VISIBLE
+            false -> progressdetailmat.visibility = View.GONE
         }
     }
 
-    override fun onResultMaterialdetail(responseMaterialDetail: ResponseMaterialDetail) {
-        materialdetail = responseMaterialDetail.dataMaterial
+    override fun onResultMaterialdetail(responseProdukDetail: ResponseProdukDetail) {
+        materialdetail = responseProdukDetail.dataProduk
 
-        GlideHelper.setImage( applicationContext,"http://192.168.43.224/api_spesialisJB/public/"+ materialdetail.gambar!!, imvGambartokoM)
-        txvNameM.text = materialdetail.nama_toko
-        txvJenisM.text = materialdetail.jenis_material
-        txvAlamatM.text = materialdetail.alamat
-        txvPhoneM.text = materialdetail.phone
-        txvHargaM.text = materialdetail.harga
-        txvDeskripsiM.text = materialdetail.deskripsi
+        GlideHelper.setImage( applicationContext,Constant.IP_IMAGE + materialdetail.gambar!!, imvgambardetailmat)
+        namadetailmat.text = materialdetail.nama_toko
+        jenispembuatandetailmat.text = materialdetail.jenis_pembuatan
+        alamatdetailmat.text = materialdetail.alamat
+        phonedetailmat.text = materialdetail.phone
+        hargadetailmat.text = materialdetail.harga
+        deskripsidetailmat.text = materialdetail.deskripsi
 
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapM) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapdetailmat) as SupportMapFragment
         mapFragment.getMapAsync( this )
 
     }
@@ -97,7 +100,7 @@ class MaterialDetailActivity : AppCompatActivity(), MaterialDetailContract.View,
                 GalleryHelper.openGallery(this)
             }
         }
-        view.btn_pengajuann.setOnClickListener {
+        view.btnpengajuannmat.setOnClickListener {
             val pengajuan = view.edtdeskripsipengajuann.text
             if (pengajuan.isNullOrEmpty() || uriImage == null ) {
                 showMessage("Deskripsi harus diisi")

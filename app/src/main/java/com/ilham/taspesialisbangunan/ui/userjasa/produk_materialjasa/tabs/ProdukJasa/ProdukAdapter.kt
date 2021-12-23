@@ -1,6 +1,7 @@
 package com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
+import com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.produkjasadetail.ProdukjasadetailActivity
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import kotlinx.android.synthetic.main.adapter_produk.view.*
 import kotlinx.android.synthetic.main.adapter_produk.view.imvImage
@@ -32,7 +35,7 @@ class ProdukAdapter (val context: Context, var dataProduk: ArrayList<DataProduk>
 
         holder.view.imvImage.setOnClickListener {
             Constant.PRODUK_ID = dataProduk[position].id!!
-            clickListener(dataProduk[position], position, "Detail")
+            context.startActivity(Intent(context, ProdukjasadetailActivity::class.java ))
         }
 
         holder.view.txvOptions.setOnClickListener {

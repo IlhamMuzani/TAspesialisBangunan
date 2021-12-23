@@ -24,15 +24,12 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imvImageM"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginEnd="5dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/product"
-            app:riv_corner_radius="10dp"
-            />
-
-
+            android:src="@drawable/img_no_image"
+            app:riv_corner_radius="10dp" />
 
         <TextView
             android:id="@+id/txvNamaTokoM"
@@ -51,9 +48,8 @@
             android:layout_marginTop="3dp"
             android:layout_toEndOf="@+id/imvImageM"
             android:layout_below="@+id/txvNamaTokoM"
-            android:drawableStart="@drawable/ic_baseline_location_on_24"
             android:text="Lokasi"
-            android:textSize="12dp"
+            android:textSize="15dp"
             />
     </RelativeLayout>
 

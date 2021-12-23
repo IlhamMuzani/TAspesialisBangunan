@@ -14,5 +14,6 @@ data class DataProduk (
     @SerializedName( "longitude") val longitude: String?,
     @SerializedName( "harga") val harga: String?,
     @SerializedName( "deskripsi") val deskripsi: String?,
-    @SerializedName( "gambar") val gambar: String?
+    @SerializedName( "gambar") val gambar: String?,
+    @SerializedName( "status") val status: String?,
 )

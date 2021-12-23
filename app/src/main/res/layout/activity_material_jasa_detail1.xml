@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imvgambardetailmat"
+                android:id="@+id/imvgambardetailjass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -46,7 +46,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/namadetailmat"
+                            android:id="@+id/namadetailjass"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -85,7 +85,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/deskripsidetailmat"
+                            android:id="@+id/deskripsidetailjass"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@+id/imvEmailuser"
@@ -122,7 +122,7 @@
                             android:src="@drawable/ic_baseline_person_24" />
 
                         <TextView
-                            android:id="@+id/jenispembuatandetailmat"
+                            android:id="@+id/jenispembuatandetailjass"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -162,7 +162,7 @@
                             android:src="@drawable/ic_baseline_person_24" />
 
                         <TextView
-                            android:id="@+id/alamatdetailmat"
+                            android:id="@+id/alamatdetailjass"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -207,7 +207,7 @@
                                 android:src="@drawable/ic_baseline_person_24" />
 
                             <TextView
-                                android:id="@+id/hargadetailmat"
+                                android:id="@+id/hargadetailjass"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
@@ -221,7 +221,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/hargamat"
+                        android:id="@+id/hargajass"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_btn_lapisanbiru"
@@ -243,7 +243,7 @@
 
 
                             <TextView
-                                android:id="@+id/phonedetailmat"
+                                android:id="@+id/phonedetailjass"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
@@ -293,56 +293,18 @@
                     android:textStyle="bold" />
 
                 <fragment
-                    android:id="@+id/mapdetailmat"
+                    android:id="@+id/mapdetailjass"
                     android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_marginTop="5dp" />
 
-                <!--            <TextView-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:text="Lihat Komentar"-->
-                <!--                android:textStyle="bold"/>-->
-
-                <LinearLayout
-                    android:id="@+id/div_footerdetailmat"
+                <ProgressBar
+                    android:id="@+id/progressdetailjass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="10dp">
+                    android:layout_marginTop="20dp" />
 
-
-                    <RelativeLayout
-                        android:id="@+id/btnpengajuannmat"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:background="@drawable/bg_btn_beli">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:text="Pengajuan"
-                            android:textColor="@color/white"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-
-                        <ProgressBar
-                            android:id="@+id/progressdetailmat"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp" />
-
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
 
             </LinearLayout>
 

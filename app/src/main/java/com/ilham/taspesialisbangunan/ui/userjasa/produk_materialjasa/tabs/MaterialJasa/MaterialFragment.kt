@@ -22,25 +22,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
-import com.ilham.taspesialisbangunan.data.model.material.DataMaterial
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialList
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialUpdate
-import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity
+import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
+import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukMCreateActivity
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import com.ilham.taspesialisbangunan.ui.utils.MapsHelper
-import kotlinx.android.synthetic.main.dialog_detailproduk.view.*
-import kotlinx.android.synthetic.main.dialog_materialdetailjasa.view.*
 
 class MaterialFragment : Fragment(), MaterialContract.View, OnMapReadyCallback {
 
     lateinit var presenter: MaterialPresenter
-    lateinit var materialadapter: MaterialAdapter
-    lateinit var material: DataMaterial
+    lateinit var materialAdapter: MaterialAdapter
+    lateinit var dataproduk: DataProduk
     lateinit var prefsManager: PrefsManager
 
-    lateinit var rcvMaterial: RecyclerView
-    lateinit var swipematerial: SwipeRefreshLayout
+    lateinit var rcvProdukM: RecyclerView
+    lateinit var swipeM: SwipeRefreshLayout
     lateinit var Fab: FloatingActionButton
 
     override fun onCreateView(
@@ -53,76 +51,74 @@ class MaterialFragment : Fragment(), MaterialContract.View, OnMapReadyCallback {
         presenter = MaterialPresenter(this)
         prefsManager = PrefsManager(requireActivity())
 
-        initFragment(view)
+        initFragmentM(view)
 
         return view
     }
 
     override fun onStart() {
         super.onStart()
-        presenter.getMaterial(prefsManager.prefsId)
+        presenter.getProdukMat(prefsManager.prefsId.toLong())
     }
 
-    override fun initFragment(view: View) {
+    override fun initFragmentM(view: View) {
         (activity as AppCompatActivity).supportActionBar!!.hide()
         MapsHelper.permissionMap(requireContext(),requireActivity())
 
-        rcvMaterial = view.findViewById(R.id.rcvMaterial)
-        swipematerial = view.findViewById(R.id.swipeMJ)
+        rcvProdukM = view.findViewById(R.id.rcvMaterial)
+        swipeM = view.findViewById(R.id.swipeMJ)
         Fab = view.findViewById(R.id.fabMaterial)
 
-        materialadapter = MaterialAdapter(requireActivity(), arrayListOf()) {
-                dataMaterial: DataMaterial, position: Int, type: String ->
+        materialAdapter = MaterialAdapter(requireActivity(), arrayListOf()) {
+                dataProduk: DataProduk, position: Int, type: String ->
 
-            material = dataMaterial
-
+            dataproduk = dataProduk
 
             when (type) {
                 "Update" -> startActivity(Intent(requireActivity(), ProdukUpdateActivity::class.java))
-                "Delete" -> showDialogDelete( dataMaterial, position )
-                "Detail" -> showDialogDetail( dataMaterial, position )
+                "Delete" -> showDialogDeleteM( dataProduk, position )
 
             }
         }
 
-        rcvMaterial.apply {
+        rcvProdukM.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = materialadapter
+            adapter = materialAdapter
         }
 
-        swipematerial.setOnRefreshListener {
-            presenter.getMaterial(prefsManager.prefsId)
+        swipeM.setOnRefreshListener {
+            presenter.getProdukMat(prefsManager.prefsId.toLong())
         }
 
         Fab.setOnClickListener { view ->
-            startActivity(Intent(requireActivity(), ProdukCreateActivity::class.java))
+            startActivity(Intent(requireActivity(), ProdukMCreateActivity::class.java))
         }
     }
 
-    override fun onLoadingMaterial(loading: Boolean) {
+    override fun onLoadingProdukM(loading: Boolean) {
         when (loading) {
-            true -> swipematerial.isRefreshing = true
-            false -> swipematerial.isRefreshing = false
+            true -> swipeM.isRefreshing = true
+            false -> swipeM.isRefreshing = false
         }
     }
 
-    override fun onResultMaterial(responseMaterialList: ResponseMaterialList) {
-        val dataMaterial: List<DataMaterial> = responseMaterialList.dataMaterial
-        materialadapter.setData(dataMaterial)
+    override fun onResultProdukM(responseProdukList: ResponseProdukList) {
+        val produk: List<DataProduk> = responseProdukList.dataProduk
+        materialAdapter.setData(produk)
     }
 
-    override fun onResultDelete(responseMaterialUpdate: ResponseMaterialUpdate) {
-        showMessage( responseMaterialUpdate. msg )
+    override fun onResultDeleteM(responseProdukUpdate: ResponseProdukUpdate) {
+        showMessage( responseProdukUpdate. msg )
     }
 
-    override fun showDialogDelete(dataMaterial: DataMaterial, position: Int) {
+    override fun showDialogDeleteM(dataProduk: DataProduk, position: Int) {
         val dialog = AlertDialog.Builder(requireActivity())
         dialog.setTitle( "Konfirmasi" )
-        dialog.setMessage( "Hapus ${material.nama_toko}?" )
+        dialog.setMessage( "Hapus ${dataProduk.nama_toko}?" )
 
         dialog.setPositiveButton("Hapus") { dialog, which ->
-            presenter.deleteMaterial( Constant.PRODUK_ID )
-            materialadapter.removeMaterial( position )
+            presenter.deleteProduk( Constant.PRODUK_ID )
+            materialAdapter.removeProduk( position )
             dialog.dismiss()
         }
 
@@ -133,25 +129,9 @@ class MaterialFragment : Fragment(), MaterialContract.View, OnMapReadyCallback {
         dialog.show()
     }
 
-    override fun showDialogDetail(dataMaterial: DataMaterial, position: Int) {
-        val dialog = BottomSheetDialog(requireActivity())
-        val view = layoutInflater.inflate(R.layout.dialog_materialdetailjasa, null)
-
-        GlideHelper.setImage( requireActivity(),"http://192.168.43.224/api_spesialisJB/public/"+dataMaterial.gambar!!, view.imvGambartoko)
-
-        view.txvNameMaterial.text = dataMaterial.nama_toko
-        view.txvJenisMaterial.text = dataMaterial.jenis_material
-        view.txvAlamatMaterial.text = dataMaterial.alamat
-        view.txvPhoneMaterial.text = dataMaterial.phone
-        view.txvHargaMaterial.text = dataMaterial.harga
-        view.txvDeskripsiMaterial.text = dataMaterial.deskripsi
-
-    }
-
-
     override fun onMapReady(googleMap: GoogleMap) {
-        val latLng = LatLng (material.latitude!!.toDouble(), material.longitude!!.toDouble())
-        googleMap.addMarker ( MarkerOptions(). position(latLng).title( material.nama_toko ))
+        val latLng = LatLng (dataproduk.latitude!!.toDouble(), dataproduk.longitude!!.toDouble())
+        googleMap.addMarker ( MarkerOptions(). position(latLng).title( dataproduk.nama_toko ))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
     }
 

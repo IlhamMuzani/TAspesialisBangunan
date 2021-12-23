@@ -24,8 +24,9 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.material.DataMaterial
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialList
+import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
-import kotlinx.android.synthetic.main.dialog_materialdetail.view.*
 import java.text.NumberFormat
 import java.util.*
 
@@ -33,7 +34,7 @@ class MaterialuserFragment : Fragment(), MaterialuserContract.View, OnMapReadyCa
 
     lateinit var presenter: MaterialuserPresenter
     lateinit var materialuserAdapter: MaterialuserAdapter
-    lateinit var material: DataMaterial
+    lateinit var produkmaterial: DataProduk
     lateinit var prefsManager: PrefsManager
 
     lateinit var rcvMaterial: RecyclerView
@@ -68,13 +69,12 @@ class MaterialuserFragment : Fragment(), MaterialuserContract.View, OnMapReadyCa
         EdtSearchMaterial = view.findViewById(R.id.edtSearchMaterial)
 
         materialuserAdapter = MaterialuserAdapter(requireActivity(), arrayListOf()){
-                dataMaterial: DataMaterial, position: Int, type: String ->
-            Constant.MATERIAL_ID = dataMaterial.kd_material!!
+                dataProdukM: DataProduk, position: Int, type: String ->
+            Constant.MATERIAL_ID = dataProdukM.id!!
 
-            material = dataMaterial
+            produkmaterial = dataProdukM
 
             when (type ){
-                "detail" -> showDialogDetail( dataMaterial, position )
             }
         }
 
@@ -104,39 +104,14 @@ class MaterialuserFragment : Fragment(), MaterialuserContract.View, OnMapReadyCa
         }
     }
 
-    override fun onResultMaterialUser(responseMaterialList: ResponseMaterialList) {
-        val dataMaterial: List<DataMaterial> = responseMaterialList.dataMaterial
-        materialuserAdapter.setData(dataMaterial)
-    }
-
-    override fun showDialogDetail(dataMaterial: DataMaterial, position: Int) {
-        val dialog = BottomSheetDialog(requireActivity())
-        val view = layoutInflater.inflate(R.layout.dialog_materialdetail, null)
-
-        GlideHelper.setImage(requireActivity(), "http://192.168.43.224/api_spesialisJB/public/"+ dataMaterial.gambar!!, view.imvGambartokoM)
-
-        view.txvNameM.text = dataMaterial.nama_toko
-        view.txvJenisM.text = dataMaterial.jenis_material
-        view.txvAlamatM.text = dataMaterial.alamat
-        view.txvPhoneM.text = dataMaterial.phone
-        view.txvHargaM.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(dataMaterial.harga))
-        view.txvDeskripsiM.text = dataMaterial.deskripsi
-
-        val mapFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.mapM) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-
-        view.imvCloseM.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction().remove(mapFragment).commit()
-            dialog.dismiss()
-        }
-        dialog.setCancelable(false)
-        dialog.setContentView(view)
-        dialog.show()
+    override fun onResultMaterialUser(responseProdukList: ResponseProdukList) {
+        val dataProdukmaterial: List<DataProduk> = responseProdukList.dataProduk
+        materialuserAdapter.setData(dataProdukmaterial)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        val latLng = LatLng(material.latitude!!.toDouble(), material.longitude!!.toDouble())
-        googleMap.addMarker( MarkerOptions().position(latLng).title(material.nama_toko))
+        val latLng = LatLng (produkmaterial.latitude!!.toDouble(), produkmaterial.longitude!!.toDouble())
+        googleMap.addMarker ( MarkerOptions(). position(latLng).title( produkmaterial.nama_toko ))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
     }
 

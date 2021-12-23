@@ -11,17 +11,16 @@ import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
 interface MaterialContract {
 
     interface Presenter {
-        fun getMaterial(kd_user: String)
-        fun deleteMaterial(kd_material: Long)
+        fun getProdukMat(kd_user: Long)
+        fun deleteProduk(kd_produkjasa: Long)
     }
 
     interface View {
-        fun initFragment(view: android.view.View)
-        fun onLoadingMaterial(loading: Boolean)
-        fun onResultMaterial(responseMaterialList: ResponseMaterialList)
-        fun onResultDelete(responseMaterialUpdate: ResponseMaterialUpdate)
-        fun showDialogDelete(dataMaterial: DataMaterial, position: Int)
-        fun showDialogDetail(dataMaterial: DataMaterial, position: Int)
+        fun initFragmentM(view: android.view.View)
+        fun onLoadingProdukM(loading: Boolean)
+        fun onResultProdukM(responseProdukList: ResponseProdukList)
+        fun onResultDeleteM(responseProdukUpdate: ResponseProdukUpdate)
+        fun showDialogDeleteM(dataProduk: DataProduk, position: Int)
         fun showMessage(message: String)
     }
 }

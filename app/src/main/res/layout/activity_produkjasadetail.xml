@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    tools:context=".ui.home.fragment.home.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity">
+    tools:context=".ui.userjasa.produk_materialjasa.tabs.ProdukJasa.produkjasadetail.ProdukjasadetailActivity">
 
 
     <ScrollView
@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imvgambardetail"
+                android:id="@+id/imvgambardetailjas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -48,7 +48,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/namadetail"
+                        android:id="@+id/namadetailjas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -84,10 +84,11 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/deskripsidetail"
+                        android:id="@+id/deskripsidetailjas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/imvEmailuser"
@@ -124,7 +125,7 @@
                             android:src="@drawable/ic_baseline_person_24" />
 
                         <TextView
-                            android:id="@+id/jenispembuatandetail"
+                            android:id="@+id/jenispembuatandetailjas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -164,7 +165,7 @@
                             android:src="@drawable/ic_baseline_person_24" />
 
                         <TextView
-                            android:id="@+id/alamatdetail"
+                            android:id="@+id/alamatdetailjas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -209,7 +210,7 @@
                             android:src="@drawable/ic_baseline_person_24" />
 
                         <TextView
-                            android:id="@+id/hargadetail"
+                            android:id="@+id/hargadetailjas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -223,7 +224,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/harga"
+                    android:id="@+id/hargajas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/bg_btn_lapisanbiru"
@@ -245,7 +246,7 @@
 
 
                         <TextView
-                            android:id="@+id/phonedetail"
+                            android:id="@+id/phonedetailjas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -295,58 +296,20 @@
                 android:textStyle="bold" />
 
             <fragment
-                android:id="@+id/mapdetail"
+                android:id="@+id/mapdetailjas"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginTop="5dp" />
 
-            <!--            <TextView-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:text="Lihat Komentar"-->
-            <!--                android:textStyle="bold"/>-->
-
-            <LinearLayout
-                android:id="@+id/div_footerdetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp">
-
-
-                <RelativeLayout
-                    android:id="@+id/btnpengajuann"
+                <ProgressBar
+                    android:id="@+id/progressdetailjas"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@drawable/bg_btn_beli">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="Pengajuan"
-                        android:textColor="@color/white"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
-
-
-                    <ProgressBar
-                        android:id="@+id/progressdetail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp" />
-
-
-                </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
 
 
             </LinearLayout>
-
-        </LinearLayout>
 
         </LinearLayout>
 

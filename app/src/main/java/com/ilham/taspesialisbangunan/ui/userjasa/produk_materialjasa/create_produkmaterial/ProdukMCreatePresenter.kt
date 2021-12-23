@@ -10,7 +10,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 
-class ProdukCreatePresenter(val view: ProdukCreateContract.View) : ProdukCreateContract.Presenter {
+class ProdukMCreatePresenter(val view: ProdukMCreateContract.View) : ProdukMCreateContract.Presenter {
 
     init {
         view.initActivity()
@@ -18,7 +18,7 @@ class ProdukCreatePresenter(val view: ProdukCreateContract.View) : ProdukCreateC
         view.onLoading(false)
     }
 
-    override fun insertProduk(
+    override fun insertProdukMaterial(
         jasausers_id: String,
         nama_toko: String,
         jenis_pembuatan: String,
@@ -38,7 +38,7 @@ class ProdukCreatePresenter(val view: ProdukCreateContract.View) : ProdukCreateC
         )
 
         view.onLoading(true)
-        ApiConfig.endpoint.insertProduk(
+        ApiConfig.endpoint.insertProdukmaterial(
             jasausers_id,
             nama_toko,
             jenis_pembuatan,

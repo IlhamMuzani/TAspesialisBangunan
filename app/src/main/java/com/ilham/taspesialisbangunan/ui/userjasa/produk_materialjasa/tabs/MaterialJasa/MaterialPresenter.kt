@@ -1,7 +1,5 @@
 package com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.MaterialJasa
 
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialList
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialUpdate
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
 import com.ilham.taspesialisbangunan.network.ApiConfig
@@ -9,49 +7,50 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MaterialPresenter (var view: MaterialContract.View) : MaterialContract.Presenter {
+class MaterialPresenter(var view: MaterialContract.View) : MaterialContract.Presenter {
 
-    override fun getMaterial(kd_user : String) {
-        view.onLoadingMaterial(true)
-        ApiConfig.endpoint.myproductmaterial(kd_user).enqueue(object : Callback<ResponseMaterialList> {
+    override fun getProdukMat(kd_user: Long) {
+        view.onLoadingProdukM(true)
+        ApiConfig.endpoint.mymaterials(kd_user).enqueue(object : Callback<ResponseProdukList> {
             override fun onResponse(
-                call: Call<ResponseMaterialList>,
-                response: Response<ResponseMaterialList>
+                call: Call<ResponseProdukList>,
+                response: Response<ResponseProdukList>
             ) {
-                view.onLoadingMaterial(false)
-                if (response.isSuccessful){
-                    val responseMaterialList: ResponseMaterialList? = response.body()
-                    view.onResultMaterial(responseMaterialList!!)
-                }
-
-            }
-
-            override fun onFailure(call: Call<ResponseMaterialList>, t: Throwable) {
-                view.onLoadingMaterial(false)
-            }
-
-        } )
-    }
-
-    override fun deleteMaterial(kd_material: Long) {
-        view.onLoadingMaterial(true)
-        ApiConfig.endpoint.deleteMaterial(kd_material).enqueue(object : Callback<ResponseMaterialUpdate>{
-            override fun onResponse(
-                call: Call<ResponseMaterialUpdate>,
-                response: Response<ResponseMaterialUpdate>
-            ) {
-                view.onLoadingMaterial(false)
+                view.onLoadingProdukM(false)
                 if (response.isSuccessful) {
-                    val responseMaterialUpdate: ResponseMaterialUpdate? = response.body()
-                    view.onResultDelete( responseMaterialUpdate!! )
+                    val responseProdukList: ResponseProdukList? = response.body()
+                    view.onResultProdukM(responseProdukList!!)
                 }
             }
 
-            override fun onFailure(call: Call<ResponseMaterialUpdate>, t: Throwable) {
-                view.onLoadingMaterial(false)
+            override fun onFailure(call: Call<ResponseProdukList>, t: Throwable) {
+                view.onLoadingProdukM(false)
             }
 
         })
+    }
+
+
+    override fun deleteProduk(kd_produkjasa: Long) {
+        view.onLoadingProdukM(true)
+        ApiConfig.endpoint.deleteProduk(kd_produkjasa)
+            .enqueue(object : Callback<ResponseProdukUpdate> {
+                override fun onResponse(
+                    call: Call<ResponseProdukUpdate>,
+                    response: Response<ResponseProdukUpdate>
+                ) {
+                    view.onLoadingProdukM(false)
+                    if (response.isSuccessful) {
+                        val responseProdukUpdate: ResponseProdukUpdate? = response.body()
+                        view.onResultDeleteM(responseProdukUpdate!!)
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseProdukUpdate>, t: Throwable) {
+                    view.onLoadingProdukM(false)
+                }
+
+            })
     }
 
 }

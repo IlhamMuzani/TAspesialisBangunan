@@ -17,7 +17,6 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
@@ -27,9 +26,7 @@ import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity
-import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import com.ilham.taspesialisbangunan.ui.utils.MapsHelper
-import kotlinx.android.synthetic.main.dialog_detailproduk.view.*
 
 class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
 
@@ -59,7 +56,7 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
 
     override fun onStart() {
         super.onStart()
-        presenter.getProduk(prefsManager.prefsId)
+        presenter.getProduk(prefsManager.prefsId.toLong())
     }
 
     override fun initFragment(view: View) {
@@ -79,8 +76,6 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
             when (type) {
                 "Update" -> startActivity(Intent(requireActivity(), ProdukUpdateActivity::class.java))
                 "Delete" -> showDialogDelete( dataProduk, position )
-                "Detail" -> showDialogDetail( dataProduk, position )
-
             }
         }
 
@@ -90,7 +85,7 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
         }
 
         swipejasa.setOnRefreshListener {
-            presenter.getProduk(prefsManager.prefsId)
+            presenter.getProduk(prefsManager.prefsId.toLong())
         }
 
         Fab.setOnClickListener { view ->
@@ -132,22 +127,6 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
         dialog.show()
     }
 
-    override fun showDialogDetail(dataProduk: DataProduk, position: Int) {
-        val dialog = BottomSheetDialog(requireActivity())
-        val view = layoutInflater.inflate(R.layout.dialog_detailproduk, null)
-
-        GlideHelper.setImage( requireActivity(),"http://192.168.43.224/api_spesialisJB/public/"+dataProduk.gambar!!, view.imvGambartoko)
-
-        view.txvNamejasa.text = dataProduk.nama_toko
-        view.txvJenis.text = dataProduk.jenis_pembuatan
-        view.txvAlamatjasa.text = dataProduk.alamat
-        view.edtPhoneDetail.text = dataProduk.phone
-        view.txvHarga.text = dataProduk.harga
-        view.txvDeskripsi.text = dataProduk.deskripsi
-
-    }
-
-
     override fun onMapReady(googleMap: GoogleMap) {
         val latLng = LatLng (produk.latitude!!.toDouble(), produk.longitude!!.toDouble())
         googleMap.addMarker ( MarkerOptions(). position(latLng).title( produk.nama_toko ))
@@ -157,6 +136,4 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
     override fun showMessage(message: String) {
         Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
     }
-
-
 }

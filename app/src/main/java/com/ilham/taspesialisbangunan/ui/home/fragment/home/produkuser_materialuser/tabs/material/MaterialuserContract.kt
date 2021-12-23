@@ -2,6 +2,8 @@ package com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialu
 
 import com.ilham.taspesialisbangunan.data.model.material.DataMaterial
 import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialList
+import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 
 interface MaterialuserContract {
 
@@ -13,8 +15,7 @@ interface MaterialuserContract {
     interface View {
         fun initFragment(view: android.view.View)
         fun onLoadingMaterialUser(loading: Boolean)
-        fun onResultMaterialUser(responseMaterialList: ResponseMaterialList)
-        fun showDialogDetail(dataMaterial: DataMaterial, position: Int)
+        fun onResultMaterialUser(responseProdukList: ResponseProdukList)
         fun showMessage(message: String)
     }
 }
