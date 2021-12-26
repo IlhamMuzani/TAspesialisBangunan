@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -22,6 +23,7 @@ class AkunFragment : Fragment(), AkunuserContract.View {
     lateinit var prefsManager: PrefsManager
     lateinit var presenter: AkunuserPresenter
 
+    //user
     lateinit var BtnUbahProfil : RelativeLayout
     lateinit var TxvAkunUser : TextView
     lateinit var TxvEmailUser : TextView
@@ -29,8 +31,16 @@ class AkunFragment : Fragment(), AkunuserContract.View {
     lateinit var Txvphoneuser : TextView
     lateinit var TxvLogoutUser : TextView
 
-    lateinit var layoutprofilpelanggan: RelativeLayout
-    lateinit var layoutprofiljasa: RelativeLayout
+    //jasa
+    lateinit var BtnUbahProfiljasa : RelativeLayout
+    lateinit var TxvAkunUserjasa : TextView
+    lateinit var TxvEmailUserjasa : TextView
+    lateinit var TxvAlamatuserjasa : TextView
+    lateinit var Txvphoneuserjasa : TextView
+    lateinit var TxvLogoutUserjasa : TextView
+
+    lateinit var layoutprofilpelanggan: LinearLayout
+    lateinit var layoutprofiljasa: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,7 +68,15 @@ class AkunFragment : Fragment(), AkunuserContract.View {
         TxvAlamatuser = view.findViewById(R.id.txvAlamatuser)
         Txvphoneuser = view.findViewById(R.id.txvPhoneuser)
         TxvLogoutUser = view.findViewById(R.id.txvLogoutuser)
-        layoutprofilpelanggan = view.findViewById(R.id.layout_profiluser)
+        layoutprofilpelanggan = view.findViewById(R.id.layout_profilPELANGGAN)
+
+        BtnUbahProfiljasa = view.findViewById(R.id.btn_ubahProfiljasa)
+        TxvAkunUserjasa= view.findViewById(R.id.txvAkunjasa)
+        TxvEmailUserjasa = view.findViewById(R.id.txvEmailjasa)
+        TxvAlamatuserjasa = view.findViewById(R.id.txvAlamatjasa)
+        Txvphoneuserjasa = view.findViewById(R.id.txvPhonejasa)
+        TxvLogoutUserjasa = view.findViewById(R.id.txvLogoutjasa)
+        layoutprofiljasa = view.findViewById(R.id.layout_profilJASA)
 
 
         BtnUbahProfil.setOnClickListener{
@@ -69,6 +87,10 @@ class AkunFragment : Fragment(), AkunuserContract.View {
             presenter.doLogout(prefsManager)
         }
 
+        TxvLogoutUserjasa.setOnClickListener {
+            presenter.doLogout(prefsManager)
+        }
+
     }
 
     override fun onResultLogin(prefsManageruser: PrefsManager) {
@@ -76,6 +98,11 @@ class AkunFragment : Fragment(), AkunuserContract.View {
         TxvEmailUser.text = prefsManageruser.prefsEmail
         TxvAlamatuser.text = prefsManageruser.prefsAlamat
         Txvphoneuser.text = prefsManageruser.prefsPhone
+
+        TxvAkunUserjasa.text = prefsManageruser.prefsUsername
+        TxvEmailUserjasa.text = prefsManageruser.prefsEmail
+        TxvAlamatuserjasa.text = prefsManageruser.prefsAlamat
+        Txvphoneuserjasa.text = prefsManageruser.prefsPhone
 
     }
 

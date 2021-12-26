@@ -1,234 +1,457 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white">
 
-
-    <RelativeLayout
-        android:id="@+id/layout_profiluser"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/biru"
-        >
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@color/white" />
-
-        <ImageView
-            android:id="@+id/imvAkunuser"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:src="@drawable/profiluser2"
-            android:layout_marginTop="50dp"
-            android:layout_centerHorizontal="true"/>
-
-        <TextView
-            android:id="@+id/txvAkunuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="username"
-            android:textSize="22dp"
-            android:textColor="@color/black"
-            android:layout_centerHorizontal="true"
-            android:textStyle="bold"
-            android:layout_below="@+id/imvAkunuser"/>
-
-
-        <TextView
-            android:id="@+id/txvInfoUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imvAkunuser"
-            android:layout_marginTop="100dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:text=" Info Profil"
-            android:textStyle="bold"
-            android:background="@color/biru"
-            android:textSize="22sp"
-            />
         <LinearLayout
-            android:id="@+id/linJasa"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="50dp"
-            android:layout_below="@id/txvInfoUser"
-            >
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_profilPELANGGAN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
 
             <RelativeLayout
+                android:id="@+id/layout_profiluser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
+                android:background="@color/biru">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/white" />
 
                 <ImageView
-                    android:id="@+id/imvEmailuser"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_person_24" />
+                    android:id="@+id/imvAkunuser"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/profiluser2" />
 
                 <TextView
-                    android:id="@+id/LabelEmailuser"
+                    android:id="@+id/txvAkunuser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvEmailuser"
-                    android:text="Email Anda"
-                    android:textColor="@color/black" />
-                <TextView
-                    android:id="@+id/txvEmailuser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvEmailuser"
-                    android:layout_below="@+id/LabelEmailuser"
-                    android:text="Email"
-                    android:textColor="@color/biru"
-                    />
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
-
-                <ImageView
-                    android:id="@+id/imvAlamatuser"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_location_on_24"
-                    />
-
-                <TextView
-                    android:id="@+id/LabelAlamatuser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvAlamatuser"
-                    android:text="Alamat"
+                    android:layout_below="@+id/imvAkunuser"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="username"
                     android:textColor="@color/black"
-                    />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
                 <TextView
-                    android:id="@+id/txvAlamatuser"
+                    android:id="@+id/txvInfoUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imvAkunuser"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@color/biru"
+                    android:text=" Info Profil"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/linJasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txvInfoUser"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/imvEmailuser"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_person_24" />
+
+                        <TextView
+                            android:id="@+id/LabelEmailuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvEmailuser"
+                            android:text="Email Anda"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/txvEmailuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelEmailuser"
+                            android:layout_toEndOf="@+id/imvEmailuser"
+                            android:text="Email"
+                            android:textColor="@color/biru" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/imvAlamatuser"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_location_on_24" />
+
+                        <TextView
+                            android:id="@+id/LabelAlamatuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvAlamatuser"
+                            android:text="Alamat"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/txvAlamatuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelAlamatuser"
+                            android:layout_toEndOf="@+id/imvAlamatuser"
+                            android:text="Alamat"
+                            android:textColor="@color/biru" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/imvPhoneuser"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_perm_phone" />
+
+                        <TextView
+                            android:id="@+id/LabelPhoneuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvPhoneuser"
+                            android:text="Nomer Telepone"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/txvPhoneuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelPhoneuser"
+                            android:layout_toEndOf="@+id/imvPhoneuser"
+                            android:text="No Telpone"
+                            android:textColor="@color/biru" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_ubahProfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_keyboard_" />
+
+                        <ImageView
+                            android:id="@+id/imvUbahProfil"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_pulpen" />
+
+                        <TextView
+                            android:id="@+id/LabelUbahProfil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvUbahProfil"
+                            android:text="Perbarui Profil"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelUbahProfil"
+                            android:layout_toEndOf="@+id/imvUbahProfil"
+                            android:text="Perbarui Profil Anda"
+                            android:textColor="@color/biru" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txvLogoutuser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvAlamatuser"
-                    android:layout_below="@+id/LabelAlamatuser"
-                    android:text="Alamat"
-                    android:textColor="@color/biru"
-                    />
-
+                    android:layout_below="@+id/linJasa"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="70dp"
+                    android:text="Logout"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
-
-                <ImageView
-                    android:id="@+id/imvPhoneuser"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_perm_phone"
-                    />
-
-                <TextView
-                    android:id="@+id/LabelPhoneuser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvPhoneuser"
-                    android:text="Nomer Telepone"
-                    android:textColor="@color/black"
-                    />
-                <TextView
-                    android:id="@+id/txvPhoneuser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvPhoneuser"
-                    android:layout_below="@+id/LabelPhoneuser"
-                    android:text="No Telpone"
-                    android:textColor="@color/biru"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/btn_ubahProfil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_baseline_keyboard_"
-                    />
-
-                <ImageView
-                    android:id="@+id/imvUbahProfil"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_pulpen"
-                    />
-
-                <TextView
-                    android:id="@+id/LabelUbahProfil"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvUbahProfil"
-                    android:text="Perbarui Profil"
-                    android:textColor="@color/black"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/imvUbahProfil"
-                    android:layout_below="@+id/LabelUbahProfil"
-                    android:text="Perbarui Profil Anda"
-                    android:textColor="@color/biru"
-                    />
-
-            </RelativeLayout>
-
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txvLogoutuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linJasa"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
-            android:text="Logout"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/layout_profilJASA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/layout_profiljasa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/kuning">
 
-</ScrollView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imvAkunjasa"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/profiluser2" />
+
+                <TextView
+                    android:id="@+id/txvAkunjasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imvAkunjasa"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="username"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/txvInfojasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imvAkunjasa"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@color/biru"
+                    android:text=" Info Profil"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/linUserjasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txvInfojasa"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/imvEmailjasa"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_person_24" />
+
+                        <TextView
+                            android:id="@+id/LabelEmailjasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvEmailjasa"
+                            android:text="Email Anda"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/txvEmailjasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelEmailjasa"
+                            android:layout_toEndOf="@+id/imvEmailjasa"
+                            android:text="Email"
+                            android:textColor="@color/biru" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/imvAlamatjasa"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_location_on_24" />
+
+                        <TextView
+                            android:id="@+id/LabelAlamatjasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvAlamatjasa"
+                            android:text="Alamat"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/txvAlamatjasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelAlamatjasa"
+                            android:layout_toEndOf="@+id/imvAlamatjasa"
+                            android:text="Alamat"
+                            android:textColor="@color/biru" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/imvPhonejasa"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_perm_phone" />
+
+                        <TextView
+                            android:id="@+id/LabelPhonejasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvPhonejasa"
+                            android:text="Nomer Telepone"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/txvPhonejasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelPhonejasa"
+                            android:layout_toEndOf="@+id/imvPhonejasa"
+                            android:text="No Telpone"
+                            android:textColor="@color/biru" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_ubahProfiljasa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_keyboard_" />
+
+                        <ImageView
+                            android:id="@+id/imvUbahProfiljasa"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_pulpen" />
+
+                        <TextView
+                            android:id="@+id/LabelUbahProfiljasa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvUbahProfiljasa"
+                            android:text="Perbarui Profil"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/LabelUbahProfiljasa"
+                            android:layout_toEndOf="@+id/imvUbahProfiljasa"
+                            android:text="Perbarui Profil Anda"
+                            android:textColor="@color/biru" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txvLogoutjasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linUserjasa"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="70dp"
+                    android:text="Logout"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

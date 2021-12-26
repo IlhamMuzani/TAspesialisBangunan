@@ -179,52 +179,6 @@ interface ApiEndpoint {
         @Path("kd_produkjasa") kd_produkjasa: Long
     ): Call<ResponseProdukUpdate>
 
-    //    MATERIAL
-//
-    @GET("material")
-    fun getMaterial(): Call<ResponseMaterialList>
-
-    @POST("myproductmaterial")
-    fun myproductmaterial(
-        @Query("kd_user") kd_user: String,
-    ): Call<ResponseMaterialList>
-
-
-    @Multipart
-    @POST("material")
-    fun insertMaterial(
-        @Query("jasausers_id") jasausers_id: String,
-        @Query("nama_toko") nama_toko: String,
-        @Query("jenis_material") jenis_material: String,
-        @Query("alamat") alamat: String,
-        @Query("phone") phone: String,
-        @Query("harga") harga: String,
-        @Query("latitude") latidude: String,
-        @Query("longitude") longitude: String,
-        @Part gambar: MultipartBody.Part,
-        @Query("deskripsi") deskripsi: String
-    ): Call<ResponseMaterialUpdate>
-
-    @Multipart
-    @POST("material/{kd_material}")
-    fun updateMaterial(
-        @Path("kd_material") kd_material: Long,
-        @Query("nama_toko") nama_toko: String,
-        @Query("jenis_material") jenis_material: String,
-        @Query("alamat") alamat: String,
-        @Query("phone") phone: String,
-        @Query("harga") harga: String,
-        @Query("latitude") latidude: String,
-        @Query("longitude") longitude: String,
-        @Part gambar: MultipartBody.Part,
-        @Query("deskripsi") deskripsi: String,
-        @Query("_method") _method: String
-    ): Call<ResponseMaterialUpdate>
-
-    @DELETE("material/{kd_material}")
-    fun deleteMaterial(
-        @Path("kd_material") kd_material: Long
-    ): Call<ResponseMaterialUpdate>
 
     //    PENGADUAN JASA
 //
