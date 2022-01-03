@@ -14,7 +14,7 @@ class NotifikasiPelangganActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notifikasi_pelanggan)
 
-        val adapter = ViewPagerAdapter(supportFragmentManager)
+        val adapter = ViewPagerAdapterNotif(supportFragmentManager)
         adapter.addFragment(MenungguFragment(), "Step 1")
         adapter.addFragment(DPFragment(), "Step 2")
 //        adapter.addFragment(DiterimaFragment(), "Step 2")

@@ -20,6 +20,7 @@ class NotificationsFragment : Fragment(), NotificationsContract.View {
 
     lateinit var BtnPesan : RelativeLayout
     lateinit var BtnKeranjang : RelativeLayout
+    lateinit var BtnLaporkan : RelativeLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +45,26 @@ class NotificationsFragment : Fragment(), NotificationsContract.View {
     override fun initFragment(view: View) {
         BtnPesan = view.findViewById(R.id.btn_Pesanan)
         BtnKeranjang = view.findViewById(R.id.btn_keranjang)
+        BtnLaporkan = view.findViewById(R.id.btnLaporkanjasa)
 
 
         BtnPesan.setOnClickListener {
+            if (prefsManager.prefsIsLogin) {
+                startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
+            } else {
+                showMessage("Silakan Login Terlebih Dahulu")
+            }
+        }
+
+        BtnKeranjang.setOnClickListener {
+            if (prefsManager.prefsIsLogin) {
+                startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
+            } else {
+                showMessage("Silakan Login Terlebih Dahulu")
+            }
+        }
+
+        BtnLaporkan.setOnClickListener {
             if (prefsManager.prefsIsLogin) {
                 startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
             } else {

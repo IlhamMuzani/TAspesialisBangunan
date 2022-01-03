@@ -72,7 +72,6 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
 
             produk = dataProduk
 
-
             when (type) {
                 "Update" -> startActivity(Intent(requireActivity(), ProdukUpdateActivity::class.java))
                 "Delete" -> showDialogDelete( dataProduk, position )

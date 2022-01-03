@@ -93,6 +93,12 @@ class AkunFragment : Fragment(), AkunuserContract.View {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        presenter.profilDetail(prefsManager.prefsId)
+
+    }
+
     override fun onResultLogin(prefsManageruser: PrefsManager) {
         TxvAkunUser.text = prefsManageruser.prefsUsername
         TxvEmailUser.text = prefsManageruser.prefsEmail

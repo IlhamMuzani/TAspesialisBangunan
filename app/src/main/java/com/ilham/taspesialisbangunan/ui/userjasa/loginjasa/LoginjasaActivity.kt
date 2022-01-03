@@ -49,11 +49,11 @@ class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
     override fun onLoading(loading: Boolean){
         when(loading){
             true -> {
-                progress.visibility = View.VISIBLE
+                progressbarjasa.visibility = View.VISIBLE
                 btnLoginjasa.visibility = View.GONE
             }
             false -> {
-                progress.visibility = View.GONE
+                progressbarjasa.visibility = View.GONE
                 btnLoginjasa.visibility = View.VISIBLE
             }
         }

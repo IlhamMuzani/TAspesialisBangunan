@@ -1,9 +1,6 @@
 package com.ilham.taspesialisbangunan.network
 
 import com.ilham.taspesialisbangunan.data.model.aduanjasa.ResponseAduanInsert
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialDetail
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialList
-import com.ilham.taspesialisbangunan.data.model.material.ResponseMaterialUpdate
 import com.ilham.taspesialisbangunan.data.model.pengajuan.*
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukDetail
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList

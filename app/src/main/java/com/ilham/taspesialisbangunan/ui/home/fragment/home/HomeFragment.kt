@@ -32,17 +32,9 @@ class HomeFragment : Fragment(), HomeContract.View {
     lateinit var layoutPelanggan: LinearLayout
     lateinit var layoutJasa: LinearLayout
 
-    lateinit var Namatoko: TextView
     lateinit var CrvUsaha: CardView
-    lateinit var Laporkanjasa: CardView
     lateinit var Notif: CardView
-    lateinit var Profil: CardView
 
-//    lateinit var Namatoko: TextView
-//    lateinit var Lokasi: TextView
-//    lateinit var Jenispembuatan: TextView
-//    lateinit var Harga: TextView
-//    lateinit var Detail: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,14 +66,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         CrvUsaha = view.findViewById(R.id.crv_Usahajasa)
         Notif = view.findViewById(R.id.crv_notifikasi)
-        Laporkanjasa = view.findViewById(R.id.crv_Laporkan)
-        Profil = view.findViewById(R.id.crv_profil)
 
-//        Namatoko = view.findViewById(R.id.txvNamaToko)
-//        Lokasi = view.findViewById(R.id.btn_tabs)
-//        Jenispembuatan = view.findViewById(R.id.layout_pelanggan)
-//        Harga = view.findViewById(R.id.layout_jasa)
-//        Detail = view.findViewById(R.id.layout_jasa)
     }
 
     override fun onStart() {

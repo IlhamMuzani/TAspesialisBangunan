@@ -48,7 +48,6 @@
             android:label="@string/title_activity_produk_maps" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukMCreateActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.home.JasaActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity" />
         <activity android:name=".ui.userjasa.profiljasa.AkunActivity" />
