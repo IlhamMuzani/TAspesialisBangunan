@@ -50,6 +50,7 @@ class LoginuserPresenter (val view: LoginuserContract.View): LoginuserContract.P
         prefsManager.prefsPassword = dataUser.password!!
         prefsManager.prefsAlamat = dataUser.alamat!!
         prefsManager.prefsPhone = dataUser.phone!!
+        prefsManager.prefsStatus = dataUser.status!!
     }
 
 }

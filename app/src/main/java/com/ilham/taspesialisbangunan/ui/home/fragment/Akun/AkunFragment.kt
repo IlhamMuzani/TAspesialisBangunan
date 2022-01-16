@@ -99,16 +99,16 @@ class AkunFragment : Fragment(), AkunuserContract.View {
 
     }
 
-    override fun onResultLogin(prefsManageruser: PrefsManager) {
-        TxvAkunUser.text = prefsManageruser.prefsUsername
-        TxvEmailUser.text = prefsManageruser.prefsEmail
-        TxvAlamatuser.text = prefsManageruser.prefsAlamat
-        Txvphoneuser.text = prefsManageruser.prefsPhone
+    override fun onResultLogin(prefsManager: PrefsManager) {
+        TxvAkunUser.text = prefsManager.prefsUsername
+        TxvEmailUser.text = prefsManager.prefsEmail
+        TxvAlamatuser.text = prefsManager.prefsAlamat
+        Txvphoneuser.text = prefsManager.prefsPhone
 
-        TxvAkunUserjasa.text = prefsManageruser.prefsUsername
-        TxvEmailUserjasa.text = prefsManageruser.prefsEmail
-        TxvAlamatuserjasa.text = prefsManageruser.prefsAlamat
-        Txvphoneuserjasa.text = prefsManageruser.prefsPhone
+        TxvAkunUserjasa.text = prefsManager.prefsUsername
+        TxvEmailUserjasa.text = prefsManager.prefsEmail
+        TxvAlamatuserjasa.text = prefsManager.prefsAlamat
+        Txvphoneuserjasa.text = prefsManager.prefsPhone
 
     }
 
@@ -118,12 +118,12 @@ class AkunFragment : Fragment(), AkunuserContract.View {
     }
 
     override fun onResult(responseUserdetail: ResponseUserdetail) {
-        if (responseUserdetail.user.status == "pelanggan"){
+        if (responseUserdetail.user.status == "pelanggan") {
             layoutprofilpelanggan.visibility = View.VISIBLE
             layoutprofiljasa.visibility = View.GONE
         } else {
-            layoutprofilpelanggan.visibility = View.GONE
-            layoutprofiljasa.visibility = View.VISIBLE
+                layoutprofilpelanggan.visibility = View.GONE
+                layoutprofiljasa.visibility = View.VISIBLE
         }
     }
 
