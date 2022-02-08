@@ -47,7 +47,7 @@ class DiprosesjasaFragment : Fragment(), DiprosesjasaContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvDiprosesjasa = view.findViewById(R.id.rcv_Diprosesjasa)
         swipeDiprosesjasa = view.findViewById(R.id.swipe_Diprosesjasa)

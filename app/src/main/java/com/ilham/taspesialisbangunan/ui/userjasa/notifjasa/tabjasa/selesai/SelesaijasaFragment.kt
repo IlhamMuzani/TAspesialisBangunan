@@ -47,7 +47,7 @@ class SelesaijasaFragment : Fragment(), SelesaijasaContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvSelesaijasa = view.findViewById(R.id.rcvSelesaijasa)
         swipeSelesaijasa = view.findViewById(R.id.swipeSelesaijasa)

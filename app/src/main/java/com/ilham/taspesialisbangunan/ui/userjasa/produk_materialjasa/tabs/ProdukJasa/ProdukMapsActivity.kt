@@ -20,6 +20,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
+import kotlinx.android.synthetic.main.toolbarjasa.*
+import kotlinx.android.synthetic.main.toolbarmap.*
 
 class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -32,13 +34,14 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_produk_maps)
-        supportActionBar!!.title = "Lokasi"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgmap.text="Location"
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        setData()
 
     }
 
@@ -51,6 +54,17 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    fun setData(){
+        ivKembalimap.setOnClickListener {
+            onBackPressed()
+        }
+
+        action_savemap.setOnClickListener {
+            onBackPressed()
+        }
+    }
+
     override fun onMapReady(map: GoogleMap) {
         googleMap1 = map
         googleMap1.uiSettings.isZoomControlsEnabled = true
@@ -111,8 +125,8 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_save -> {
+        return when (R.layout.toolbarmap) {
+            R.id.action_savemap -> {
                 finish()
                 return true
             }

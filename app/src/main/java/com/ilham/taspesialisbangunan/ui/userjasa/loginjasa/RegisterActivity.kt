@@ -9,6 +9,7 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.register.ResponseModel
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,12 +18,16 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        supportActionBar!!.title = "Register"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text="Register Jasa"
+
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
 
         btn_register.setOnClickListener {
         registerjasauser()
         }
+
 
 //        btn_google.setOnClickListener {
 //            dataDUmmy()

@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_produk_create.*
 import kotlinx.android.synthetic.main.activity_produk_create.btnSave
 import kotlinx.android.synthetic.main.activity_produk_create.progress
 import kotlinx.android.synthetic.main.activity_produkm_create.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class ProdukMCreateActivity : AppCompatActivity(), ProdukMCreateContract.View {
 
@@ -48,12 +49,15 @@ class ProdukMCreateActivity : AppCompatActivity(), ProdukMCreateContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Produk Baru"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text="Create Materials"
     }
 
     override fun initListener() {
-        BtnLocationMat.setOnClickListener {
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+
+        }
+        edtLocationMat.setOnClickListener {
             startActivity(Intent(this, ProdukMapsActivity::class.java))
         }
 

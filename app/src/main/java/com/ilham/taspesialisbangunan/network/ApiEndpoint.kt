@@ -333,12 +333,12 @@ interface ApiEndpoint {
 
     @POST("myproducttambahrek")
     fun myproducttambahrek(
-        @Query("jasausers_id") jasausers_id: String,
+        @Query("kd_user") kd_user: String,
     ): Call<ResponseTambahrekList>
 
     @POST("tambahrek")
     fun insertTambahrek(
-        @Query("jasausers_id") jasausers_id: String,
+        @Query("kd_user") kd_user: String,
         @Query("jenis_bank") jenis_bank: String,
         @Query("norek") norek: String,
         @Query("nama") nama: String
@@ -363,9 +363,9 @@ interface ApiEndpoint {
         @Path("kd_rekening") kd_rekening: Long
     ): Call<ResponseTambahrekUpdate>
 
-    @GET("productrekening/{kd_jasa}")
+    @GET("productrekening/{kd_user}")
     fun produkrekeningtampil(
-        @Path("kd_jasa") kd_jasa: String,
+        @Path("kd_user") kd_user: String,
     ): Call<ResponseTambahrekList>
 
 }

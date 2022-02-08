@@ -47,7 +47,7 @@ class DPjasaFragment : Fragment(), DPjasaContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvDpjasa = view.findViewById(R.id.rcvDpjasa)
         swipeDpjasa = view.findViewById(R.id.swipeDpjasa)

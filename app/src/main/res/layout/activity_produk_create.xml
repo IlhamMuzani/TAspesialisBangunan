@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbarjasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbarjasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:orientation="vertical"
@@ -13,91 +32,185 @@
         android:padding="20dp"
         >
 
-        <EditText
-            android:id="@+id/edtNameToko"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Masukan Nama Toko"/>
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_btn_lapisandongker">
 
-        <EditText
-            android:id="@+id/edtJenispembuatan"
+            <EditText
+                android:id="@+id/edtNameToko"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Nama Toko"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="10dp"
-            android:hint="Jenis Pembuatan"/>
+            android:background="@drawable/bg_btn_lapisandongker">
 
-        <EditText
-            android:id="@+id/edtAlamateddres"
+            <EditText
+                android:id="@+id/edtJenispembuatan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Jenis Pembuatan"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="10dp"
-            android:hint="Alamat Lengkap Toko"/>
+            android:background="@drawable/bg_btn_lapisandongker">
 
-        <EditText
-            android:id="@+id/edtPhone"
+            <EditText
+                android:id="@+id/edtAlamateddres"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Alamat"
+                android:inputType="textEmailAddress"
+                android:textSize="14dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="10dp"
-            android:hint="No Telpone"
-            android:inputType="phone"/>
+            android:background="@drawable/bg_btn_lapisandongker">
 
 
-        <EditText
-            android:id="@+id/edtHarga"
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="No Telpone"
+                android:inputType="phone"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="10dp"
-            android:hint="Harga"
-            android:inputType="number"/>
+            android:background="@drawable/bg_btn_lapisandongker">
 
-        <Button
+            <EditText
+                android:id="@+id/edtHarga"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Harga"
+                android:inputType="number"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/BtnLocation"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/button_corner_color"
-            android:drawableStart="@drawable/ic_baseline_location_black"
-            android:paddingStart="10dp"
-            android:paddingEnd="20dp"
-            android:text="Location"
-            android:textColor="@color/white"
-            app:backgroundTint="#03A9F4" />
+            android:background="@drawable/bg_btn_lapisandongker">
 
+            <ImageView
+                android:id="@+id/imvlokasi"
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_location_on_dongker" />
 
+            <TextView
+                android:id="@+id/edtLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/imvlokasi"
+                android:text="Klik untuk lokasi" />
 
-        <EditText
-            android:id="@+id/edtLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:focusable="false"
-            android:hint="Atur Lokasi"/>
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/imvImages"
             android:layout_width="125dp"
             android:layout_height="125dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_add_image"/>
 
-        <EditText
-            android:id="@+id/edtDeskripsi"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="10dp"
-            android:hint="Masukan Deskripsi"/>
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <EditText
+                android:id="@+id/edtDeskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:inputType="textAutoComplete"
+                android:hint="Deskripsi"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_corner_color"
-            app:backgroundTint="#2196F3"
-            android:text="Simpan"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:text="Save"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/colorPrimary" />
 
         <ProgressBar
             android:id="@+id/progress"
@@ -107,4 +220,6 @@
 
     </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+</LinearLayout>

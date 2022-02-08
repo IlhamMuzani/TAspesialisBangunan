@@ -62,7 +62,7 @@ class MaterialFragment : Fragment(), MaterialContract.View, OnMapReadyCallback {
     }
 
     override fun initFragmentM(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
         MapsHelper.permissionMap(requireContext(),requireActivity())
 
         rcvProdukM = view.findViewById(R.id.rcvMaterial)

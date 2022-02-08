@@ -60,7 +60,7 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
         MapsHelper.permissionMap(requireContext(),requireActivity())
 
         rcvProdukjasa = view.findViewById(R.id.rcvProduk)

@@ -10,6 +10,7 @@ import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.data.model.userpelanggan.ResponsePelangganUpdate
 import kotlinx.android.synthetic.main.activity_ubah_profil.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class UbahProfilActivity : AppCompatActivity(), UbahProfilContract.View {
 
@@ -30,11 +31,15 @@ class UbahProfilActivity : AppCompatActivity(), UbahProfilContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Perbarui profil"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_nama.text="Update Profile"
     }
 
     override fun initListener() {
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
+
         btn_ubah.setOnClickListener {
             val username = edt_ubahusername.text
             val email = edt_ubahemaiil.text

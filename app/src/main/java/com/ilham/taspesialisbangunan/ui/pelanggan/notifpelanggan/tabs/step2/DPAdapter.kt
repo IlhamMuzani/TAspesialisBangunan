@@ -34,7 +34,7 @@ class DPAdapter (val context: Context, var dataPengajuan: ArrayList<DataPengajua
             Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
             context.startActivity(Intent(context, DetailPelangganActivity::class.java ))
         }
-              GlideHelper.setImage(context, Constant.IP_IMAGE + "uploads/" + dataPengajuan[position].gambar, holder.imvPengajuanDP)
+              GlideHelper.setImage(context, Constant.IP_IMAGE + dataPengajuan[position].gambar, holder.imvPengajuanDP)
 
     }
 

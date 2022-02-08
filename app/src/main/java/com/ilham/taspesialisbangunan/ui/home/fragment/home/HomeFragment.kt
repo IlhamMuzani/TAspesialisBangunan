@@ -59,8 +59,8 @@ class HomeFragment : Fragment(), HomeContract.View {
         layoutJasa = view.findViewById(R.id.layout_jasa)
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(ProdukuserFragment(), "Produk")
-        adapter.addFragment(MaterialuserFragment(), "Material")
+        adapter.addFragment(ProdukuserFragment(), "Product")
+        adapter.addFragment(MaterialuserFragment(), "Materials")
         btnviewpager.adapter = adapter
         btntabs.setupWithViewPager(btnviewpager)
 

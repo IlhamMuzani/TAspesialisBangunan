@@ -12,6 +12,7 @@ import com.ilham.taspesialisbangunan.ui.home.UserActivity
 import kotlinx.android.synthetic.main.activity_loginjasa.*
 import kotlinx.android.synthetic.main.activity_loginuser.progress
 import kotlinx.android.synthetic.main.activity_masuk.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
 
@@ -26,12 +27,16 @@ class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Masuk"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text ="Login Jasa"
 
     }
 
     override fun initListener() {
+
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
+
         btnLoginjasa.setOnClickListener {
             presenter.doLogin(edtEmail.text.toString(), edtPassword.text.toString())
         }

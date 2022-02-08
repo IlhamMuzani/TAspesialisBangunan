@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:background="@color/white"
     tools:context=".ui.userjasa.produk_materialjasa.tabs.ProdukJasa.produkjasadetail.ProdukjasadetailActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbarjasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbarjasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 
     <ScrollView
@@ -18,11 +33,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imvgambardetailjas"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
+                android:padding="10dp"
+                app:riv_corner_radius="10dp"
                 android:src="@drawable/img_no_image" />
 
             <LinearLayout
@@ -30,74 +47,75 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:paddingHorizontal="15dp">
-
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:orientation="horizontal">
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="5dp">
 
                     <TextView
                         android:id="@+id/namadetailjas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_toEndOf="@+id/imvEmailuser"
-                        android:text="Nama"
+                        android:text="Nama Toko"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textStyle="bold" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
-            </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="5dp">
 
-            <TextView
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imvjenispembuatan"-->
+                    <!--                        android:layout_width="30dp"-->
+                    <!--                        android:layout_height="45dp"-->
+                    <!--                        android:layout_marginStart="10dp"-->
+                    <!--                        android:layout_marginEnd="15dp"-->
+                    <!--                        android:src="@drawable/ic_baseline_person_black" />-->
+
+                    <TextView
+                        android:id="@+id/jenispembuatandetailjas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Pembuatan"
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginStart="2dp"
                 android:layout_toEndOf="@+id/imvEmailuser"
                 android:paddingHorizontal="15dp"
                 android:text="Deskripsi"
                 android:textSize="14dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="2dp"
-                android:background="@drawable/bg_btn_lapisanbiru"
-                android:orientation="vertical"
-                android:paddingHorizontal="15dp">
-
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:orientation="horizontal">
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/bg_btn_lapisandongker">
 
                     <TextView
                         android:id="@+id/deskripsidetailjas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@+id/imvEmailuser"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
                         android:text="Deskripsi"
-                        android:textSize="14dp" />
+                        android:textColor="@color/black" />
 
-                </LinearLayout>
-
-            </LinearLayout>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,9 +124,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_btn_lapisanbiru"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="15dp">
+                    android:orientation="vertical">
 
 
                     <LinearLayout
@@ -122,47 +138,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_person_24" />
-
-                        <TextView
-                            android:id="@+id/jenispembuatandetailjas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_toEndOf="@+id/imvEmailuser"
-                            android:text="Jenis Pembuatan"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_btn_lapisanbiru"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="15dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:orientation="horizontal">
-
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_person_24" />
+                            android:src="@drawable/ic_baseline_location_on_dongker" />
 
                         <TextView
                             android:id="@+id/alamatdetailjas"
@@ -182,17 +158,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:paddingHorizontal="15dp">
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="170dp"
+                    android:layout_width="230dp"
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="20dp"
-                    android:background="@drawable/bg_btn_lapisanbiru"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -200,6 +173,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
                         android:layout_marginTop="7dp"
                         android:orientation="horizontal">
 
@@ -207,14 +181,15 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_person_24" />
+                            android:src="@drawable/wa" />
+
 
                         <TextView
-                            android:id="@+id/hargadetailjas"
+                            android:id="@+id/phonedetailjas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="Harga"
+                            android:text="No telpone"
                             android:textColor="@color/black"
                             android:textSize="14dp" />
 
@@ -227,7 +202,6 @@
                     android:id="@+id/hargajas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_btn_lapisanbiru"
                     android:orientation="vertical"
                     android:paddingHorizontal="14dp">
 
@@ -236,21 +210,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
+                        android:layout_marginStart="7dp"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_person_24" />
-
-
                         <TextView
-                            android:id="@+id/phonedetailjas"
+                            android:id="@+id/hargadetailjas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="No telpone"
+                            android:text="Harga"
                             android:textColor="@color/black"
                             android:textSize="14dp" />
 
@@ -281,20 +249,6 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:drawableStart="@drawable/ic_baseline_location_on_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/black"
-                android:text="Lokasi"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
             <fragment
                 android:id="@+id/mapdetailjas"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -316,4 +270,4 @@
     </ScrollView>
 
 
-</RelativeLayout>
+</LinearLayout>

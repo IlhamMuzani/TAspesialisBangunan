@@ -34,7 +34,7 @@ class MaterialAdapter (val context: Context, var dataProduk: ArrayList<DataProdu
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bing(dataProduk[position])
 
-        GlideHelper.setImage(context, "http://192.168.43.224/api_spesialisJB/public/uploads/"+dataProduk[position].gambar!!, holder.view.imvImageM)
+        GlideHelper.setImage(context, Constant.IP_IMAGE +dataProduk[position].gambar!!, holder.view.imvImageM)
 
         holder.view.imvImageM.setOnClickListener {
             Constant.PRODUK_ID = dataProduk[position].id!!

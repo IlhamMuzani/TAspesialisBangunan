@@ -5,19 +5,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".ui.userjasa.loginjasa.RegisterActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTER JASA"
-        android:layout_margin="30dp"
-        android:textStyle="bold"
-        android:textSize="20sp" />
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbarjasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:text="Register Jasa"
+            android:layout_marginTop="90dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,236 +47,192 @@
         android:orientation="vertical"
         android:paddingHorizontal="15dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="53dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_btn_lapisandongker">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/imvusername"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_account_circle_dongker" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toEndOf="@+id/imvemail"
+                    android:background="@color/white"
+                    android:hint="Nama Lengkap"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <ImageView
+                android:id="@+id/imvemail"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_email_black_dongker" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toEndOf="@+id/imvemail"
+                    android:background="@color/white"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <ImageView
+                android:id="@+id/imvalamat"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_location_on_dongker" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toEndOf="@+id/imvalamat"
+                    android:background="@color/white"
+                    android:hint="Alamat"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <ImageView
+                android:id="@+id/imvphone"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_phone_android_dongker" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toEndOf="@+id/imvemail"
+                    android:background="@color/white"
+                    android:hint="No Telpone"
+                    android:inputType="phone" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <ImageView
+                android:id="@+id/imvpassword"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_lock_black_dongker" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                app:passwordToggleEnabled="true">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_account_circle_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
+                <EditText
+                    android:id="@+id/edt_password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toEndOf="@+id/imvpassword"
+                    android:background="@color/white"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/edt_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="Nama Lengkap"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+        </RelativeLayout>
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CACACA" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_email_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/edt_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CACACA" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_baseline_location_abu" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/edt_alamat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="Alamat"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CACACA" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_phone_android_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/edt_phone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="Nomor Telepon"
-                        android:inputType="phone"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CACACA" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_lock_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:passwordToggleEnabled="true">
-
-                    <EditText
-                        android:id="@+id/edt_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:hint="Password"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#CACACA" />
-
-        </LinearLayout>
 
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
-            android:background="@drawable/bg_btn_login1"
+            android:background="@drawable/bg_btn_lapisandongker"
             android:text="Register"
-            android:textColor="@color/black"
-            app:backgroundTint="#FFEB3B" />
+            android:textColor="@color/white"
+            app:backgroundTint="@color/colorPrimary" />
 
 
     </LinearLayout>
@@ -266,4 +243,6 @@
         android:layout_centerInParent="true"
         android:layout_width="40dp"
         android:layout_height="40dp"/>
+
+    </LinearLayout>
 </LinearLayout>

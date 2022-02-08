@@ -16,6 +16,7 @@ import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.ui.home.UserActivity
 import com.ilham.taspesialisbangunan.ui.home.fragment.Akun.profil.updateprofil.UbahProfilActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.profiljasa.tambahrek.TambahRekActivity
 
 
 class AkunFragment : Fragment(), AkunuserContract.View {
@@ -38,6 +39,7 @@ class AkunFragment : Fragment(), AkunuserContract.View {
     lateinit var TxvAlamatuserjasa : TextView
     lateinit var Txvphoneuserjasa : TextView
     lateinit var TxvLogoutUserjasa : TextView
+    lateinit var tambahrek : RelativeLayout
 
     lateinit var layoutprofilpelanggan: LinearLayout
     lateinit var layoutprofiljasa: LinearLayout
@@ -77,12 +79,18 @@ class AkunFragment : Fragment(), AkunuserContract.View {
         Txvphoneuserjasa = view.findViewById(R.id.txvPhonejasa)
         TxvLogoutUserjasa = view.findViewById(R.id.txvLogoutjasa)
         layoutprofiljasa = view.findViewById(R.id.layout_profilJASA)
+        tambahrek = view.findViewById(R.id.btn_tambahrek)
 
 
         BtnUbahProfil.setOnClickListener{
             Constant.USERPELANGGAN_ID = prefsManager.prefsId.toLong()
             startActivity(Intent(requireActivity(), UbahProfilActivity::class.java))
         }
+
+        tambahrek.setOnClickListener{
+            startActivity(Intent(requireContext(), TambahRekActivity::class.java))
+        }
+
         TxvLogoutUser.setOnClickListener {
             presenter.doLogout(prefsManager)
         }

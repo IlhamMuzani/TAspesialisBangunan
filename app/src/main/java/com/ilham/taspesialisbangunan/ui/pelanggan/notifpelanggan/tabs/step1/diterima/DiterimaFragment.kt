@@ -47,7 +47,7 @@ class DiterimaFragment : Fragment(), DiterimaContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvDiterima = view.findViewById(R.id.rcvDiterima)
         swipeDiterima = view.findViewById(R.id.swipeDiterima)

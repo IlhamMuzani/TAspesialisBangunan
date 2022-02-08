@@ -18,8 +18,8 @@ class ProdukMaterialJasaActivity : AppCompatActivity() {
 
 
         val adapter = ViewPagerAdapterProduk(supportFragmentManager)
-        adapter.addFragment(ProdukFragment(), "Produk")
-        adapter.addFragment(MaterialFragment(), "Material")
+        adapter.addFragment(ProdukFragment(), "Product")
+        adapter.addFragment(MaterialFragment(), "Materials")
         btn_viepager.adapter = adapter
         btn_tabs.setupWithViewPager(btn_viepager)
     }

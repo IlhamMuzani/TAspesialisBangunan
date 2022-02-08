@@ -15,6 +15,7 @@ import com.ilham.taspesialisbangunan.ui.utils.FileUtils
 import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_pengajuan.*
 import kotlinx.android.synthetic.main.activity_pengajuan.imvPengajuan
+import kotlinx.android.synthetic.main.toolbar.*
 
 class PengajuanActivity : AppCompatActivity(), PengajuanContract.View {
 
@@ -32,11 +33,14 @@ class PengajuanActivity : AppCompatActivity(), PengajuanContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Pengajuan"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_nama.text = "Pengajuan"
     }
 
     override fun initListener() {
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
 
         imvPengajuan.setOnClickListener {
             if (GalleryHelper.permissionGallery(this, this, pickImage)) {

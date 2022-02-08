@@ -23,6 +23,7 @@ import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import kotlinx.android.synthetic.main.activity_material_detail1.*
 import kotlinx.android.synthetic.main.activity_material_jasa_detail1.*
 import kotlinx.android.synthetic.main.activity_pengajuan.view.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class MaterialJasaDetailActivity : AppCompatActivity(), MaterialJasaDetailContract.View, OnMapReadyCallback {
 
@@ -46,11 +47,13 @@ class MaterialJasaDetailActivity : AppCompatActivity(), MaterialJasaDetailContra
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Detail Material"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text="Detail Materials"
     }
 
     override fun initListener() {
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun onLoadingMaterialdetailjas(loading: Boolean) {

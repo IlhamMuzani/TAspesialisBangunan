@@ -11,6 +11,7 @@ import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.ui.home.UserActivity
 import kotlinx.android.synthetic.main.activity_loginuser.*
 import kotlinx.android.synthetic.main.activity_loginuser.progress
+import kotlinx.android.synthetic.main.toolbar.*
 
 class LoginuserActivity : AppCompatActivity(), LoginuserContract.View {
 
@@ -26,11 +27,17 @@ class LoginuserActivity : AppCompatActivity(), LoginuserContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Masuk"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar!!.title = "Masuk"
+//        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_nama.text = "Login User"
     }
 
     override fun initListener() {
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
+
         btnLoginuser.setOnClickListener {
             presenter.doLogin(edtEmailuser.text.toString(), edtPassworduser.text.toString())
         }

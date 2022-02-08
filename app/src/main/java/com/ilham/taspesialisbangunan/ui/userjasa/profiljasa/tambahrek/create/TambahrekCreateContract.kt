@@ -5,7 +5,7 @@ import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekUpdat
 interface TambahrekCreateContract {
 
     interface Presenter {
-        fun insertTambahrek(jasausers_id: String, jenis_bank: String, norek: String, nama: String)
+        fun insertTambahrek(kd_user: String, jenis_bank: String, norek: String, nama: String)
     }
 
 

@@ -28,6 +28,8 @@ import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_pengajuan.view.*
 import kotlinx.android.synthetic.main.activity_produkdetail.*
 import kotlinx.android.synthetic.main.activity_saran.view.*
+import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 import java.text.NumberFormat
 import java.util.*
 
@@ -53,11 +55,16 @@ class ProdukdetailActivity : AppCompatActivity(), ProdukdetailContract.View, OnM
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Detail Produk"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_nama.text ="Detail Product"
+
     }
 
     override fun initListener() {
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
+
         btnpengajuann.setOnClickListener {
             if (prefsManager.prefsIsLogin) {
                 Constant.PRODUK_ID = produkdetail.id!!

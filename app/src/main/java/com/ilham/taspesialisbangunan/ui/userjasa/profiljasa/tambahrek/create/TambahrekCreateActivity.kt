@@ -8,6 +8,7 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekUpdate
 import kotlinx.android.synthetic.main.activity_tambahrek_create.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class TambahrekCreateActivity : AppCompatActivity(), TambahrekCreateContract.View {
 
@@ -29,11 +30,13 @@ class TambahrekCreateActivity : AppCompatActivity(), TambahrekCreateContract.Vie
 
 
     override fun initActivity() {
-        supportActionBar!!.title = "Tambah No Rekening"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text="Create Rekening"
     }
 
     override fun initListener() {
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
 
         BTN_savetambahrek.setOnClickListener {
             val jenis_bank = edtJenisBank.text

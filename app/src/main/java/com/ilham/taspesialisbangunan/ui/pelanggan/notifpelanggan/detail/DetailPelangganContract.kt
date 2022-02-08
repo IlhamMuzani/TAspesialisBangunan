@@ -9,7 +9,7 @@ interface DetailPelangganContract {
     interface Presenter {
         fun getDetail(id: Long)
         fun buktiPengajuan(id: Long, bukti: File)
-        fun getTampilprodukrekening(kd_jasa: String)
+        fun getTampilprodukrekening(kd_user: String)
 
     }
     interface View {

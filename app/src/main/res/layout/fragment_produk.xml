@@ -42,16 +42,14 @@
                     android:id="@+id/edtSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@android:color/transparent"
                     android:drawablePadding="10dp"
-                    android:hint="Cari Jasa"
+                    android:hint="Search Jasa"
                     android:imeOptions="actionSearch"
                     android:inputType="text"
-                    android:maxLines="1"
-                    android:textStyle="bold" />
+                    android:maxLines="1" />
 
             </LinearLayout>
 

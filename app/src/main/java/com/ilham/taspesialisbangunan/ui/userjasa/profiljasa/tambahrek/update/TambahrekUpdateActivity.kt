@@ -9,6 +9,7 @@ import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekDetail
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekUpdate
 import kotlinx.android.synthetic.main.activity_tambahrek_create.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class TambahrekUpdateActivity : AppCompatActivity(), TambahrekUpdateContract.View {
 
@@ -23,11 +24,14 @@ class TambahrekUpdateActivity : AppCompatActivity(), TambahrekUpdateContract.Vie
 
 
     override fun initActivity() {
-        supportActionBar!!.title = "Update No Rekening"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text="Update No Rekening"
     }
 
     override fun initListener() {
+
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
 
         BTN_savetambahrek.setOnClickListener {
             val jenis_bank = edtJenisBank.text

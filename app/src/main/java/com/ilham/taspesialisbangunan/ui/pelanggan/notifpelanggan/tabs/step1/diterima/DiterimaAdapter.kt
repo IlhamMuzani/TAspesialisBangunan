@@ -33,7 +33,7 @@ class DiterimaAdapter (val context: Context, var dataPengajuan: ArrayList<DataPe
             Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
             context.startActivity(Intent(context, DetailPelangganActivity::class.java ))
         }
-        GlideHelper.setImage(context, Constant.IP_IMAGE + "uploads/" + dataPengajuan[position].gambar, holder.imvPengajuanT)
+        GlideHelper.setImage(context, Constant.IP_IMAGE + dataPengajuan[position].gambar, holder.imvPengajuanT)
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

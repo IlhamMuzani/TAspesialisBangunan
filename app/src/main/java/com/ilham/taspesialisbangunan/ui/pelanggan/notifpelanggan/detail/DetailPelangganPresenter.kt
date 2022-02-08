@@ -61,9 +61,9 @@ class DetailPelangganPresenter(val view: DetailPelangganContract.View): DetailPe
         })
     }
 
-    override fun getTampilprodukrekening(kd_jasa: String) {
+    override fun getTampilprodukrekening(kd_user: String) {
         view.onLoading(true)
-        ApiConfig.endpoint.produkrekeningtampil(kd_jasa).enqueue(object : Callback<ResponseTambahrekList>{
+        ApiConfig.endpoint.produkrekeningtampil(kd_user).enqueue(object : Callback<ResponseTambahrekList>{
             override fun onResponse(
                 call: Call<ResponseTambahrekList>,
                 response: Response<ResponseTambahrekList>

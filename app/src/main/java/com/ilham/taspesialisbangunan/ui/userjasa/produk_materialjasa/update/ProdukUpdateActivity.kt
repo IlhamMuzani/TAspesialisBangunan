@@ -16,6 +16,7 @@ import com.ilham.taspesialisbangunan.ui.utils.FileUtils
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_produk_create.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class ProdukUpdateActivity : AppCompatActivity(), ProdukUpdateContract.View {
 
@@ -47,11 +48,13 @@ class ProdukUpdateActivity : AppCompatActivity(), ProdukUpdateContract.View {
 
 
     override fun initActivity() {
-        supportActionBar!!.title = "Edit Produk Jasa"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+       tv_bgjasa.text="Update"
     }
 
     override fun initListener() {
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
         BtnLocation.setOnClickListener {
             startActivity(Intent(this, ProdukMapsActivity::class.java))
         }

@@ -30,6 +30,8 @@ import kotlinx.android.synthetic.main.activity_material_detail1.*
 import kotlinx.android.synthetic.main.activity_material_detail1.view.*
 import kotlinx.android.synthetic.main.activity_pengajuan.view.*
 import kotlinx.android.synthetic.main.activity_pengajuan.view.btn_pengajuann
+import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class MaterialDetailActivity : AppCompatActivity(), MaterialDetailContract.View, OnMapReadyCallback {
 
@@ -53,11 +55,13 @@ class MaterialDetailActivity : AppCompatActivity(), MaterialDetailContract.View,
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Detail Material"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+       tv_nama.text="Detail Materials"
     }
 
     override fun initListener() {
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
 //        btn_pengajuanmaterial.setOnClickListener{
 //            Constant.MATERIAL_ID = materialdetail.kd_material!!
 //            startActivity(Intent(this, PengajuanActivity::class.java))

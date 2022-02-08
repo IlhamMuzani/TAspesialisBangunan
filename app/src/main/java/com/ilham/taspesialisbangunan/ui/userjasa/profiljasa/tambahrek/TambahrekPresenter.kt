@@ -14,9 +14,9 @@ class TambahrekPresenter (var view: TambahrekContract.View) : TambahrekContract.
         view.initListener()
     }
 
-    override fun getTambahrek(jasausers_id: String) {
+    override fun getTambahrek(kd_user: String) {
         view.onLoadingTambahrek(true)
-        ApiConfig.endpoint.myproducttambahrek(jasausers_id).enqueue(object : Callback<ResponseTambahrekList>{
+        ApiConfig.endpoint.myproducttambahrek(kd_user).enqueue(object : Callback<ResponseTambahrekList>{
             override fun onResponse(
                 call: Call<ResponseTambahrekList>,
                 response: Response<ResponseTambahrekList>

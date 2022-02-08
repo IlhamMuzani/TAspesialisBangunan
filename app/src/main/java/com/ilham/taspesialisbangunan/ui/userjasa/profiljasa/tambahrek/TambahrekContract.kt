@@ -7,7 +7,7 @@ import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekUpdat
 interface TambahrekContract {
 
         interface Presenter {
-            fun getTambahrek(jasausers_id: String)
+            fun getTambahrek(kd_user: String)
             fun deleteTambahrek(kd_rekening: Long)
         }
 

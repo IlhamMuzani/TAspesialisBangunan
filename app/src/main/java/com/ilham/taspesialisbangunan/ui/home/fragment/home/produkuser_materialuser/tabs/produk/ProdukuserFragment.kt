@@ -55,7 +55,7 @@ class ProdukuserFragment : Fragment(), ProdukuserContract.View, OnMapReadyCallba
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvProduk = view.findViewById(R.id.rcvProduk)
         swipe = view.findViewById(R.id.swipe)

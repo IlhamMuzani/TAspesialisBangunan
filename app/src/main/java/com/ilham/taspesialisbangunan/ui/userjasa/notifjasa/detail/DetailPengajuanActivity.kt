@@ -59,8 +59,8 @@ class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.Vie
     override fun onResultDetail(responsePengajuanDetail: ResponsePengajuanDetail) {
         pengajuan = responsePengajuanDetail.pengajuan
 
-        GlideHelper.setImage(this,  Constant.IP_IMAGE + "uploads/" + pengajuan.gambar,imvPengajuan)
-        GlideHelper.setImage(this,  Constant.IP_IMAGE + "uploads/" + pengajuan.bukti,imvBukti)
+        GlideHelper.setImage(this,  Constant.IP_IMAGE + pengajuan.gambar,imvPengajuan)
+        GlideHelper.setImage(this,  Constant.IP_IMAGE + pengajuan.bukti,imvBukti)
         txtDeskripsi.text = pengajuan.deskripsi
         txtStatus.text = pengajuan.status
 

@@ -47,7 +47,7 @@ class MenunggujasaFragment : Fragment(), MenunggujasaContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvMenunggujasa = view.findViewById(R.id.rcvMenunggujasa)
         swipeMenunggujasa = view.findViewById(R.id.swipeMenunggujasa)

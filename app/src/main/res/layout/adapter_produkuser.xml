@@ -34,7 +34,6 @@
             android:layout_toEndOf="@+id/imvImage"
             android:text="Nama Toko"
             android:textColor="@color/black"
-            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,14 +44,13 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="3dp"
             android:layout_toEndOf="@+id/imvImage"
-            android:text="Jenis Pembuatan"
-            android:textSize="18dp" />
+            android:text="Jenis Pembuatan" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginStart="115dp"
-            android:layout_marginTop="57dp">
+            android:layout_marginTop="45dp">
 
             <TextView
                 android:id="@+id/txvHargauser"
@@ -60,19 +58,29 @@
                 android:layout_height="25dp"
                 android:layout_marginEnd="10dp"
                 android:text="Rp.0"
-                android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="70dp">
+
 
             <Button
                 android:id="@+id/txvDetailuser"
-                android:layout_width="60dp"
+                android:layout_width="70dp"
                 android:layout_height="30dp"
                 android:backgroundTint="#7CD1B8"
-                android:text="Open"
+                android:text="Details"
                 android:textSize="8dp" />
 
 
         </LinearLayout>
+
 
     </RelativeLayout>
 

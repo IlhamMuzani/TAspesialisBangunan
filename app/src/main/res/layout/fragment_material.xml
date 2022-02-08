@@ -42,7 +42,6 @@
                         android:imeOptions="actionSearch"
                         android:inputType="text"
                         android:maxLines="1"
-
                         android:id="@+id/edtSearchMaterial"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -50,8 +49,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:background="@android:color/transparent"
-                        android:hint="Cari Material"
-                        android:textStyle="bold"/>
+                        android:hint="Search Material" />
 
                 </LinearLayout>
 

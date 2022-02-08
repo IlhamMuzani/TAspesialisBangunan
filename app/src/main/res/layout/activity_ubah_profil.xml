@@ -5,7 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.home.fragment.Akun.profil.updateprofil.UbahProfilActivity">
+
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,112 +42,143 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
+                android:layout_height="53dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_btn_lapisanbirucantik">
 
                 <ImageView
-                    android:id="@+id/imvUsername"
-                    android:layout_width="45dp"
+                    android:id="@+id/imvusername"
+                    android:layout_width="20dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_person_24"
-                    />
+                    android:src="@drawable/ic_account_circle_black_24dp" />
 
-                <EditText
-                    android:id="@+id/edt_ubahusername"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@+id/imvUsername"
-                    android:hint="Username" />
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_ubahusername"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_toEndOf="@+id/imvemail"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:text="Nama Lengkap" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
+                android:background="@drawable/bg_btn_lapisanbirucantik">
 
                 <ImageView
-                    android:id="@+id/imvEmailuser"
-                    android:layout_width="45dp"
+                    android:id="@+id/imvemail"
+                    android:layout_width="20dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_alternate_email_24"
-                    />
+                    android:src="@drawable/ic_email_black_24dp" />
 
-                <EditText
-                    android:id="@+id/edt_ubahemaiil"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@+id/imvEmailuser"
-                    android:hint="Email" />
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_ubahemaiil"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_toEndOf="@+id/imvemail"
+                        android:background="@color/white"
+                        android:text="Email"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
+                android:background="@drawable/bg_btn_lapisanbirucantik">
 
                 <ImageView
-                    android:id="@+id/imvAlamatuser"
-                    android:layout_width="45dp"
+                    android:id="@+id/imvalamat"
+                    android:layout_width="20dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_location_on_24"
-                    />
+                    android:src="@drawable/ic_lock_black_24dp" />
 
-                <EditText
-                    android:id="@+id/edt_ubahalamat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@+id/imvAlamatuser"
-                    android:hint="Alamat" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="329dp"
+                    android:layout_height="52dp">
+
+                    <EditText
+                        android:id="@+id/edt_ubahalamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_toEndOf="@+id/imvalamat"
+                        android:background="@color/white"
+                        android:text="Alamat"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="53dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/white"
-                >
+                android:background="@drawable/bg_btn_lapisanbirucantik">
 
                 <ImageView
-                    android:id="@+id/imvPhoneuser"
-                    android:layout_width="45dp"
+                    android:id="@+id/imvphone"
+                    android:layout_width="20dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_baseline_perm_phone"
-                    />
+                    android:src="@drawable/ic_phone_android_black_24dp" />
 
-                <EditText
-                    android:id="@+id/edt_ubahphone"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@+id/imvPhoneuser"
-                    android:hint="No Telpone"
-                    android:inputType="phone"/>
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_ubahphone"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_toEndOf="@+id/imvemail"
+                        android:background="@color/white"
+                        android:text="No Telpone"
+                        android:inputType="phone" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </RelativeLayout>
-
-
 
 
         </LinearLayout>
@@ -139,10 +187,11 @@
         <Button
             android:id="@+id/btn_ubah"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginTop="30dp"
-            android:text="Simpan"
-            android:background="@drawable/button_corner_color"/>
+            android:text="Update"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/birucantik" />
 
         <ProgressBar
             android:id="@+id/progressubah"

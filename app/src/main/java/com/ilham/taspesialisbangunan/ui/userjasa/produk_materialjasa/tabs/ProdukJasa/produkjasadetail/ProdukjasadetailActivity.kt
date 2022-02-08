@@ -29,6 +29,7 @@ import kotlinx.android.synthetic.main.activity_pengajuan.view.*
 import kotlinx.android.synthetic.main.activity_produkdetail.*
 import kotlinx.android.synthetic.main.activity_produkjasadetail.*
 import kotlinx.android.synthetic.main.activity_saran.view.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 import java.text.NumberFormat
 import java.util.*
 
@@ -54,11 +55,13 @@ class ProdukjasadetailActivity : AppCompatActivity(), ProdukjasadetailContract.V
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Detail Produk"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+       tv_bgjasa.text="Detail Product"
     }
 
     override fun initListener() {
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
 
     }
 

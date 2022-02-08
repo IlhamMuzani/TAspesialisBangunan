@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ilham.taspesialisbangunan.R
@@ -17,6 +18,8 @@ import com.ilham.taspesialisbangunan.ui.userjasa.profiljasa.tambahrek.update.Tam
 import com.ilham.taspesialisbangunan.ui.utils.MapsHelper
 import kotlinx.android.synthetic.main.activity_tambah_rek.*
 import kotlinx.android.synthetic.main.content_tambahrek.*
+import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class TambahRekActivity : AppCompatActivity(), TambahrekContract.View {
 
@@ -24,7 +27,6 @@ class TambahRekActivity : AppCompatActivity(), TambahrekContract.View {
     lateinit var tambahrekAdapter: TambahrekAdapter
     lateinit var tambahrek: DataTambahrek
     lateinit var prefsManager: PrefsManager
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,13 +43,16 @@ class TambahRekActivity : AppCompatActivity(), TambahrekContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "No Rekening"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_bgjasa.text="No Rekening"
 
         MapsHelper.permissionMap(this, this)
     }
 
     override fun initListener() {
+
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
 
         tambahrekAdapter = TambahrekAdapter(this, arrayListOf()){
                 dataTambahrek: DataTambahrek, position: Int, type: String ->

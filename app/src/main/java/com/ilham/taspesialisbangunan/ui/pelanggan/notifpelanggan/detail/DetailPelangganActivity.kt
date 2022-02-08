@@ -34,7 +34,6 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
     lateinit var rekening: DataTambahrek
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_pelanggan)
@@ -83,7 +82,7 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
     override fun onResultDetail(responsePengajuanDetail: ResponsePengajuanDetail) {
         pengajuan = responsePengajuanDetail.pengajuan
 
-        GlideHelper.setImage(this, Constant.IP_IMAGE + "uploads/" + pengajuan.gambar, imvPengajuan)
+        GlideHelper.setImage(this, Constant.IP_IMAGE + pengajuan.gambar, imvPengajuan)
         txtDeskripsi.text = pengajuan.deskripsi
         txtHarga.text = pengajuan.harga
         hargaDp.text = (Integer.valueOf(pengajuan.harga) * 30 / 100).toString()
@@ -106,6 +105,7 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
                 layout_deskripsi.visibility = View.VISIBLE
                 layout_status1.visibility = View.VISIBLE
                 layout_rekeninge.visibility = View.VISIBLE
+                btnKirim.visibility = View.VISIBLE
             }
             "DP" -> {
                 layout_bukti.visibility = View.GONE

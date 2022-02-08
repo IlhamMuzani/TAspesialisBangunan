@@ -15,6 +15,7 @@ import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.Produk
 import com.ilham.taspesialisbangunan.ui.utils.FileUtils
 import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_produk_create.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class ProdukCreateActivity : AppCompatActivity(), ProdukCreateContract.View {
 
@@ -45,11 +46,15 @@ class ProdukCreateActivity : AppCompatActivity(), ProdukCreateContract.View {
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Produk Baru"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+       tv_bgjasa.text="Create Produk"
     }
 
     override fun initListener() {
+
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
+
         BtnLocation.setOnClickListener {
             startActivity(Intent(this, ProdukMapsActivity::class.java))
         }

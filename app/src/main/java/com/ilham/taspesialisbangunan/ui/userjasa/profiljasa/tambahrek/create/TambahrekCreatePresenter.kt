@@ -16,7 +16,7 @@ class TambahrekCreatePresenter (val view: TambahrekCreateContract.View) : Tambah
 
 
     override fun insertTambahrek(
-        jasausers_id: String,
+        kd_user: String,
         jenis_bank: String,
         norek: String,
         nama: String
@@ -24,7 +24,7 @@ class TambahrekCreatePresenter (val view: TambahrekCreateContract.View) : Tambah
 
         view.onLoading(true)
         ApiConfig.endpoint.insertTambahrek(
-            jasausers_id,
+            kd_user,
             jenis_bank,
             norek,
             nama

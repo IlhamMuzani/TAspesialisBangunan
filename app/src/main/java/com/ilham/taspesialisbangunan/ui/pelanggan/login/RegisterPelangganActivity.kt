@@ -10,6 +10,7 @@ import com.ilham.taspesialisbangunan.data.model.register.ResponseModel
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register_pelanggan.*
+import kotlinx.android.synthetic.main.toolbar.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,8 +19,11 @@ class RegisterPelangganActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_pelanggan)
-        supportActionBar!!.title = "Register"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        tv_nama.text="Register User"
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
 
         btn_registeruser.setOnClickListener {
             registeruser()

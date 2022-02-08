@@ -48,7 +48,7 @@ class MenungguFragment : Fragment(), MenungguContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvMenunggu = view.findViewById(R.id.rcvMenunggu)
         swipeMenunggu = view.findViewById(R.id.swipeMenunggu)

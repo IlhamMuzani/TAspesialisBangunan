@@ -48,7 +48,7 @@ class DPFragment : Fragment(), DPContract.View {
     }
 
     override fun initFragment(view: View) {
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+//        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         rcvDP = view.findViewById(R.id.rcvDp)
         swipeDP = view.findViewById(R.id.swipeDp)
