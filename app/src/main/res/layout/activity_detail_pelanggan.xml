@@ -5,7 +5,23 @@
     android:id="@+id/txv_semua"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.pelanggan.notifpelanggan.detail.DetailPelangganActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,21 +47,58 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/layout_status2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Deskripsi : "
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:adjustViewBounds="true"
+                        android:text="Status          :"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtstatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:textStyle="bold"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
 
                 <TextView
-                    android:id="@+id/txtDeskripsi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Deskripsi"
-                    android:textColor="@color/black" />
+                    android:text="Deskripsi"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_btn_lapisanabu">
+
+                    <TextView
+                        android:id="@+id/txtDeskripsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="3dp"
+                        android:background="@color/white"
+                        android:hint="Deskripsi"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
 
             </LinearLayout>
 
@@ -58,11 +111,11 @@
 
                 <TextView
                     android:id="@+id/btn_Harga"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:adjustViewBounds="true"
-                    android:text="Harga        :"
+                    android:text="Harga           :"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
@@ -76,6 +129,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layoutdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -91,7 +145,7 @@
                     android:id="@+id/hargaDp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DP minimal : "
+                    android:text="DP minimal"
                     android:textColor="@color/black"/>
 
             </LinearLayout>
@@ -104,13 +158,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:adjustViewBounds="true"
-                    android:text="Status       :"
+                    android:text="Status          :"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                     />
 
                 <TextView
                     android:id="@+id/txtstatus2"

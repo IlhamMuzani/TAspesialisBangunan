@@ -8,10 +8,9 @@ import android.widget.Toast
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
-import com.ilham.taspesialisbangunan.ui.home.UserActivity
+import com.ilham.taspesialisbangunan.ui.fragment.UserActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_loginjasa.*
-import kotlinx.android.synthetic.main.activity_loginuser.progress
-import kotlinx.android.synthetic.main.activity_masuk.*
 import kotlinx.android.synthetic.main.toolbarjasa.*
 
 class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
@@ -24,6 +23,10 @@ class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
         setContentView(R.layout.activity_loginjasa)
         presenter = LoginPresenter(this)
         prefsManager = PrefsManager(this)
+    }
+
+    override fun onStart() {
+        super.onStart()
     }
 
     override fun initActivity() {
@@ -39,6 +42,15 @@ class LoginjasaActivity : AppCompatActivity(), LoginContract.View {
 
         btnLoginjasa.setOnClickListener {
             presenter.doLogin(edtEmail.text.toString(), edtPassword.text.toString())
+
+            if (edtEmail.text!!.isEmpty()){
+                edtEmail.error = "Kolom Email Tidak Boleh Kosong"
+                edtEmail.requestFocus()
+            } else if (edtPassword.text!!.isEmpty()){
+                edtPassword.error = "Kolom Password Tidak Boleh Kosong"
+                edtPassword.requestFocus()
+            }
+
         }
         btn_daftarakun.setOnClickListener{
             startActivity(Intent(this, RegisterActivity::class.java))

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
+import com.ilham.taspesialisbangunan.data.model.user.DataUser
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity
 import com.ilham.taspesialisbangunan.ui.utils.MapsHelper
@@ -37,7 +39,8 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
 
     lateinit var rcvProdukjasa: RecyclerView
     lateinit var swipejasa: SwipeRefreshLayout
-    lateinit var Fab: FloatingActionButton
+//    lateinit var Fab: FloatingActionButton
+    lateinit var Fab: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,7 +59,10 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
 
     override fun onStart() {
         super.onStart()
-        presenter.getProduk(prefsManager.prefsId.toLong())
+
+        if(prefsManager.prefsIsLogin) {
+            presenter.getProduk(prefsManager.prefsId.toLong())
+        }
     }
 
     override fun initFragment(view: View) {

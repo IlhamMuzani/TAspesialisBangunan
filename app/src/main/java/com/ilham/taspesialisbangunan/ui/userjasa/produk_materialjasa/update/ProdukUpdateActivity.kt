@@ -111,7 +111,7 @@ class ProdukUpdateActivity : AppCompatActivity(), ProdukUpdateContract.View {
         Constant.LATITUDE = produk.latitude!!
         Constant.LONGITUDE = produk.longitude!!
 
-        GlideHelper.setImage(this,"http://192.168.43.224/api_spesialisJB/public/"+ produk.gambar!!, imvImages)
+        GlideHelper.setImage(this,Constant.IP_IMAGE + produk.gambar!!, imvImages)
 
         edtDeskripsi.setText( produk.deskripsi )
     }

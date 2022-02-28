@@ -1,6 +1,8 @@
 package com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step1.menunggu
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,5 +31,24 @@ class MenungguPresenter (var view: MenungguContract.View) : MenungguContract.Pre
         })
     }
 
+    override fun deletePengajuanMenunggu(id: Long) {
+        view.onLoadingPengajuanmenunggu(true)
+        ApiConfig.endpoint.deletePengajuanmenunggu(id).enqueue(object : Callback<ResponsePengajuanUpdate>{
+            override fun onResponse(
+                call: Call<ResponsePengajuanUpdate>,
+                response: Response<ResponsePengajuanUpdate>
+            ) {
+                view.onLoadingPengajuanmenunggu(false)
+                if (response.isSuccessful) {
+                    val responsePengajuanUpdate: ResponsePengajuanUpdate? = response.body()
+                    view.onResultDelete( responsePengajuanUpdate!! )
+                }
+            }
 
+            override fun onFailure(call: Call<ResponsePengajuanUpdate>, t: Throwable) {
+                view.onLoadingPengajuanmenunggu(false)
+            }
+
+        })
+    }
 }

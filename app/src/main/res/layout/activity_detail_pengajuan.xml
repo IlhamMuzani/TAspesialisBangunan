@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".ui.userjasa.notifjasa.detail.DetailPengajuanActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbarjasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbarjasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,42 +39,109 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imvPengajuan"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             app:riv_corner_radius="10dp"
+            android:adjustViewBounds="true"
             android:src="@drawable/img_add_image"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Deskripsi : "
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtDeskripsi"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Nama : "
+                />
+
+            <TextView
+                android:id="@+id/txtNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Deskripsi"
-            android:textColor="@color/black"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Status : "
+                />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Status : "
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:text="Deskripsi"/>
 
-        <TextView
-            android:id="@+id/txtStatus"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginTop="5dp"
-            android:text="Status"
-            android:textColor="@color/black"/>
+            android:background="@drawable/bg_btn_lapisanabu">
+
+            <TextView
+                android:id="@+id/txtDeskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Deskripsi"
+                android:textSize="14dp"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="LOKASI"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <fragment
+            android:id="@+id/mapdetailpengajuan"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp" />
+
 
         <ImageView
             android:id="@+id/imvBukti"
@@ -74,7 +165,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Masukan harga : "
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,12 +177,12 @@
                 android:id="@+id/edtHarga"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="3dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
-                android:inputType="number"
-                android:hint="Masukan harga"
                 android:background="@color/white"
+                android:hint="Masukan harga"
+                android:inputType="number"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -101,9 +192,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Kirim"
-            android:background="@color/colorPrimary"
-            />
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Kirim" />
 
     </LinearLayout>
 
@@ -114,9 +204,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
         android:text="Proses"
-        android:background="@drawable/bg_birucantik"
-        />
+        android:backgroundTint="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/btnSelesai"
@@ -125,9 +215,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
         android:text="Selesai"
-        android:background="@drawable/bg_btn_lapisandongker"
-        />
+        android:backgroundTint="@color/colorPrimary"/>
 
     <ProgressBar
         android:id="@+id/progresspeng"
@@ -137,4 +227,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp" />
 
-</RelativeLayout>
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

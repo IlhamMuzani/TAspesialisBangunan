@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".ui.home.fragment.home.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity">
+    tools:context=".ui.pelanggan.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity">
 
     <LinearLayout
         android:id="@+id/toolbar"
@@ -139,7 +139,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_location_on_24" />
+                            android:src="@drawable/ic_baseline_location_on_24"
+                            app:tint="@color/birucantik" />
 
                         <TextView
                             android:id="@+id/alamatdetail"
@@ -253,7 +254,7 @@
                 android:id="@+id/mapdetail"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="5dp" />
 
             <LinearLayout
@@ -277,7 +278,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Pengajuan"
+                        android:text="Check Out"
                         android:textColor="@color/white"
                         android:textSize="15dp"
                         android:textStyle="bold" />

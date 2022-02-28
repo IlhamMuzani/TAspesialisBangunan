@@ -25,7 +25,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="50dp"
-            android:background="@drawable/bg_btn_lapisanbiru"
+            android:background="@drawable/bg_btn_lapisanbirucantik"
             >
 
 <!--            <ImageView-->
@@ -37,14 +37,13 @@
 <!--                />-->
 
             <ImageView
-                android:layout_marginTop="2dp"
                 android:id="@+id/imvloginuser"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="15dp"
-                android:src="@drawable/profiluser"
-                />
+                android:src="@drawable/profiluser2" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +64,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="50dp"
-            android:background="@drawable/bg_btn_lapisanbiruungu"
+            android:background="@drawable/bg_btn_lapisandongker"
             >
 
 <!--            <ImageView-->

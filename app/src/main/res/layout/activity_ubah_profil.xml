@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.home.fragment.Akun.profil.updateprofil.UbahProfilActivity">
+    tools:context=".ui.pelanggan.updateprofil.UbahProfilActivity">
 
 
     <LinearLayout
@@ -40,146 +40,92 @@
             android:layout_below="@id/txvInfoUser"
             >
 
-            <RelativeLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_btn_lapisanbirucantik">
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_account_circle_black_24dp"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imvusername"
-                    android:layout_width="20dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_account_circle_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_ubahusername"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/Username"/>
 
-                    <EditText
-                        android:id="@+id/edt_ubahusername"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:layout_toEndOf="@+id/imvemail"
-                        android:background="@color/white"
-                        android:inputType="text"
-                        android:text="Nama Lengkap" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_btn_lapisanbirucantik">
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_email_black_24dp"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imvemail"
-                    android:layout_width="20dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_email_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_ubahemaiil"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/Email"/>
 
-                    <EditText
-                        android:id="@+id/edt_ubahemaiil"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:layout_toEndOf="@+id/imvemail"
-                        android:background="@color/white"
-                        android:text="Email"
-                        android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_btn_lapisanbirucantik">
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imvalamat"
-                    android:layout_width="20dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_lock_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="329dp"
-                    android:layout_height="52dp">
-
-                    <EditText
-                        android:id="@+id/edt_ubahalamat"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:layout_toEndOf="@+id/imvalamat"
-                        android:background="@color/white"
-                        android:text="Alamat"
-                        android:inputType="textEmailAddress" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_btn_lapisanbirucantik">
-
-                <ImageView
-                    android:id="@+id/imvphone"
-                    android:layout_width="20dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_phone_android_black_24dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_ubahalamat"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/Alamat"/>
 
-                    <EditText
-                        android:id="@+id/edt_ubahphone"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:layout_toEndOf="@+id/imvemail"
-                        android:background="@color/white"
-                        android:text="No Telpone"
-                        android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_phone_android_black_24dp"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            </RelativeLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_ubahphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:inputType="phone"
+                    android:hint="@string/Telpone"/>
 
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 

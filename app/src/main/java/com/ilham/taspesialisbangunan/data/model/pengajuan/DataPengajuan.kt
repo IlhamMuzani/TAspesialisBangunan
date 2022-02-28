@@ -1,6 +1,7 @@
 package com.ilham.taspesialisbangunan.data.model.pengajuan
 
 import com.google.gson.annotations.SerializedName
+import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
 import com.ilham.taspesialisbangunan.data.model.user.DataUser
 
 data class DataPengajuan(
@@ -12,5 +13,8 @@ data class DataPengajuan(
     @SerializedName("harga") val harga: String,
     @SerializedName("bukti") val bukti: String,
     @SerializedName("status") val status: String,
+    @SerializedName("latitude") val latitude: String,
+    @SerializedName("longitude") val longitude: String,
     @SerializedName("user") val user: DataUser,
+    @SerializedName("produk") val produk: DataProduk,
 )

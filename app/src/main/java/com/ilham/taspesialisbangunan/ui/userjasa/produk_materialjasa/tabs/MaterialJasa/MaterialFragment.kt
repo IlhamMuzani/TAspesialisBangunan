@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +40,8 @@ class MaterialFragment : Fragment(), MaterialContract.View, OnMapReadyCallback {
 
     lateinit var rcvProdukM: RecyclerView
     lateinit var swipeM: SwipeRefreshLayout
-    lateinit var Fab: FloatingActionButton
+    lateinit var Fab: Button
+//    lateinit var Fab: FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,7 +60,9 @@ class MaterialFragment : Fragment(), MaterialContract.View, OnMapReadyCallback {
 
     override fun onStart() {
         super.onStart()
-        presenter.getProdukMat(prefsManager.prefsId.toLong())
+        if (prefsManager.prefsIsLogin) {
+            presenter.getProdukMat(prefsManager.prefsId.toLong())
+        }
     }
 
     override fun initFragmentM(view: View) {

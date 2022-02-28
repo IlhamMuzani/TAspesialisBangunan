@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
@@ -29,18 +30,33 @@ class MenungguAdapter (val context: Context, var dataPengajuan: ArrayList<DataPe
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bing(dataPengajuan[position])
 
-        holder.view.crv_menunggu.setOnClickListener {
+        holder.view.imvPengajuanmenunggu.setOnClickListener {
             Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
             context.startActivity(Intent(context, DetailPelangganActivity::class.java ))
         }
         GlideHelper.setImage(context, Constant.IP_IMAGE + dataPengajuan[position].gambar, holder.imvPengajuanM)
 
+        holder.view.txvOptionss.setOnClickListener {
+            val popupMenu = PopupMenu(context, holder.view.txvOptionss)
+            popupMenu.inflate(R.menu.menu_optionspengajuan)
+            popupMenu.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.action_deletepengajuan -> {
+                        Constant.PENGAJUAN_ID = dataPengajuan[position].id!!
+                        clickListener(dataPengajuan[position], position, "Delete")
+                    }
+                }
+                true
+            }
+
+            popupMenu.show()
+            }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
-            view.txvDeskripsimenunggu.text = datapengajuan.deskripsi
+//            view.txvDeskripsimenunggu.text = datapengajuan.deskripsi
             view.txvNama.text = datapengajuan.user.username
             view.txv__Status.text = datapengajuan.status
         }
@@ -52,4 +68,11 @@ class MenungguAdapter (val context: Context, var dataPengajuan: ArrayList<DataPe
         dataPengajuan.addAll(newDataPengajuan)
         notifyDataSetChanged()
     }
+
+    fun removePengajuanmenunggu(position: Int) {
+        dataPengajuan.removeAt(position)
+        notifyItemRemoved(position)
+        notifyItemRangeChanged(position, dataPengajuan.size)
+    }
+
 }

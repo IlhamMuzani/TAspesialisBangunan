@@ -35,22 +35,34 @@
             android:id="@+id/txvNamaToko"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imvImage"
+            android:layout_marginStart="10dp"
             android:layout_toStartOf="@+id/txvOptions"
+            android:layout_toEndOf="@+id/imvImage"
             android:text="Nama Toko"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txvLocation"
+            android:id="@+id/txvJenispembuatan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_toEndOf="@+id/imvImage"
             android:layout_below="@+id/txvNamaToko"
-            android:text="Lokasi"
-            android:textSize="15dp"
-            />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imvImage"
+            android:text="Pembuatan"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_below="@+id/txvJenispembuatan"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imvImage"
+            android:text="Harga" />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

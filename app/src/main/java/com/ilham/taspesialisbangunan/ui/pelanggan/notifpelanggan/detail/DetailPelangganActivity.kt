@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_detail_pelanggan.imvBukti
 import kotlinx.android.synthetic.main.activity_detail_pelanggan.imvPengajuan
 import kotlinx.android.synthetic.main.activity_detail_pelanggan.progresspeng
 import kotlinx.android.synthetic.main.activity_detail_pelanggan.txtDeskripsi
+import kotlinx.android.synthetic.main.toolbar.*
 
 class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.View {
 
@@ -54,6 +55,8 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
 
     override fun initActivity() {
 
+        tv_nama.text = "Pengajuan"
+
         rekeningAdapter = RekeningAdapter(this , arrayListOf()){
                 datatambahrek: DataTambahrek, position: Int, type: String ->
             Constant.TAMBAHREK_ID = datatambahrek.kd_rekening!!
@@ -65,6 +68,11 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
     }
 
     override fun initListener() {
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
+
         btnKirim.setOnClickListener {
             if (uriImage == null) {
                 Toast.makeText(applicationContext, "Masukan bukti pembayaran", Toast.LENGTH_SHORT).show()
@@ -87,6 +95,7 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
         txtHarga.text = pengajuan.harga
         hargaDp.text = (Integer.valueOf(pengajuan.harga) * 30 / 100).toString()
         txtstatus2.text = pengajuan.status
+        txtstatus.text = pengajuan.status
 
         presenter.getTampilprodukrekening(pengajuan.kd_produk!!)
 
@@ -94,9 +103,11 @@ class DetailPelangganActivity : AppCompatActivity(), DetailPelangganContract.Vie
             "Menunggu" -> {
                 layout_bukti.visibility = View.GONE
                 layout_harga1.visibility = View.GONE
+                layoutdp.visibility = View.GONE
                 imvPengajuan.visibility = View.VISIBLE
                 layout_deskripsi.visibility = View.VISIBLE
-                layout_status1.visibility = View.VISIBLE
+                layout_status2.visibility = View.VISIBLE
+                layout_status1.visibility = View.GONE
             }
             "Diterima" -> {
                 layout_bukti.visibility = View.VISIBLE

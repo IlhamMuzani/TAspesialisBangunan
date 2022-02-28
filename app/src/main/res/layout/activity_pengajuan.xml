@@ -23,14 +23,6 @@
     </LinearLayout>
 
 
-    <!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Pengajuan Pembuatan"-->
-<!--        android:layout_margin="30dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="20sp" />-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,8 +38,34 @@
         android:scaleType="centerCrop"
         android:src="@drawable/img_add_image"/>
 
+        <RelativeLayout
+            android:id="@+id/BtnLocation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn_lapisanabu">
 
-    <LinearLayout
+            <ImageView
+                android:id="@+id/imvlokasi"
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_location_on_dongker" />
+
+            <TextView
+                android:id="@+id/edtLocationpengajuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/imvlokasi"
+                android:text="Klik untuk lokasi" />
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -57,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Masukan Deskripsi"
             android:textStyle="bold"/>
 
@@ -94,7 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:text="Kirim"
+        android:text="Check Out"
         android:textColor="@color/white"
         android:backgroundTint="#7BC2E3"/>
 

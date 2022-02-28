@@ -11,6 +11,7 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
+import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.ProdukMapsActivity
 import com.ilham.taspesialisbangunan.ui.utils.FileUtils
 import com.lazday.poslaravel.util.GalleryHelper
 import kotlinx.android.synthetic.main.activity_pengajuan.*
@@ -32,6 +33,19 @@ class PengajuanActivity : AppCompatActivity(), PengajuanContract.View {
         prefsManager = PrefsManager(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+        if (Constant.LATITUDE.isNotEmpty()){
+            edtLocationpengajuan.setText("${Constant.LATITUDE}, ${Constant.LONGITUDE}")
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Constant.LATITUDE = ""
+        Constant.LONGITUDE = ""
+    }
+
     override fun initActivity() {
         tv_nama.text = "Pengajuan"
     }
@@ -48,18 +62,19 @@ class PengajuanActivity : AppCompatActivity(), PengajuanContract.View {
             }
         }
 
+        edtLocationpengajuan.setOnClickListener {
+            startActivity(Intent(this, ProdukMapsActivity::class.java))
+        }
+
         btn_pengajuann.setOnClickListener {
             val deskripsi = edtdeskripsipengajuann.text
+            val location = edtLocationpengajuan.text
 
-            if ( deskripsi.isNullOrEmpty() || uriImage == null ) {
+            if ( deskripsi.isNullOrEmpty() || location.isNullOrEmpty() || uriImage == null ) {
                 showMessage("Lengkapi Data Benar")
             } else {
-                presenter.insertPengajuan(
-                    Constant.PRODUK_ID.toString(),
-                    prefsManager.prefsId,
-                    FileUtils.getFile(this, uriImage),
-                    deskripsi.toString(),
-                    "Menunggu"
+                presenter.insertPengajuan(Constant.PRODUK_ID.toString(), prefsManager.prefsId, FileUtils.getFile(this, uriImage), deskripsi.toString(),
+                    "Menunggu",  Constant.LATITUDE, Constant.LONGITUDE
                 )
             }
         }

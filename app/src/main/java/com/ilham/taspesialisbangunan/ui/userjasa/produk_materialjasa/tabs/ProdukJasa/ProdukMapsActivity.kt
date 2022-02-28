@@ -61,7 +61,7 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         action_savemap.setOnClickListener {
-            onBackPressed()
+            finish()
         }
     }
 
@@ -124,15 +124,15 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (R.layout.toolbarmap) {
-            R.id.action_savemap -> {
-                finish()
-                return true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (R.layout.toolbarmap) {
+//            R.id.action_savemap -> {
+//                finish()
+//                return true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
 
     override fun onSupportNavigateUp(): Boolean {

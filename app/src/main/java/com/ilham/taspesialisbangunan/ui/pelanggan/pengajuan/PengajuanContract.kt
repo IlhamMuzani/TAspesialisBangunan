@@ -12,6 +12,8 @@ interface PengajuanContract {
             gambar: File,
             deskripsi: String,
             status: String,
+            latitude: String,
+            longitude: String
         )
     }
 

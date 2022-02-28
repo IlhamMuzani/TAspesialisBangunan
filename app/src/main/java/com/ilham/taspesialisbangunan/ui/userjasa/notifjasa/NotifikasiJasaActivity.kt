@@ -8,7 +8,7 @@ import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.diproses.Dipr
 import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.dp.DPjasaFragment
 import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.menunggu.MenunggujasaFragment
 import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.selesai.SelesaijasaFragment
-import com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.ViewPagerAdapter
+import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_notifikasi_jasa.*
 
 class NotifikasiJasaActivity : AppCompatActivity() {

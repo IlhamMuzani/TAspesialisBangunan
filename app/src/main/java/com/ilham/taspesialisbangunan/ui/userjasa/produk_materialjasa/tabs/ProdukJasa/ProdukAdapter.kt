@@ -14,6 +14,8 @@ import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.Produk
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import kotlinx.android.synthetic.main.adapter_produk.view.*
 import kotlinx.android.synthetic.main.adapter_produk.view.imvImage
+import java.text.NumberFormat
+import java.util.*
 import kotlin.collections.ArrayList
 
 class ProdukAdapter (val context: Context, var dataProduk: ArrayList<DataProduk>,
@@ -62,7 +64,8 @@ class ProdukAdapter (val context: Context, var dataProduk: ArrayList<DataProduk>
         val view = view
         fun bing(dataProduk: DataProduk) {
             view.txvNamaToko.text = dataProduk.nama_toko
-            view.txvLocation.text = dataProduk.alamat
+            view.txvJenispembuatan.text = dataProduk.jenis_pembuatan
+            view.harga.text = NumberFormat.getCurrencyInstance(Locale("in","ID")).format(Integer.valueOf(dataProduk.harga))
         }
     }
 

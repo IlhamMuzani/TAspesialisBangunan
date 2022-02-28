@@ -19,14 +19,14 @@ class PengajuanPresenter (val view: PengajuanContract.View) : PengajuanContract.
     }
 
     override fun insertPengajuan(kd_produk: String, kd_user: String, gambar: File,
-                                 deskripsi: String, status: String) {
+                                 deskripsi: String, status: String, latitude: String, longitude: String) {
 
         val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"), gambar)
         val multipartBody: MultipartBody.Part? = MultipartBody. Part.createFormData("gambar",
             gambar.name, requestBody)
 
         view.onLoading(true)
-        ApiConfig.endpoint.insertPengajuan(kd_produk, kd_user, multipartBody!!, deskripsi, status).enqueue(object: Callback<ResponsePengajuanInsert>{
+        ApiConfig.endpoint.insertPengajuan(kd_produk, kd_user, multipartBody!!, deskripsi, status, latitude, longitude).enqueue(object: Callback<ResponsePengajuanInsert>{
             override fun onResponse(
                 call: Call<ResponsePengajuanInsert>,
                 response: Response<ResponsePengajuanInsert>

@@ -4,15 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
+import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import kotlinx.android.synthetic.main.activity_detail_pengajuan.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
-class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.View {
+class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.View,
+    OnMapReadyCallback {
 
     lateinit var presenter: DetailPengajuanPresenter
     lateinit var pengajuan: DataPengajuan
@@ -35,10 +44,16 @@ class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.Vie
     }
 
     override fun initActivity() {
+        tv_bgjasa.text ="Details Notifications"
 
     }
 
     override fun initListener() {
+
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
+
         btnKirim.setOnClickListener {
             val harga = edtHarga.text
             if (harga.isEmpty()) {
@@ -46,6 +61,8 @@ class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.Vie
             } else {
                 presenter.hargaPengajuan(pengajuan.id!!, harga.toString())
             }
+
+            layout_harga.visibility =View.GONE
         }
         btnProses.setOnClickListener {
             presenter.pengajuandiproses(pengajuan.id!!)
@@ -63,6 +80,9 @@ class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.Vie
         GlideHelper.setImage(this,  Constant.IP_IMAGE + pengajuan.bukti,imvBukti)
         txtDeskripsi.text = pengajuan.deskripsi
         txtStatus.text = pengajuan.status
+
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapdetailpengajuan) as SupportMapFragment
+        mapFragment.getMapAsync( this )
 
         when (pengajuan.status) {
             "Menunggu" -> {
@@ -119,5 +139,11 @@ class DetailPengajuanActivity : AppCompatActivity(), DetailPengajuanContract.Vie
                 btnKirim.visibility = View.VISIBLE
             }
         }
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        val latLng = LatLng (pengajuan.latitude!!.toDouble(), pengajuan.longitude!!.toDouble())
+        googleMap.addMarker ( MarkerOptions(). position(latLng).title( pengajuan.kd_produk ))
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.userjasa.profiljasa.tambahrek.create.TambahrekCreateActivity">
+    tools:context=".ui.userjasa.tambahrek.create.TambahrekCreateActivity">
 
     <LinearLayout
         android:id="@+id/toolbarjasa"

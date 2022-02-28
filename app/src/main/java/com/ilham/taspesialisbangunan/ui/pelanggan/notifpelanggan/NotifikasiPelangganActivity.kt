@@ -6,8 +6,8 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step2.dp.DPFragment
 import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step1.menunggu.MenungguFragment
 import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step3.selesai.SelesaiFragment
-import com.ilham.taspesialisbangunan.ui.home.fragment.home.produkuser_materialuser.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_notifikasi_pelanggan.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class NotifikasiPelangganActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,5 +22,14 @@ class NotifikasiPelangganActivity : AppCompatActivity() {
         adapter.addFragment(SelesaiFragment(), "Selesai")
         btn_viepagerNotif.adapter = adapter
         btn_tabsNotif.setupWithViewPager(btn_viepagerNotif)
+        tv_nama.text = "Notification"
+
+        setData()
+    }
+
+    fun setData() {
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
     }
 }

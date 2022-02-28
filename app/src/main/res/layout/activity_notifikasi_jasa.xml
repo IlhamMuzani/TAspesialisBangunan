@@ -52,7 +52,6 @@
 <!--            android:src="@drawable/ic_bar_close"-->
 <!--            app:tint="@color/black" />-->
 
-
     </RelativeLayout>
 
     <androidx.viewpager.widget.ViewPager

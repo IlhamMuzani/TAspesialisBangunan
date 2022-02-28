@@ -11,9 +11,10 @@ import com.ilham.taspesialisbangunan.data.model.saran.ResponseSaranList
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekDetail
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekList
 import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekUpdate
+import com.ilham.taspesialisbangunan.data.model.user.ResponseJasaUpdate
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
-import com.ilham.taspesialisbangunan.data.model.userpelanggan.ResponsePelangganUpdate
+import com.ilham.taspesialisbangunan.data.model.user.ResponsePelangganUpdate
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -59,19 +60,26 @@ interface ApiEndpoint {
         @Field("password") password: String
     ): Call<ResponseUser>
 
+    //user profil dan detail
     @GET("userDetail/{id}")
     fun userDetail(
         @Path("id") id: String
     ): Call<ResponseUserdetail>
 
+    @POST("user/{id}")
+    fun updateJasa(
+        @Path("id") id: Long,
+        @Query("username") username: String,
+        @Query("email") email: String,
+        @Query("alamat") alamat: String,
+        @Query("phone") phone: String,
+        @Query("_method") _method: String
+    ): Call<ResponseJasaUpdate>
+
     //    UBAH PROFIL PELANGGAN
 //
-    @GET("userpelanggan/{id}")
-    fun getPelangganDetail(
-        @Path("id") id: Long
-    ): Call<ResponseUserdetail>
 
-    @POST("userpelanggan/{id}")
+    @POST("user/{id}")
     fun updatePelanggan(
         @Path("id") id: Long,
         @Query("username") username: String,
@@ -81,10 +89,10 @@ interface ApiEndpoint {
         @Query("_method") _method: String
     ): Call<ResponsePelangganUpdate>
 
-    @GET("ProfilDetail/{id}")
-    fun ProfilDetail(
-        @Path("id") id: String
-    ): Call<ResponseUserdetail>
+//    @GET("ProfilDetail/{id}")
+//    fun ProfilDetail(
+//        @Path("id") id: String
+//    ): Call<ResponseUserdetail>
 
     //    PRODUK
 //
@@ -220,7 +228,9 @@ interface ApiEndpoint {
         @Query("kd_user") kd_user: String,
         @Part gambar: MultipartBody.Part,
         @Query("deskripsi") deskripsi: String,
-        @Query("status") status: String
+        @Query("status") status: String,
+        @Query("latitude") latitude: String,
+        @Query("longitude") longitude: String
     ): Call<ResponsePengajuanInsert>
 
     @POST("mypengajuan")
@@ -303,6 +313,13 @@ interface ApiEndpoint {
     fun Pengajuanuserselesai(
         @Path("kd_userpelenggan") kd_userpelenggan: Long
     ): Call<ResponsePengajuanList1>
+
+    @DELETE("pengajuan/{id}")
+    fun deletePengajuanmenunggu(
+        @Path("id") id: Long
+    ): Call<ResponsePengajuanUpdate>
+
+
 
     //      SARAN
 //

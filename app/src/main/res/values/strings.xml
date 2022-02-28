@@ -18,4 +18,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Profil</string>
     <string name="title_notifications">Notifications</string>
+    <string name="email">email</string>
+    <string name="Required">Required</string>
+    <string name="password">Password</string>
+    <string name="Email">Email</string>
+    <string name="content_description_end_icon">content_description_end_icon</string>
+    <string name="Username">Username</string>
+    <string name="Alamat">Alamat</string>
+    <string name="Telpone">Telpone</string>
 </resources>

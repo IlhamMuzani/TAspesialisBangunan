@@ -41,76 +41,54 @@
         android:orientation="vertical"
         android:paddingHorizontal="15dp">
 
-        <RelativeLayout
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bg_btn_lapisandongker">
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_email_black_24dp"
+            app:startIconContentDescription="@string/content_description_end_icon"
+            app:helperText="@string/Required"
+            app:helperTextTextColor="@color/merah"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imvemail"
-                android:layout_width="20dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/ic_email_black_dongker" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edtEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_toEndOf="@+id/imvemail"
-                    android:background="@color/white"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bg_btn_lapisandongker">
-
-            <ImageView
-                android:id="@+id/imvpassword"
-                android:layout_width="20dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/ic_lock_black_dongker" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true">
+                android:lines="1"
+                android:inputType="textEmailAddress"
+                android:hint="@string/Email"/>
 
-                <EditText
-                    android:id="@+id/edtPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_toEndOf="@+id/imvpassword"
-                    android:background="@color/white"
-                    android:hint="Password"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        </RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="16"
+            app:passwordToggleEnabled="true"
+            app:helperText="@string/Required"
+            app:helperTextTextColor="@color/merah"
+            app:startIconDrawable="@drawable/ic_lock_black_24dp"
+            app:startIconContentDescription="@string/content_description_end_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLength="16"
+                android:inputType="textPassword"
+                android:hint="@string/password"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnLoginjasa"

@@ -39,8 +39,9 @@ class MenunggujasaAdapter (val context: Context, var dataPengajuan: ArrayList<Da
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
-            view.txvDeskripsimenunggujasa.text = datapengajuan.deskripsi
             view.txvNamajasa.text = datapengajuan.user.username
+            view.txvjenis.text = datapengajuan.produk.jenis_pembuatan
+            view.txvProduk.text = datapengajuan.produk.status
         }
         val imvPengajuan = view.findViewById<ImageView>(R.id.imvPengajuanmenunggu)
     }

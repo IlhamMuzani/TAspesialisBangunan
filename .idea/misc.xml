@@ -81,55 +81,64 @@
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_akun.xml" value="0.33" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_baru.xml" value="0.1" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_daftar.xml" value="0.1" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_detail_pelanggan.xml" value="0.20416666666666666" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_detail_pengajuan.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_detail_pelanggan.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_detail_pengajuan.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_jasa.xml" value="0.20416666666666666" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_loginjasa.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_loginjasa.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_loginjasacadang.xml" value="0.20416666666666666" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_loginuser.xml" value="0.22" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_loginuser.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_masuk.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_material.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_material_create.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_material_detail1.xml" value="0.22" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_material_jasa_detail1.xml" value="0.1812778603268945" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_material_jasa_detail1.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_material_update.xml" value="0.1" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_materialuser.xml" value="0.18" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_notif_pelanggan.xml" value="0.1" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_notifikasi.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_notifikasi.xml" value="0.33" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_notifikasi_jasa.xml" value="0.2" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_notifikasi_pelanggan.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_notifikasi_pelanggan.xml" value="0.18" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_pelanggan.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_pengajuan.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_pengajuan2.xml" value="0.20416666666666666" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produk.xml" value="0.1" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produk_create.xml" value="0.23461538461538461" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produk.xml" value="0.18" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produk_create.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produk_maps.xml" value="0.5" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produkdetail.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produkjasadetail.xml" value="0.193006993006993" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produkm_create.xml" value="0.23461538461538461" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produkuser.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_produkuser.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_register_pelanggan.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_registerjasa.xml" value="0.20416666666666666" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_saran.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_report.xml" value="0.33" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_saran.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_tambah_rek.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_tambahrek_create.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_ubah_profil.xml" value="0.25" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_user.xml" value="0.1" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_diproses.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_ubah_profiljasa.xml" value="0.2" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/activity_user.xml" value="0.46196403872752423" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_diproses.xml" value="0.22" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_diprosesjasa.xml" value="0.20416666666666666" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_diterima.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_diterimajasa.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_dp.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_material.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_materialuser.xml" value="0.2" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_menunggu.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_menunggu.xml" value="0.33" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_menunggujasa.xml" value="0.33" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_notifpengajuan.xml" value="0.1" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_produk.xml" value="0.20416666666666666" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_produk.xml" value="0.33" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_produkuser.xml" value="0.33" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_rekening.xml" value="0.20416666666666666" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_tambahrekl.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_rekening.xml" value="0.33" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_selesaijasa.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_tambahrekl.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/adapter_user_dp.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/content_material.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/content_materialuser.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/content_notifsaran.xml" value="0.1" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/content_pelanggan.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/content_produk.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/dialog_detailproduk.xml" value="0.28634039444850257" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/dialog_detailprodukuser.xml" value="0.20416666666666666" />
@@ -137,14 +146,17 @@
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/dialog_materialdetailjasa.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_akun.xml" value="0.25" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_diproses.xml" value="0.20416666666666666" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_diprosesjasa.xml" value="0.25" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_diterimajasa.xml" value="0.22" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_dp.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_material.xml" value="0.33" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_materialjasa.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_menunggu.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_menunggujasa.xml" value="0.18055555555555555" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_produk.xml" value="0.33" />
-        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_produkjasa.xml" value="0.2" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_produk.xml" value="0.2" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_produkjasa.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_selesaijasa.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/fragment_user_dp.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/layout/ic_baseline_location_abu.xml" value="0.1" />
@@ -157,6 +169,7 @@
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/menu/bottom_nav_menujasa.xml" value="0.18425925925925926" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/menu/menu_maps.xml" value="0.20416666666666666" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/menu/menu_options.xml" value="0.20416666666666666" />
+        <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/menu/menu_optionspengajuan.xml" value="0.22" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
         <entry key="..\:/Mk Semester 7/Android/TAspesialisBangunan/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

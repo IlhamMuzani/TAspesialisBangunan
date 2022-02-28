@@ -8,7 +8,8 @@ import android.widget.Toast
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
-import com.ilham.taspesialisbangunan.ui.home.UserActivity
+import com.ilham.taspesialisbangunan.ui.fragment.UserActivity
+import com.ilham.taspesialisbangunan.ui.pelanggan.register.RegisterPelangganActivity
 import kotlinx.android.synthetic.main.activity_loginuser.*
 import kotlinx.android.synthetic.main.activity_loginuser.progress
 import kotlinx.android.synthetic.main.toolbar.*
@@ -40,6 +41,13 @@ class LoginuserActivity : AppCompatActivity(), LoginuserContract.View {
 
         btnLoginuser.setOnClickListener {
             presenter.doLogin(edtEmailuser.text.toString(), edtPassworduser.text.toString())
+            if (edtEmailuser.text!!.isEmpty()){
+                edtEmailuser.error = "Kolom Email Tidak Boleh Kosong"
+                edtEmailuser.requestFocus()
+            } else if (edtPassworduser.text!!.isEmpty()){
+                edtPassworduser.error = "Kolom Password Tidak Boleh Kosong"
+                edtPassworduser.requestFocus()
+            }
         }
 
         btn_daftarakunuser.setOnClickListener{

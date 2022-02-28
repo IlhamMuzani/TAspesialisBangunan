@@ -16,13 +16,15 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="Pesanan Menunggu"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvMenunggujasa"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

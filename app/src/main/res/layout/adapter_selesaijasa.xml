@@ -11,7 +11,6 @@
         android:id="@+id/detailpengajuanjasa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_btn_lapisanabu"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -43,8 +42,7 @@
                         android:layout_marginEnd="5dp"
                         android:adjustViewBounds="true"
                         android:text="Nama        :"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/txvNamajasaSelesai"
@@ -68,8 +66,7 @@
                         android:layout_marginTop="25dp"
                         android:layout_marginEnd="5dp"
                         android:text="Deskripsi :"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/txvDeskripsiselesaijasa"
