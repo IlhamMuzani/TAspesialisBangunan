@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.userjasa.updateprofiljasa.UbahProfiljasaActivity">
+
+
+    <LinearLayout
+        android:id="@+id/toolbarjasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <include
+            layout="@layout/toolbarjasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/linubahprofil"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/txvInfoUser"
+            >
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fotoprofilejasa"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/img_add_image"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foto Profil"
+                android:layout_gravity="center"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_account_circle_black_24dp"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_ubahusernamejasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/Username"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:startIconDrawable="@drawable/ic_email_black_24dp"-->
+<!--                app:startIconContentDescription="@string/content_description_end_icon"-->
+<!--                app:helperTextTextColor="@color/merah"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/edt_ubahemailjasa"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:lines="1"-->
+<!--                    android:inputType="textEmailAddress"-->
+<!--                    android:hint="@string/Email"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_btn_lapisanabu"
+                android:orientation="horizontal"
+                >
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mat"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/edt_ubahalamatjasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_toEndOf="@+id/imv"
+                    android:background="@color/white"
+                    android:inputType="text"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_btn_lapisanabu"
+                android:orientation="horizontal"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mata"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+                    app:startIconContentDescription="@string/content_description_end_icon"
+                    app:helperTextTextColor="@color/merah"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/edt_ubahalamatkelurahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@color/white"
+                    android:inputType="text"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_rtrw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/DetailAlamat"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_phone_android_black_24dp"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                app:helperTextTextColor="@color/merah"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_ubahphonejasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:inputType="phone"
+                    android:hint="@string/Telpone"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_ubahjasa"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:text="Simpan"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/colorPrimary" />
+
+        <ProgressBar
+            android:id="@+id/progressubahjasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

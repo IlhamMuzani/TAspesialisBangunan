@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/crv_selesai"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:id="@+id/detailpengajuanselesai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/txvOptionselesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingEnd="5dp"
+            android:text="&#8942;"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imvPengajuanselesaiPel"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/img_no_image"
+            app:riv_corner_radius="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/imvPengajuanselesaiPel"
+            android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txv_StatusSelesai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/btn_norek"
+                        android:text="Nama Toko"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/txvJenisselesai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/btn_jenisbank"
+                        android:text="Jenis"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

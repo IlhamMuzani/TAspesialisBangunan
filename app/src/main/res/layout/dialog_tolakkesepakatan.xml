@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout_hargad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Masukan deskripsi kesepakatan"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <EditText
+                android:id="@+id/edtdeskripsilainya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Ketik.."
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <Spinner
+                android:id="@+id/spinnerDP"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="DP"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Masukan harga : "
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <EditText
+                android:id="@+id/edtHargad"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Masukan harga"
+                android:inputType="number"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnKirimd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Kirim" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
