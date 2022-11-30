@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.notifprodukjasa
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,15 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.ilham.taspesialisbangunan.R
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step1.menunggu.MenungguFragment
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step2.dp.DPFragment
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.tabs.step3.selesai.SelesaiFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.pelunasan.PelunasanFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.menunggu.MenungguFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.dp.DPFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.selesai.SelesaiFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.bertemu.BertemuFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.dikonfirmasi.DikonfirmasiFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.diterima.DiterimaFragment
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.diproses.DiprosesFragment
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.ViewPagerAdapter
-import kotlinx.android.synthetic.main.activity_notifikasi_pelanggan.*
-import kotlinx.android.synthetic.main.activity_notifikasi_pelanggan.btn_tabsNotif
-import kotlinx.android.synthetic.main.activity_notifikasi_pelanggan.btn_viepagerNotif
-import kotlinx.android.synthetic.main.fragment_notifpjasafragment.*
-import kotlinx.android.synthetic.main.toolbar.*
-import org.w3c.dom.Text
 
 class NotifPjasaFragment : Fragment(), NotifPjasaContract.View {
 
@@ -42,13 +41,25 @@ class NotifPjasaFragment : Fragment(), NotifPjasaContract.View {
         btn_tabs = view.findViewById(R.id.btn_tabsNotifP)
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(MenungguFragment(), "Tunggu")
-        adapter.addFragment(DPFragment(), "Proses")
-//        adapter.addFragment(DiterimaFragment(), "Step 2")
-//        adapter.addFragment(DiprosesFragment(), "Proses")
+        adapter.addFragment(MenungguFragment(), "Menunggu")
+        adapter.addFragment(DikonfirmasiFragment(), "Dikonfirmasi")
+        adapter.addFragment(BertemuFragment(), "Bertemu")
+        adapter.addFragment(DiterimaFragment(), "Diterima")
+        adapter.addFragment(DPFragment(), "Bayar")
+        adapter.addFragment(DiprosesFragment(), "Dikerjakan")
+        adapter.addFragment(PelunasanFragment(), "Pelunasan")
         adapter.addFragment(SelesaiFragment(), "Selesai")
         viewpager.adapter = adapter
         btn_tabs.setupWithViewPager(viewpager)
+
+        btn_tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_access_jam)
+        btn_tabs.getTabAt(1)!!.setIcon(R.drawable.dikonfirmasi2)
+        btn_tabs.getTabAt(2)!!.setIcon(R.drawable.bertemu)
+        btn_tabs.getTabAt(3)!!.setIcon(R.drawable.diterimaa)
+        btn_tabs.getTabAt(4)!!.setIcon(R.drawable.dp1)
+        btn_tabs.getTabAt(5)!!.setIcon(R.drawable.diproses2)
+        btn_tabs.getTabAt(6)!!.setIcon(R.drawable.pelunasan)
+        btn_tabs.getTabAt(7)!!.setIcon(R.drawable.done)
     }
 
 }

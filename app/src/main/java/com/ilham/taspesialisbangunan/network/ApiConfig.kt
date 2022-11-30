@@ -1,11 +1,14 @@
 package com.ilham.taspesialisbangunan.network
 
+import com.google.gson.GsonBuilder
 import com.ilham.taspesialisbangunan.data.model.Constant
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.Array.get
+import java.sql.Time
+import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 

@@ -11,7 +11,7 @@ interface HomeContract {
     interface View{
         fun initFragment(view: android.view.View)
         fun showMessage(message: String)
-        fun onLoading(loading: Boolean)
+        fun onLoading(loading: Boolean, message: String? = "Loading...")
         fun onResult(responseUserdetail: ResponseUserdetail)
     }
 }

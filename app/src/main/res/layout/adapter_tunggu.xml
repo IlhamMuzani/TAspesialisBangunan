@@ -27,7 +27,7 @@
 
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/imvPengajuanmenunggu"
+            android:id="@+id/imvPengajuantunggu"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:src="@drawable/img_no_image"
@@ -38,66 +38,38 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_toStartOf="@+id/txvOptionss"
-            android:layout_toEndOf="@id/imvPengajuanmenunggu"
+            android:layout_toEndOf="@id/imvPengajuantunggu"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
 
                     <TextView
-                        android:id="@+id/btn_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:text="Status                     :"
-                        android:textColor="@color/black"
-                        />
-
-                    <TextView
-                        android:id="@+id/txv__Status"
+                        android:id="@+id/txv__StatusTunggu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/btn_norek"
-                        android:text="Status"
-                        android:textStyle="bold"
+                        android:text="Nama Toko"
                         android:textColor="@color/black" />
 
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
                     <TextView
-                        android:id="@+id/btn_jenisbank"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:adjustViewBounds="true"
-                        android:text="Jenis Pembuatan :"
-                        android:textColor="@color/black"
-                        />
-
-                    <TextView
-                        android:id="@+id/txvJenisPem"
+                        android:id="@+id/txvJenisPemTunggu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:layout_toEndOf="@+id/btn_jenisbank"
-                        android:text="Jenis"
+                        android:text="Jenis Material"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
-
 
             </LinearLayout>
 

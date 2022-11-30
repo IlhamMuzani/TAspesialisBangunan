@@ -29,5 +29,4 @@ class NotificationsPresenter (val view: NotificationsContract.View): HomeContrac
 
         })
     }
-
 }

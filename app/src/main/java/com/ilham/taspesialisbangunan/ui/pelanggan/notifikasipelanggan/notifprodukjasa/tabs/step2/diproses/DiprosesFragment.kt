@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step2.diproses
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.diproses
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,11 +14,12 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.DPAdapter
 
 class DiprosesFragment : Fragment(), DiprosesContract.View {
 
     lateinit var presenter: DiprosesPresenter
-    lateinit var diprosesAdapter: DiprosesAdapter
+    lateinit var diprosesAdapter: DPAdapter
     lateinit var datapengajuan: DataPengajuan
     lateinit var prefsManager: PrefsManager
 
@@ -42,7 +43,9 @@ class DiprosesFragment : Fragment(), DiprosesContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter.getPengajuandiproses(prefsManager.prefsId.toLong())
+        if (prefsManager.prefsIsLogin) {
+            presenter.getPengajuandiproses(prefsManager.prefsId.toLong())
+        }
     }
 
     override fun initFragment(view: View) {
@@ -51,7 +54,7 @@ class DiprosesFragment : Fragment(), DiprosesContract.View {
         rcvDiproses = view.findViewById(R.id.rcvDiproses)
         swipeDiproses = view.findViewById(R.id.swipeDiproses)
 
-        diprosesAdapter = DiprosesAdapter(requireActivity(), arrayListOf()){
+        diprosesAdapter = DPAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
             Constant.PENGAJUAN_ID = datapengajuan.id!!
 
@@ -62,6 +65,10 @@ class DiprosesFragment : Fragment(), DiprosesContract.View {
         rcvDiproses.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = diprosesAdapter
+        }
+
+        swipeDiproses.setOnRefreshListener {
+            presenter.getPengajuandiproses(prefsManager.prefsId.toLong())
         }
     }
 

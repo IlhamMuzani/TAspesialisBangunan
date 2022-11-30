@@ -12,7 +12,7 @@ interface TambahrekCreateContract {
     interface View {
         fun initActivity()
         fun initListener()
-        fun onLoading(loading: Boolean)
+        fun onLoading(loading: Boolean, message: String? = "Loading...")
         fun onResult(responseTambahrekUpdate: ResponseTambahrekUpdate)
         fun showMessage(message: String)
     }

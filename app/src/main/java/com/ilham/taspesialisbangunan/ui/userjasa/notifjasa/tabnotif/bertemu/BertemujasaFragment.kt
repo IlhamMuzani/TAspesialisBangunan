@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.bertemu
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.bertemu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,9 +14,8 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.menunggu.MenunggujasaAdapter
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.menunggu.MenunggujasaAdapter
 import kotlinx.android.synthetic.main.fragment_bertemujasa.*
-import kotlinx.android.synthetic.main.fragment_dikonfirmasijasa.*
 
 class BertemujasaFragment : Fragment(), BertemujasaContract.View {
 

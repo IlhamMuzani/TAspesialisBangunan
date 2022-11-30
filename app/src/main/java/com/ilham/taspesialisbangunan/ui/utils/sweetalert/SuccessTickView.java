@@ -1,4 +1,4 @@
-package com.amar.sitambol.util.sweetalert;
+package com.ilham.taspesialisbangunan.ui.utils.sweetalert;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,7 +11,8 @@ import android.view.animation.Transformation;
 
 import androidx.core.content.ContextCompat;
 
-import com.amar.sitambol.R;
+import com.ilham.taspesialisbangunan.R;
+
 
 public class SuccessTickView extends View {
     private float mDensity = -1;

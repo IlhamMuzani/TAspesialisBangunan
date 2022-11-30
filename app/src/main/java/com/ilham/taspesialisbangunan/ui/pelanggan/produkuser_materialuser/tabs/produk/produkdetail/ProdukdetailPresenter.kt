@@ -2,7 +2,11 @@ package com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.
 
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
+import com.ilham.taspesialisbangunan.data.model.saran.ResponseRating
 import com.ilham.taspesialisbangunan.data.model.saran.ResponseSaranInsert
+import com.ilham.taspesialisbangunan.data.model.saran.ResponseSaranList
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -21,7 +25,7 @@ class ProdukdetailPresenter  (var view: ProdukdetailContract.View) : Produkdetai
     }
 
     override fun getProdukdetail(id: Long) {
-        view.onLoadingProdukdetail(true)
+        view.onLoadingProdukdetail(true,"Mendapatkan Detail...")
         ApiConfig.endpoint.produkDetail(id).enqueue(object : Callback<ResponseProdukDetail>{
             override fun onResponse(
                 call: Call<ResponseProdukDetail>,
@@ -40,25 +44,65 @@ class ProdukdetailPresenter  (var view: ProdukdetailContract.View) : Produkdetai
         } )
     }
 
-    override fun insertSaran(kd_jasa: String, kd_userpelanggan: String, deskripsi: String) {
-
-        ApiConfig.endpoint.insertSaran(kd_jasa, kd_userpelanggan, deskripsi)
-            .enqueue(object : Callback<ResponseSaranInsert> {
-                override fun onResponse(
-                    call: Call<ResponseSaranInsert>,
-                    response: Response<ResponseSaranInsert>
-                ) {
-
-                    if (response.isSuccessful) {
-                        val responseSaranInsert: ResponseSaranInsert? = response.body()
-                        view.onResultSaran(responseSaranInsert!!)
-                    }
+    override fun getsaranproduk(id: Long) {
+        view.onLoadingProdukdetail(true,"Mendapatkan Detail...")
+        ApiConfig.endpoint.semuasaranperproduk(id).enqueue(object : Callback<ResponseSaranList> {
+            override fun onResponse(
+                call: Call<ResponseSaranList>,
+                response: Response<ResponseSaranList>
+            ) {
+                view.onLoadingProdukdetail(false)
+                if (response.isSuccessful) {
+                    val responseSaranList: ResponseSaranList? = response.body()
+                    view.onResultSaranProduk(responseSaranList!!)
                 }
+            }
 
-                override fun onFailure(call: Call<ResponseSaranInsert>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseSaranList>, t: Throwable) {
+                view.onLoadingProdukdetail(false)
+            }
+        })
+    }
 
+    override fun getProduklainya() {
+        view.onLoadingProdukdetail(true,"Mendapatkan Detail...")
+        ApiConfig.endpoint.getProduk().enqueue(object : Callback<ResponseProdukList> {
+            override fun onResponse(
+                call: Call<ResponseProdukList>,
+                response: Response<ResponseProdukList>
+            ) {
+                view.onLoadingProdukdetail(false)
+                if (response.isSuccessful) {
+                    val responseProdukList: ResponseProdukList? = response.body()
+                    view.onResultProduklainya( responseProdukList!! )
                 }
+            }
 
-            })
+            override fun onFailure(call: Call<ResponseProdukList>, t: Throwable) {
+                view.onLoadingProdukdetail(false)
+            }
+
+        })
+    }
+
+    override fun getRating(id: Long) {
+        view.onLoadingProdukdetail(true,"Mendapatkan Detail...")
+        ApiConfig.endpoint.getRating(id).enqueue(object : Callback<ResponseRating> {
+            override fun onResponse(
+                call: Call<ResponseRating>,
+                response: Response<ResponseRating>
+            ) {
+                view.onLoadingProdukdetail(false)
+                if (response.isSuccessful) {
+                    val responseRating: ResponseRating? = response.body()
+                    view.onResultgetRating( responseRating!! )
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseRating>, t: Throwable) {
+                view.onLoadingProdukdetail(false)
+            }
+
+        })
     }
 }

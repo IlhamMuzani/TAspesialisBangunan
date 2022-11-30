@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.dikonfirmasi
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.bertemu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,24 +19,24 @@ import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
 import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.MenungguAdapter
 
-class DikonfirmasiFragment : Fragment(), DikonfirmasiContract.View {
+class BertemuFragment : Fragment(), BertemuContract.View {
 
-    lateinit var presenter: DikonfirmasiPresenter
+    lateinit var presenter: BertemuPresenter
     lateinit var dikonfirmasiAdapter: MenungguAdapter
     lateinit var datapengajuan: DataPengajuan
     lateinit var prefsManager: PrefsManager
 
-    lateinit var rcvDikonfirmasi: RecyclerView
-    lateinit var swipeDikonfirmasi: SwipeRefreshLayout
+    lateinit var rcvBertemu: RecyclerView
+    lateinit var swipeBertemu: SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_dikonfirmasi, container, false)
+        val view = inflater.inflate(R.layout.fragment_bertemu, container, false)
 
-        presenter = DikonfirmasiPresenter(this)
+        presenter = BertemuPresenter(this)
         prefsManager = PrefsManager(requireActivity())
 
         initFragment(view)
@@ -47,15 +47,15 @@ class DikonfirmasiFragment : Fragment(), DikonfirmasiContract.View {
     override fun onStart() {
         super.onStart()
         if (prefsManager.prefsIsLogin) {
-            presenter.getPengajuandikonfirmasi(prefsManager.prefsId.toLong())
+            presenter.getPengajuanbertemu(prefsManager.prefsId.toLong())
         }
     }
 
     override fun initFragment(view: View) {
 //        (activity as AppCompatActivity).supportActionBar!!.hide()
 
-        rcvDikonfirmasi = view.findViewById(R.id.rcvDikonfirmasi)
-        swipeDikonfirmasi = view.findViewById(R.id.swipeDikonfirmasi)
+        rcvBertemu = view.findViewById(R.id.rcvBertemu)
+        swipeBertemu = view.findViewById(R.id.swipeBertemu)
 
         dikonfirmasiAdapter = MenungguAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
@@ -69,26 +69,26 @@ class DikonfirmasiFragment : Fragment(), DikonfirmasiContract.View {
 
         }
 
-        rcvDikonfirmasi.apply {
+        rcvBertemu.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = dikonfirmasiAdapter
         }
 
-        swipeDikonfirmasi.setOnRefreshListener {
+        swipeBertemu.setOnRefreshListener {
             if (prefsManager.prefsIsLogin) {
-                presenter.getPengajuandikonfirmasi(prefsManager.prefsId.toLong())
+                presenter.getPengajuanbertemu(prefsManager.prefsId.toLong())
             }
         }
     }
 
-    override fun onLoadingPengajuandikonfirmasi(loading: Boolean) {
+    override fun onLoadingPengajuanbertemu(loading: Boolean) {
         when (loading) {
-            true -> swipeDikonfirmasi.isRefreshing = true
-            false -> swipeDikonfirmasi.isRefreshing = false
+            true -> swipeBertemu.isRefreshing = true
+            false -> swipeBertemu.isRefreshing = false
         }
     }
 
-    override fun onResultPengajuandikonfirmasi(responsePengajuanList1: ResponsePengajuanList1) {
+    override fun onResultPengajuanbertemu(responsePengajuanList1: ResponsePengajuanList1) {
         val pengajuan: List<DataPengajuan> = responsePengajuanList1.pengajuan
         dikonfirmasiAdapter.setData(pengajuan)
     }
@@ -103,7 +103,7 @@ class DikonfirmasiFragment : Fragment(), DikonfirmasiContract.View {
         dialog.setMessage("Hapus ${dataPengajuan.bukti}?")
 
         dialog.setPositiveButton ("Hapus") { dialog, which ->
-            presenter.deletePengajuanDikonfirmasi(Constant.PENGAJUAN_ID)
+            presenter.deletePengajuanbertemu(Constant.PENGAJUAN_ID)
             dikonfirmasiAdapter.removePengajuanmenunggu(position)
             dialog.dismiss()
         }

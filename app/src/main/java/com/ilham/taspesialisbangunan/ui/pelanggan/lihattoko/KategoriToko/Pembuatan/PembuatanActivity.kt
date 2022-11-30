@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.KategoriToko.PembuatanKanopi
+package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.KategoriToko.Pembuatan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,20 +10,21 @@ import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.ProdukuserAdapter
-import kotlinx.android.synthetic.main.activity_pembuatankanopi.*
+import kotlinx.android.synthetic.main.activity_pembuatan.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class PembuatanKanopiActivity : AppCompatActivity(), PembuatanKanopiContract.View {
+class PembuatanActivity : AppCompatActivity(), PembuatanContract.View {
 
-    lateinit var presenter: PembuatanKanopiPresenter
+    lateinit var presenter: PembuatanPresenter
     lateinit var pembuatanAdapter: ProdukuserAdapter
     lateinit var produk: DataProduk
     lateinit var prefsManager: PrefsManager
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pembuatankanopi)
-        presenter = PembuatanKanopiPresenter(this)
+        setContentView(R.layout.activity_pembuatan)
+        presenter = PembuatanPresenter(this)
         prefsManager = PrefsManager(this)
 
     }
@@ -31,6 +32,11 @@ class PembuatanKanopiActivity : AppCompatActivity(), PembuatanKanopiContract.Vie
     override fun onStart() {
         super.onStart()
         presenter.getProdukpembuatan(Constant.USERJASA_ID , Constant.JENISPEMBUATAN_NAME)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Constant.JENISPEMBUATAN_NAME = "Pembuatan"
     }
 
     override fun initActivity() {

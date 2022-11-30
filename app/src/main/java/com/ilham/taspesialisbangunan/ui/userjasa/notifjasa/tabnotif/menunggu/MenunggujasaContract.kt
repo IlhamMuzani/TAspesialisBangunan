@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.menunggu
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.menunggu
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 

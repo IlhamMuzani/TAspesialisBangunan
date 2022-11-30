@@ -1,9 +1,9 @@
-package com.ilham.taspesialisbangunan.data.model.user
+package com.ilham.taspesialisbangunan.data.model.saran
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseUserdetail (
+data class ResponseSarandetail (
     @SerializedName("status") val status: Boolean,
     @SerializedName("msg") val msg: String,
-    @SerializedName("user") val user: DataUser
+    @SerializedName("saran") val user: DataSaran
 )

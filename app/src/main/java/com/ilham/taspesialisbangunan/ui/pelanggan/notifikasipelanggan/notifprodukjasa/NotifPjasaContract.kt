@@ -1,7 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.notifprodukjasa
-
-import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
-import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa
 
 interface NotifPjasaContract {
 

@@ -1,8 +1,8 @@
-package com.amar.sitambol.util.sweetalert;
+package com.ilham.taspesialisbangunan.ui.utils.sweetalert;
 
 import android.content.Context;
 
-import com.amar.sitambol.R;
+import com.ilham.taspesialisbangunan.R;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class ProgressHelper {

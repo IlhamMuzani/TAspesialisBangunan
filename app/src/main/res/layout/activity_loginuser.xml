@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp">
+        android:paddingHorizontal="@dimen/_7sdp">
 
         <include
             layout="@layout/toolbar"
@@ -25,58 +25,86 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="32dp"
-        android:textSize="18dp"
-        android:text="Silakan Login Sebagai User"
+        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_marginStart="@dimen/_26sdp"
+        android:textSize="@dimen/_14sdp"
+        android:text="Silakan Login Sebagai User Pembeli"
         android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:layout_centerInParent="true"
-        android:layout_marginHorizontal="15dp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
         android:orientation="vertical"
         android:paddingHorizontal="15dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <RelativeLayout
+            android:id="@+id/txvphone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/ic_email_black_24dp"
-            app:startIconContentDescription="@string/content_description_end_icon"
-            app:helperText="@string/Required"
-            app:helperTextTextColor="@color/merah"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn_lapisanabu">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtEmailuser"
+            <ImageView
+                android:id="@+id/imvphone"
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_phone_android_black_24dp"
+                app:tint="@color/Abuabuhitam" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="1"
-                android:inputType="textEmailAddress"
-                android:hint="@string/Email"/>
+                android:layout_toEndOf="@+id/imvphone"
+                android:orientation="horizontal">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    android:gravity="center"
+                    android:text="+62"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/edtEmailuser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_toEndOf="@+id/imvphone"
+                    android:background="@color/white"
+                    android:hint="No Telpone"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/_10sdp"
             app:counterEnabled="true"
             app:counterMaxLength="16"
             app:passwordToggleEnabled="true"
-            app:helperText="@string/Required"
-            app:helperTextTextColor="@color/merah"
             app:startIconDrawable="@drawable/ic_lock_black_24dp"
             app:startIconContentDescription="@string/content_description_end_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtPassworduser"
@@ -93,17 +121,32 @@
         <Button
             android:id="@+id/btnLoginuser"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
             android:text="Login"
             android:textColor="@color/white"
             app:backgroundTint="@color/birucantik" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Belum Punya akun??"/>
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Belum Punya akun??"/>
+
+            <TextView
+                android:id="@+id/txtlupapassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="end"
+                android:text="Lupa Password??"/>
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -114,7 +157,7 @@
                 android:id="@+id/Labeldaftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="3dp"
+                android:layout_marginEnd="@dimen/_3sdp"
                 android:text="Daftar," />
 
             <TextView
@@ -126,12 +169,12 @@
                 android:textColor="@color/biru" />
         </RelativeLayout>
 
-        <ProgressBar
-            android:id="@+id/progress"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progress"-->
+<!--            android:layout_width="@dimen/_50sdp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"/>-->
 
     </LinearLayout>
 

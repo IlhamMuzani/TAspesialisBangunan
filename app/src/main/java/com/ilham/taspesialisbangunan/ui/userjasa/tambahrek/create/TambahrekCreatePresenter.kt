@@ -22,7 +22,7 @@ class TambahrekCreatePresenter (val view: TambahrekCreateContract.View) : Tambah
         nama: String
     ) {
 
-        view.onLoading(true)
+        view.onLoading(true,"Loading...")
         ApiConfig.endpoint.insertTambahrek(
             kd_user,
             jenis_bank,

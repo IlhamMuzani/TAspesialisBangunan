@@ -1,13 +1,10 @@
 package com.ilham.taspesialisbangunan.ui.fragment.notifications
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -15,15 +12,9 @@ import com.google.android.material.tabs.TabLayout
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.NotifikasiPelangganActivity
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.NotifPjasaFragment
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.ViewPagerAdapter
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.NotifikasiJasaActivity
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.diproses.DiprosesjasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.diterima.DiterimajasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.dp.DPjasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.menunggu.MenunggujasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabjasa.selesai.SelesaijasaFragment
-import kotlinx.android.synthetic.main.activity_notifikasi_jasa.*
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.NotifProdukjasaFragment
 
 
 class NotificationsFragment : Fragment(), NotificationsContract.View {
@@ -32,13 +23,12 @@ class NotificationsFragment : Fragment(), NotificationsContract.View {
     lateinit var presenter: NotificationsPresenter
 
     //user
-    lateinit var layoutjasa : LinearLayout
-    lateinit var BtnPesan : RelativeLayout
-    lateinit var BtnNotifikasi : RelativeLayout
-    lateinit var BtnLaporkan : RelativeLayout
+    lateinit var layoutuser : LinearLayout
+    lateinit var viewpageruser : ViewPager
+    lateinit var btn_tabsuser : TabLayout
 
     //jasa
-    lateinit var layoutuser : LinearLayout
+    lateinit var layoutjasa : LinearLayout
     lateinit var viewpager : ViewPager
     lateinit var btn_tabs : TabLayout
 
@@ -66,9 +56,17 @@ class NotificationsFragment : Fragment(), NotificationsContract.View {
 
         //user
         layoutuser = view.findViewById(R.id.layoutuser)
-        BtnPesan = view.findViewById(R.id.btn_Pesanan)
-        BtnNotifikasi = view.findViewById(R.id.btn_notifikasi)
-        BtnLaporkan = view.findViewById(R.id.btnLaporkanjasa)
+        viewpageruser = view.findViewById(R.id.btn_viepagerNotifuser)
+        btn_tabsuser = view.findViewById(R.id.btn_tabsNotifuser)
+
+        val adapteruser = ViewPagerAdapter(requireActivity().supportFragmentManager)
+        adapteruser.addFragment(NotifPjasaFragment(), "Notifikasi Pesanan Jasa")
+        viewpageruser.adapter = adapteruser
+        btn_tabsuser.setupWithViewPager(viewpageruser)
+
+        btn_tabsuser.getTabAt(0)!!.setIcon(R.drawable.jasa)
+
+
 
         //jasa
         layoutjasa = view.findViewById(R.id.layoutjasa)
@@ -76,46 +74,12 @@ class NotificationsFragment : Fragment(), NotificationsContract.View {
         btn_tabs = view.findViewById(R.id.btn_tabsNotifjasa)
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(MenunggujasaFragment(), "Menunggu")
-        adapter.addFragment(DiterimajasaFragment(), "Diterima")
-        adapter.addFragment(DPjasaFragment(), "DP")
-        adapter.addFragment(DiprosesjasaFragment(), "Proses")
-        adapter.addFragment(SelesaijasaFragment(), "Selesai")
+        adapter.addFragment(NotifProdukjasaFragment(), "Notifikasi Pengajuan Jasa")
         viewpager.adapter = adapter
         btn_tabs.setupWithViewPager(viewpager)
 
+        btn_tabs.getTabAt(0)!!.setIcon(R.drawable.jasa)
 
-        BtnPesan.setOnClickListener {
-            if (prefsManager.prefsIsLogin) {
-                startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
-            } else {
-                showMessage("Silakan Login Terlebih Dahulu")
-            }
-        }
-
-        BtnNotifikasi.setOnClickListener {
-            if (prefsManager.prefsIsLogin) {
-                startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
-            } else {
-                showMessage("Silakan Login Terlebih Dahulu")
-            }
-        }
-
-        BtnNotifikasi.setOnClickListener {
-            if (prefsManager.prefsIsLogin) {
-                startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
-            } else {
-                showMessage("SIlakan Login Terlebih Dahulu")
-            }
-        }
-
-        BtnLaporkan.setOnClickListener {
-            if (prefsManager.prefsIsLogin) {
-                startActivity(Intent(requireActivity(), NotifikasiPelangganActivity::class.java))
-            } else {
-                showMessage("Silakan Login Terlebih Dahulu")
-            }
-        }
     }
 
     override fun onStart() {

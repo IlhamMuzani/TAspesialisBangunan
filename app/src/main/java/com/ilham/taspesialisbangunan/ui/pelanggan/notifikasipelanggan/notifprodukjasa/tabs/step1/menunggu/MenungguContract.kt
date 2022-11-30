@@ -1,8 +1,10 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1.menunggu
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.menunggu
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 
 
 interface MenungguContract {

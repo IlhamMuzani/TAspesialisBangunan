@@ -1,7 +1,8 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.passwordbaru
+package com.ilham.taspesialisbangunan.ui.pelanggan.invoice
 
 import android.widget.Toast
 import com.ilham.taspesialisbangunan.data.model.alamat.ResponseALamatList
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanDetail
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
@@ -17,7 +18,7 @@ import retrofit2.Response
 import retrofit2.http.PUT
 import java.io.File
 
-class PasswordbaruPresenter(val view: PasswordbaruContract.View) : PasswordbaruContract.Presenter {
+class InvoicePresenter(val view: InvoiceContract.View) : InvoiceContract.Presenter {
 
     init {
         view.initActivity()
@@ -26,25 +27,24 @@ class PasswordbaruPresenter(val view: PasswordbaruContract.View) : PasswordbaruC
 
     }
 
-    override fun passwordbaru_pelanggan(id: Long, password: String) {
-        view.onLoading(true, "Loading...")
-        ApiConfig.endpoint.passwordbaru(id, password, "PUT")
-            .enqueue(object : Callback<ResponseUserUpdate> {
-                override fun onResponse(
-                    call: Call<ResponseUserUpdate>,
-                    response: Response<ResponseUserUpdate>
-                ) {
-                    view.onLoading(false)
-                    if (response.isSuccessful) {
-                        val responseUserUpdate: ResponseUserUpdate? = response.body()
-                        view.onResult( responseUserUpdate!! )
-                    }
+    override fun getDetail(id: Long) {
+        view.onLoading(true, "Menampilkan detail..")
+        ApiConfig.endpoint.detailPengajuan(id).enqueue(object: Callback<ResponsePengajuanDetail>{
+            override fun onResponse(
+                call: Call<ResponsePengajuanDetail>,
+                response: Response<ResponsePengajuanDetail>
+            ) {
+                view.onLoading(false)
+                if (response.isSuccessful) {
+                    val responsePengajuanDetail: ResponsePengajuanDetail? = response.body()
+                    view.onResultDetail(responsePengajuanDetail!!)
                 }
+            }
 
-                override fun onFailure(call: Call<ResponseUserUpdate>, t: Throwable) {
-                    view.onLoading(false)
-                }
-
-            })
+            override fun onFailure(call: Call<ResponsePengajuanDetail>, t: Throwable) {
+                view.onLoading(false)
+            }
+        })
     }
+
 }

@@ -17,9 +17,9 @@ class LoginuserPresenter (val view: LoginuserContract.View): LoginuserContract.P
 
     }
 
-    override fun doLogin(email: String, password: String) {
-        view.onLoading(true)
-        ApiConfig.endpoint.login_pelanggan(email, password)
+    override fun doLogin(phone: String, password: String, fcm: String) {
+        view.onLoading(true,"Loading...")
+        ApiConfig.endpoint.login_pelanggan(phone, password, fcm)
             .enqueue(object : Callback<ResponseUser> {
                 override fun onResponse(
                     call: Call<ResponseUser>,
@@ -46,7 +46,6 @@ class LoginuserPresenter (val view: LoginuserContract.View): LoginuserContract.P
         prefsManager.prefsIsLogin = true
         prefsManager.prefsId = dataUser.id.toString()!!
         prefsManager.prefsUsername = dataUser.username!!
-        prefsManager.prefsEmail = dataUser.email!!
         prefsManager.prefsPassword = dataUser.password!!
         prefsManager.prefsAlamat = dataUser.alamat!!
         prefsManager.prefsPhone = dataUser.phone!!

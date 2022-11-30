@@ -9,150 +9,7 @@
     tools:context=".ui.fragment.notifications.NotificationsFragment">
 
     <LinearLayout
-        android:id="@+id/layoutuser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/btn_Pesanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/bg_btn_lapisanabu">
-
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_baseline_keyboard_"
-            app:tint="@color/birucantik" />
-
-        <ImageView
-            android:id="@+id/imvPesananjasa"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_baseline_transaksi_24"
-            app:tint="@color/birucantik" />
-
-        <TextView
-            android:id="@+id/LabelPesananjasa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@+id/imvPesananjasa"
-            android:text="Pesanan"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/LabelPesananjasa"
-            android:layout_toEndOf="@+id/imvPesananjasa"
-            android:text="Pesanan Yang Anda Minta"
-            android:textColor="@color/birucantik" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/btn_notifikasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/bg_btn_lapisanabu">
-
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_baseline_keyboard_"
-            app:tint="@color/birucantik" />
-
-        <ImageView
-            android:id="@+id/imvkeranjang"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_baseline_shopping_cart_24"
-            app:tint="@color/birucantik" />
-
-        <TextView
-            android:id="@+id/labelnotifikasi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@+id/imvkeranjang"
-            android:text="Keranjang"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/labelnotifikasi"
-            android:layout_toEndOf="@+id/imvkeranjang"
-            android:text="Notifikasi Jasa"
-            android:textColor="@color/birucantik" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/btnLaporkanjasa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/bg_btn_lapisanabu">
-
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_baseline_keyboard_"
-            app:tint="@color/birucantik" />
-
-        <ImageView
-            android:id="@+id/imvlaporkan"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_round_app_laporkanjasa"
-            app:tint="@color/birucantik" />
-
-        <TextView
-            android:id="@+id/labellaporkan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@+id/imvlaporkan"
-            android:text="Laporkan Jasa"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/labellaporkan"
-            android:layout_toEndOf="@+id/imvlaporkan"
-            android:text="Laporkan Jasa"
-            android:textColor="@color/birucantik" />
-
-    </RelativeLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutjasa"
+        android:id="@+id/layoutnotifproduk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -169,7 +26,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
+            android:paddingVertical="5dp">
 
         </LinearLayout>
 
@@ -183,8 +40,16 @@
                 android:orientation="horizontal"
                 android:background="@drawable/bg_btn_lapisanbiruungu">
 
+<!--                <com.nex3z.notificationbadge.NotificationBadge-->
+<!--                    android:id="@+id/badge"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:nbMaxTextLength="2"-->
+<!--                    app:nbBackground="@color/dark"-->
+<!--                    android:textSize="15sp"/>-->
+
                 <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/btn_tabsNotifjasa"
+                    android:id="@+id/btn_tabsnotifproduk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -197,7 +62,7 @@
         </RelativeLayout>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/btn_viepagerNotifjasa"
+            android:id="@+id/btn_viepagerNotifproduk"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

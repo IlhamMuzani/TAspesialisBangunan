@@ -5,8 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp"
     android:orientation="vertical">
+
+    <View
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/birucantik"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_15sdp"
+        android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/layout_Hargadialog"
@@ -19,8 +33,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
+            android:layout_marginStart="25dp"
             android:adjustViewBounds="true"
-            android:text="Harga Jasa :"
+            android:text="Pilih Pembayaran :"
             android:textColor="@color/black"
             android:textStyle="bold"
             />
@@ -29,14 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtHargadialog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Harga"
-                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -53,162 +60,82 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/layoutdp1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Silakan DP untuk melanjutkan : "
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/hargaDpdialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DP minimal"
-            android:textColor="@color/black"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutpelunasan1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Silakan melakukan pelunasan agar dapat memberi saran"
-            android:textColor="@color/black"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pelunasan      :"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:id="@+id/hargapelunasan2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pelunasan"
-                android:layout_marginStart="5dp"
-                android:textColor="@color/black"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
 
     <LinearLayout
         android:id="@+id/layoutbukti"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/btncast"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_lapisanbirucantik"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imvBuktimatt2"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/img_add_image" />
-
-<!--            <TextView-->
-<!--                android:id="@+id/layout_rekeninge3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:gravity="end"-->
-<!--                android:text="Lihat Rekening"-->
-<!--                android:textColor="@color/black" />-->
+                android:id="@+id/imvmodel1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_keyboard_"
+                app:tint="@color/birucantik" />
 
 
-            <RelativeLayout
-                android:id="@+id/layout_rekeninge3"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/jenispembuatandetail"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/bg_btn_lapisanbirucantik">
-
-
-                <ImageView
-                    android:id="@+id/imvEmailuser"
-                    android:layout_width="30dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/norekening" />
-
-                <TextView
-                    android:id="@+id/txvEmailuser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    android:layout_toEndOf="@+id/imvEmailuser"
-                    android:text="Lihat Rekening"
-                    android:textColor="@color/black" />
-
-            </RelativeLayout>
-
+                android:layout_marginTop="3dp"
+                android:text="Bayar Cash"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/btnDP"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp">
+            android:layout_marginStart="15dp"
+            android:background="@drawable/bg_btn_lapisanbirucantik"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imvmodel2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_keyboard_"
+                app:tint="@color/birucantik" />
+
 
             <TextView
-                android:id="@+id/txtbuktitrasnver"
+                android:id="@+id/dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Masukkan Bukti Transver "
-                android:textColor="@color/black"/>
+                android:layout_marginTop="3dp"
+                android:text="DP"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnKirimBukti2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/birucantik"
-            android:text="Kirim Bukti" />
-
-        <Button
-            android:id="@+id/btnKirimPelunasan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/birucantik"
-            android:text="Kirim" />
 
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
 
+
+    </LinearLayout>
 
 </LinearLayout>

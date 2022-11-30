@@ -1,7 +1,9 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1.menunggu
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.menunggu
 
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback

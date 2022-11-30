@@ -15,7 +15,7 @@ class TambahrekUpdatePresenter (var view: TambahrekUpdateContract.View) : Tambah
     }
 
     override fun getDetailTambahrek(kd_rekening: Long) {
-        view.onLoading(true)
+        view.onLoading(true,"Loading...")
         ApiConfig.endpoint.getTambahrekDetail(kd_rekening)
             .enqueue(object : Callback<ResponseTambahrekDetail> {
                 override fun onResponse(
@@ -42,7 +42,7 @@ class TambahrekUpdatePresenter (var view: TambahrekUpdateContract.View) : Tambah
         norek: String,
         nama: String
     ) {
-        view.onLoading(true)
+        view.onLoading(true,"Loading...")
         ApiConfig.endpoint.updateTambahrek(
             kd_rekening, jenis_bank, norek, nama,"PUT"
         ).enqueue(object : Callback<ResponseTambahrekUpdate> {

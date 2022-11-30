@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.KategoriToko.PembuatanKanopi
+package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.KategoriToko.Pembuatan
 
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.network.ApiConfig
@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PembuatanKanopiPresenter (var view: PembuatanKanopiContract.View) : PembuatanKanopiContract.Presenter {
+class PembuatanPresenter (var view: PembuatanContract.View) : PembuatanContract.Presenter {
 
     init {
         view.initActivity()

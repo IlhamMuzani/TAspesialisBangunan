@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "457766420084",
+    "project_id": "notifikasijb",
+    "storage_bucket": "notifikasijb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457766420084:android:9bf133a9fcfc45af329b21",
+        "android_client_info": {
+          "package_name": "com.ilham.taspesialisbangunan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457766420084-h78d51sjfnprjkghsc08upvsduro0b0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilham.taspesialisbangunan",
+            "certificate_hash": "4a27b31d528197f9cd5ed248d42660b67d45f41a"
+          }
+        },
+        {
+          "client_id": "457766420084-pv5knb9ecg3ml05cusmfdtc4q1gr2mdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA6RuLmLzTtaYJvSqiC-5T10gOT6_2M-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457766420084-pv5knb9ecg3ml05cusmfdtc4q1gr2mdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

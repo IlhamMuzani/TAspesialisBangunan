@@ -1,35 +1,27 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.lupapassword
+package com.ilham.taspesialisbangunan.ui.userjasa.lupapasswordjasa
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.messaging.FirebaseMessaging
 import com.ilham.taspesialisbangunan.R
-import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
-import com.ilham.taspesialisbangunan.ui.fragment.UserActivity
-import com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserPresenter
-import com.ilham.taspesialisbangunan.ui.pelanggan.register.RegisterPelangganActivity
-import com.ilham.taspesialisbangunan.ui.pelanggan.register.phoneferifi.PhoneVerifiActivity
+import com.ilham.taspesialisbangunan.ui.pelanggan.phoneferifi.PhoneVerifiActivity
 import kotlinx.android.synthetic.main.activity_loginuser.*
 import kotlinx.android.synthetic.main.activity_lupapassword.*
+import kotlinx.android.synthetic.main.activity_lupapasswordjasa.*
 import kotlinx.android.synthetic.main.activity_register_pelanggan.*
 import java.util.concurrent.TimeUnit
 
-class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
+class LupapasswordJasaActivity : AppCompatActivity(), LupapasswordJasaContract.View {
 
-    lateinit var presenter: LupapasswordPresenter
+    lateinit var presenter: LupapasswordJasaPresenter
     lateinit var fcm:String
 
     private lateinit var sLoading: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
@@ -47,8 +39,8 @@ class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lupapassword)
-        presenter = LupapasswordPresenter(this)
+        setContentView(R.layout.activity_lupapasswordjasa)
+        presenter = LupapasswordJasaPresenter(this)
 
     }
 
@@ -65,13 +57,13 @@ class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
 
     override fun initListener() {
 
-        btn_lupapassword.setOnClickListener {
-            phone = edt_phonelupapassword.text.toString().trim()
-            if (edt_phonelupapassword.text!!.isEmpty()){
-                edt_phonelupapassword.error = "Masukkan Nomor Telepon"
-                edt_phonelupapassword.requestFocus()
+        btn_lupapasswordjasa.setOnClickListener {
+            phone = edt_phonelupapasswordjasa.text.toString().trim()
+            if (edt_phonelupapasswordjasa.text!!.isEmpty()){
+                edt_phonelupapasswordjasa.error = "Masukkan Nomor Telepon"
+                edt_phonelupapasswordjasa.requestFocus()
             }else
-                presenter.lupapassword_pelanggan(edt_phonelupapassword.text.toString(), "pelanggan")
+                presenter.lupapassword_jasa(edt_phonelupapasswordjasa.text.toString(), "jasa")
         }
     }
 
@@ -133,7 +125,7 @@ class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
                 resendToken = token
                 Toast.makeText(applicationContext, "Pendaftaran berhasil, silakan lakukan verifikasi untuk melanjutkan", Toast.LENGTH_SHORT).show()
                 finish()
-                val intent = Intent(this@LupapasswordActivity, PhoneVerifiActivity::class.java)
+                val intent = Intent(this@LupapasswordJasaActivity, PhoneVerifiActivity::class.java)
                 intent.putExtra("phone", "+62$phone")
                 intent.putExtra("verificationId", storedVerificationId)
                 startActivity(intent)

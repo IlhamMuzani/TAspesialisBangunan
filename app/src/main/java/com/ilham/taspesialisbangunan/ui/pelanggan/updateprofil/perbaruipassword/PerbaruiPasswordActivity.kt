@@ -1,30 +1,18 @@
 package com.ilham.taspesialisbangunan.ui.pelanggan.updateprofil.perbaruipassword
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
-import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
-import com.ilham.taspesialisbangunan.ui.pelanggan.register.phoneferifi.PhoneVerifiActivity
-import kotlinx.android.synthetic.main.activity_loginuser.*
-import kotlinx.android.synthetic.main.activity_lupapassword.*
-import kotlinx.android.synthetic.main.activity_passwordbaru.*
-import kotlinx.android.synthetic.main.activity_passwordbaru.edtPasswordbaru
 import kotlinx.android.synthetic.main.activity_perbaruipassword.*
-import kotlinx.android.synthetic.main.activity_register_pelanggan.*
-import java.util.concurrent.TimeUnit
+import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
-class PasswordbaruActivity : AppCompatActivity(), PasswordbaruContract.View {
+class PerbaruiPasswordActivity : AppCompatActivity(), PerbaruiPasswordContract.View {
 
-    lateinit var presenter: PasswordbaruPresenter
+    lateinit var presenter: PerbaruiPasswordPresenter
     lateinit var fcm:String
 
     private lateinit var sLoading: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
@@ -36,10 +24,11 @@ class PasswordbaruActivity : AppCompatActivity(), PasswordbaruContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perbaruipassword)
-        presenter = PasswordbaruPresenter(this)
+        presenter = PerbaruiPasswordPresenter(this)
     }
 
     override fun initActivity() {
+        tv_nama.text = "Login User"
 
         sLoading = com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog(this, com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog.PROGRESS_TYPE)
         sSuccess = com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog(this, com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog.SUCCESS_TYPE).setTitleText("Berhasil")
@@ -49,6 +38,10 @@ class PasswordbaruActivity : AppCompatActivity(), PasswordbaruContract.View {
     }
 
     override fun initListener() {
+
+        ivKembali.setOnClickListener {
+            onBackPressed()
+        }
 
         btnPasswordbaru2.setOnClickListener {
             if (edtPasswordbaru1.text!!.isEmpty()){
@@ -70,7 +63,8 @@ class PasswordbaruActivity : AppCompatActivity(), PasswordbaruContract.View {
     }
 
     override fun onResult(responseUserUpdate: ResponseUserUpdate) {
-
+        showMessage(responseUserUpdate.msg)
+        finish()
     }
 
     override fun showMessage(message: String) {

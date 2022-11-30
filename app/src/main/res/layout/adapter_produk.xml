@@ -57,8 +57,8 @@
             android:id="@+id/harga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_below="@+id/txvJenispembuatan"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/imvImage"
             android:text="Harga" />

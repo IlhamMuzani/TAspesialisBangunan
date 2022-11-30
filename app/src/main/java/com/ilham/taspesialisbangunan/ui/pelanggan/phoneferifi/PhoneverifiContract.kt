@@ -1,14 +1,8 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.register.phoneferifi
+package com.ilham.taspesialisbangunan.ui.pelanggan.phoneferifi
 
 import com.google.firebase.auth.PhoneAuthCredential
-import com.ilham.taspesialisbangunan.data.model.alamat.ResponseALamatList
-import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
-import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
-import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
-import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
-import java.io.File
 
 interface PhoneverifiContract {
 

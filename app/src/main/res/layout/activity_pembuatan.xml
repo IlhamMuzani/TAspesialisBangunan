@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp">
+        android:paddingHorizontal="@dimen/_7sdp">
 
         <include
             layout="@layout/toolbar"
@@ -30,7 +30,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="52dp"
+        android:paddingBottom="@dimen/_44sdp"
         android:orientation="vertical"
         >
 

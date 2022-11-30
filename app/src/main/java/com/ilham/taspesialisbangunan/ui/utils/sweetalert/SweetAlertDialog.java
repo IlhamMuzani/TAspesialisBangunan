@@ -1,4 +1,4 @@
-package com.amar.sitambol.util.sweetalert;
+package com.ilham.taspesialisbangunan.ui.utils.sweetalert;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import com.amar.sitambol.R;
+import com.ilham.taspesialisbangunan.R;
 
 import java.util.List;
 

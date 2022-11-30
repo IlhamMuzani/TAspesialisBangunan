@@ -1,8 +1,7 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.lihattoko.ProdukToko
+package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.ProdukToko
 
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.network.ApiConfig
-import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.ProdukuserContract
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -88,4 +89,26 @@ dependencies {
 
 //    implementation 'com.github.chirag-kachhadiya:RoundedImageView:1.0'
 
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    // Sweet Alert
+    implementation 'com.github.thomper:sweet-alert-dialog:1.4.0'
+    implementation 'com.pnikosis:materialish-progress:1.7'
+
+    implementation 'com.github.delight-im:Android-SimpleLocation:v1.1.0'
+
+//FIRE BASE
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    //Cetak PDF
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.karumi:dexter:4.2.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    //notifikasi budge
+    implementation'com.nex3z:notification-badge:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 }

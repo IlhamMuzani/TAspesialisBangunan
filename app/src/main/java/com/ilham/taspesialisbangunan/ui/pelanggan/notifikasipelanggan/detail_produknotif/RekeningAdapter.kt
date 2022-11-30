@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.detailnotif
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.detail_produknotif
 
 import android.content.ClipData
 import android.content.ClipboardManager

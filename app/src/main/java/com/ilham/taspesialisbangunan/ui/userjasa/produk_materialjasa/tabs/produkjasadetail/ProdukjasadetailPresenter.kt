@@ -1,16 +1,11 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.produkjasadetail
+package com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.produkjasadetail
 
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukDetail
-import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
-import com.ilham.taspesialisbangunan.data.model.saran.ResponseSaranInsert
+import com.ilham.taspesialisbangunan.data.model.saran.ResponseRating
 import com.ilham.taspesialisbangunan.network.ApiConfig
-import okhttp3.MediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File
 
 class ProdukjasadetailPresenter  (var view: ProdukjasadetailContract.View) : ProdukjasadetailContract.Presenter {
 
@@ -21,7 +16,7 @@ class ProdukjasadetailPresenter  (var view: ProdukjasadetailContract.View) : Pro
     }
 
     override fun getProdukjasadetail(id: Long) {
-        view.onLoadingProdukJasadetail(false)
+        view.onLoadingProdukJasadetail(true,"Loading...")
         ApiConfig.endpoint.produkjasaDetail(id).enqueue(object : Callback<ResponseProdukDetail>{
             override fun onResponse(
                 call: Call<ResponseProdukDetail>,
@@ -38,5 +33,26 @@ class ProdukjasadetailPresenter  (var view: ProdukjasadetailContract.View) : Pro
                 view.onLoadingProdukJasadetail(false)
             }
         } )
+    }
+
+    override fun getRatingjasa(id: Long) {
+        view.onLoadingProdukJasadetail(true,"Mendapatkan Detail...")
+        ApiConfig.endpoint.getRating(id).enqueue(object : Callback<ResponseRating> {
+            override fun onResponse(
+                call: Call<ResponseRating>,
+                response: Response<ResponseRating>
+            ) {
+                view.onLoadingProdukJasadetail(false)
+                if (response.isSuccessful) {
+                    val responseRating: ResponseRating? = response.body()
+                    view.onResultgetRatingjasa( responseRating!! )
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseRating>, t: Throwable) {
+                view.onLoadingProdukJasadetail(false)
+            }
+
+        })
     }
 }

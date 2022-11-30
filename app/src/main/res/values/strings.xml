@@ -21,9 +21,41 @@
     <string name="email">email</string>
     <string name="Required">Required</string>
     <string name="password">Password</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
     <string name="Email">Email</string>
+    <string name="Telepon">Telepon</string>
+    <string name="Nama_Toko">Nama Toko</string>
     <string name="content_description_end_icon">content_description_end_icon</string>
-    <string name="Username">Username</string>
+    <string name="Nama_Lengkap">Nama Lengkap</string>
+    <string name="Kecamatan">Kecamtan</string>
+    <string name="Kelurahan">Kelurahan</string>
     <string name="Alamat">Alamat</string>
+    <string name="DetailAlamat">Detail alamat rt,rw</string>
     <string name="Telpone">Telpone</string>
+    <string name="default_notification_channel_id">SpesialisJB</string>
+
+    <string-array name="list_jenispembuatan">
+        <item>Pilih</item>
+        <item>Pembuatan Pagar</item>
+        <item>Pembuatan Tangga</item>
+        <item>Pembuatan Kanopi</item>
+        <item>Pembuatan Tralis</item>
+    </string-array>
+
+    <string-array name="list_category">
+        <item>Pilih Produk</item>
+        <item>Produk Jasa</item>
+        <item>Produk Material</item>
+        <item>Produk Jasa dan Material</item>
+    </string-array>
+
+    <string-array name="list_alamat">
+        <item>Pilih Kecamatan</item>
+        <item>Kecamatan Margadana</item>
+        <item>Kecamatan Tegal Barat</item>
+        <item>Kecamatan Tegal Selatan</item>
+        <item>Kecamatan Tegal Timur</item>
+
+    </string-array>
+
 </resources>

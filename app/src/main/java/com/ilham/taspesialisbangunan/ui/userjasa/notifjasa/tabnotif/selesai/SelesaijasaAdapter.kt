@@ -1,20 +1,16 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.selesai
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.selesai
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.detail.DetailPengajuanActivity
-import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
-import kotlinx.android.synthetic.main.adapter_menunggujasa.view.*
 import kotlinx.android.synthetic.main.adapter_menunggujasa.view.detailpengajuanjasa
-import kotlinx.android.synthetic.main.adapter_selesai.view.*
 import kotlinx.android.synthetic.main.adapter_selesaijasa.view.*
 import java.text.NumberFormat
 import java.util.*
@@ -44,7 +40,7 @@ class SelesaijasaAdapter (val context: Context, var dataPengajuan: ArrayList<Dat
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
-            view.txvJenispembuatanP.text = datapengajuan.produk.jenis_pembuatan
+            view.txvJenispembuatanP.text = datapengajuan.produk.model
             view.txvNamajasaSelesai.text = datapengajuan.user.username
             view.txvtanggaljas.text = datapengajuan.created_at
             view.txvHargajas.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format (Integer.valueOf(datapengajuan.harga))

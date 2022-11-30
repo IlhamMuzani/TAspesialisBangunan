@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.dikonfirmasi
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.dikonfirmasi
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 

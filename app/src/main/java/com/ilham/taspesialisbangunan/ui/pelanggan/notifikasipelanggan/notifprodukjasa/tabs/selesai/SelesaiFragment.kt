@@ -1,11 +1,13 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step3.selesai
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.selesai
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -14,6 +16,7 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
 
 class SelesaiFragment : Fragment(), SelesaiContract.View {
 
@@ -55,10 +58,13 @@ class SelesaiFragment : Fragment(), SelesaiContract.View {
 
         selesaiAdapter = SelesaiAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
-            Constant.PENGAJUAN_ID = datapengajuan.id!!
+//            Constant.PENGAJUAN_ID = datapengajuan.id!!
 
             datapengajuan = dataPengajuan
 
+            when (type) {
+                "Delete" -> showDialogHistori( dataPengajuan, position )
+            }
         }
 
         rcvSelesai.apply {
@@ -81,6 +87,28 @@ class SelesaiFragment : Fragment(), SelesaiContract.View {
     override fun onResultPengajuanselesai(responsePengajuanList1: ResponsePengajuanList1) {
         val pengajuan: List<DataPengajuan> = responsePengajuanList1.pengajuan
         selesaiAdapter.setData(pengajuan)
+    }
+
+    override fun onResultSelesaikeHistori(responsePengajuanUpdate: ResponsePengajuanUpdate) {
+        showMessage( responsePengajuanUpdate.msg )
+    }
+
+    override fun showDialogHistori(dataPengajuan: DataPengajuan, position: Int) {
+        val dialog = AlertDialog.Builder(requireActivity())
+        dialog.setTitle("Konfirmasi")
+        dialog.setMessage("Hapus?")
+
+        dialog.setPositiveButton ("Hapus") { dialog, which ->
+            presenter.pengajuanselesaikehistori(Constant.PENGAJUAN_ID)
+            selesaiAdapter.removePengajuanselesai(position)
+            dialog.dismiss()
+        }
+
+        dialog.setNegativeButton("Batal") { dialog, which ->
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     override fun showMessage(message: String) {

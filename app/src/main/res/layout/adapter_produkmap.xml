@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    android:id="@+id/crv_produkuser"
+    android:id="@+id/crv_produkmap"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -17,11 +17,11 @@
         >
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/imvImage"
+            android:id="@+id/imvImagemap"
             android:layout_width="120dp"
             android:layout_height="100dp"
-            android:layout_marginEnd="5dp"
             android:layout_marginTop="7dp"
+            android:layout_marginEnd="5dp"
             android:adjustViewBounds="true"
             android:src="@drawable/product"
             app:riv_corner_radius="10dp" />
@@ -33,38 +33,6 @@
             android:orientation="vertical"
             >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                >
-
-                <ImageView
-                    android:id="@+id/imvprodukjasa"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/jasa"
-                    app:tint="@color/Abuabu" />
-
-                <ImageView
-                    android:id="@+id/imvprodukjasamaterial"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_fab_plus"
-                    app:tint="@color/Abuabugelap" />
-
-                <ImageView
-                    android:id="@+id/imvprodukjasamaterial2"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/materials"
-                    app:tint="@color/Abuabugelap" />
-
-            </LinearLayout>
-
-
 
         </LinearLayout>
 
@@ -72,17 +40,17 @@
             android:id="@+id/layoutnama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imvImage"
+            android:layout_toEndOf="@+id/imvImagemap"
             android:layout_marginTop="7dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txvNameTokouser"
+                android:id="@+id/txvNamemap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_toEndOf="@+id/imvImage"
-                android:text="Nama Toko"
+                android:layout_toEndOf="@+id/imvImagemap"
+                android:text="Jenis Pembuatan"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -91,48 +59,29 @@
 
 
         <TextView
-            android:id="@+id/txvJenispembuatanuser"
+            android:id="@+id/txvJenismap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/layoutnama"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="3dp"
-            android:layout_toEndOf="@+id/imvImage"
+            android:layout_toEndOf="@+id/imvImagemap"
             android:text="Jenis Pembuatan" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_toEndOf="@+id/imvImage"
+            android:layout_toEndOf="@+id/imvImagemap"
             android:layout_marginTop="45dp">
 
             <TextView
-                android:id="@+id/txvHargauser"
+                android:id="@+id/txvHargamap"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
                 android:text="Rp.0"
                 android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/imvImage"
-            android:layout_marginTop="70dp">
-
-
-            <Button
-                android:id="@+id/txvDetailuser"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:backgroundTint="#7CD1B8"
-                android:text="Detail"
-                android:textSize="8dp" />
 
 
         </LinearLayout>

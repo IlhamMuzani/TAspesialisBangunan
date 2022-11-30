@@ -1,6 +1,5 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.lihattoko.ProdukToko
+package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.ProdukToko
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Spinner
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -23,18 +19,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
-import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
-import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanDetail
-import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
-import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.MenungguAdapter
-import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.lihattoko.KategoriToko.PembuatanKanopi.PembuatanKanopiPresenter
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.ProdukuserAdapter
-import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.ProdukuserPresenter
-import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produkmap.ProdukMapdetailActivity
-import im.delight.android.location.SimpleLocation
 
 class ProdukTokoFragment : Fragment(), ProdukTokoContract.View, OnMapReadyCallback {
 
@@ -92,7 +79,7 @@ class ProdukTokoFragment : Fragment(), ProdukTokoContract.View, OnMapReadyCallba
         }
 
         swipeproduk1.setOnRefreshListener {
-            presenter.getProduk1(produk.kd_user!!.toLong())
+            presenter.getProduk1(Constant.USERJASA_ID)
         }
 
 
@@ -123,7 +110,7 @@ class ProdukTokoFragment : Fragment(), ProdukTokoContract.View, OnMapReadyCallba
 
     override fun onMapReady(googleMap: GoogleMap) {
         val latLng = LatLng(produk.latitude!!.toDouble(), produk.longitude!!.toDouble())
-        googleMap.addMarker(MarkerOptions().position(latLng).title(produk.nama_toko))
+        googleMap.addMarker(MarkerOptions().position(latLng).title(produk.user.nama_toko))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
     }
 

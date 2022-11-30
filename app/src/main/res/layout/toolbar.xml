@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bg_birucantik"
+        android:background="@drawable/bg_btn_lapisanbirucantik"
         android:padding="10dp">
 
         <ImageView

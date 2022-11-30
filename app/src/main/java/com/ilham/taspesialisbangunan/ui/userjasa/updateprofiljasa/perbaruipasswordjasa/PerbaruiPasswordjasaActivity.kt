@@ -1,5 +1,6 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.updateprofil.perbaruipassword
+package com.ilham.taspesialisbangunan.ui.userjasa.updateprofiljasa.perbaruipasswordjasa
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,10 +8,13 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
 import kotlinx.android.synthetic.main.activity_perbaruipassword.*
+import kotlinx.android.synthetic.main.activity_perbaruipassword.edtPasswordbaru1
+import kotlinx.android.synthetic.main.activity_perbaruipasswordjasa.*
+import kotlinx.android.synthetic.main.toolbarjasa.*
 
-class PerbaruiPasswordActivity : AppCompatActivity(), PerbaruiPasswordContract.View {
+class PerbaruiPasswordjasaActivity : AppCompatActivity(), PerbaruiPasswordjasaContract.View {
 
-    lateinit var presenter: PerbaruiPasswordPresenter
+    lateinit var presenter: PerbaruiPasswordjasaPresenter
     lateinit var fcm:String
 
     private lateinit var sLoading: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
@@ -21,11 +25,13 @@ class PerbaruiPasswordActivity : AppCompatActivity(), PerbaruiPasswordContract.V
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_perbaruipassword)
-        presenter = PerbaruiPasswordPresenter(this)
+        setContentView(R.layout.activity_perbaruipasswordjasa)
+        presenter = PerbaruiPasswordjasaPresenter(this)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun initActivity() {
+        tv_bgjasa.text ="Password Baru"
 
         sLoading = com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog(this, com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog.PROGRESS_TYPE)
         sSuccess = com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog(this, com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog.SUCCESS_TYPE).setTitleText("Berhasil")
@@ -36,15 +42,19 @@ class PerbaruiPasswordActivity : AppCompatActivity(), PerbaruiPasswordContract.V
 
     override fun initListener() {
 
-        btnPasswordbaru2.setOnClickListener {
-            if (edtPasswordbaru1.text!!.isEmpty()){
-                edtPasswordbaru1.error = "Masukkan Password"
-                edtPasswordbaru1.requestFocus()
-            }else if (edtkonfirmasipassword.text!!.isEmpty()){
-                    edtkonfirmasipassword.error = "Konfirmasi Password"
-                    edtkonfirmasipassword.requestFocus()
+        ivKembalijasa.setOnClickListener {
+            onBackPressed()
+        }
+
+        btnPasswordbaru2jasa.setOnClickListener {
+            if (edtPasswordbaru1jasa.text!!.isEmpty()){
+                edtPasswordbaru1jasa.error = "Masukkan Password"
+                edtPasswordbaru1jasa.requestFocus()
+            }else if (edtkonfirmasipasswordjasa.text!!.isEmpty()){
+                    edtkonfirmasipasswordjasa.error = "Konfirmasi Password"
+                    edtkonfirmasipasswordjasa.requestFocus()
                 }else
-                presenter.Perbaruipassword(Constant.USERPELANGGAN_ID, edtPasswordbaru1.text.toString(), edtkonfirmasipassword.text.toString())
+                presenter.Perbaruipasswordjasa(Constant.USERJASA_ID, edtPasswordbaru1jasa.text.toString(), edtkonfirmasipasswordjasa.text.toString())
         }
     }
 

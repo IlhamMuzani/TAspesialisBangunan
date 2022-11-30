@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.selesai
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.pelunasan
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,25 +14,27 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.selesai.SelesaiAdapter
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.DPAdapter
 
-class SelesaiFragment : Fragment(), SelesaiContract.View {
+class PelunasanFragment : Fragment(), PelunasanContract.View {
 
-   lateinit var presenter: SelesaiPresenter
-    lateinit var selesaiAdapter: SelesaiAdapter
+   lateinit var presenter: PelunasanPresenter
+    lateinit var pelunasanAdapter: DPAdapter
     lateinit var datapengajuan: DataPengajuan
     lateinit var prefsManager: PrefsManager
 
-    lateinit var rcvSelesai: RecyclerView
-    lateinit var swipeSelesai: SwipeRefreshLayout
+    lateinit var rcvPelunasan: RecyclerView
+    lateinit var swipePelunasan: SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_selesai, container, false)
+        val view = inflater.inflate(R.layout.fragment_pelunasan, container, false)
 
-        presenter = SelesaiPresenter(this)
+        presenter = PelunasanPresenter(this)
         prefsManager = PrefsManager(requireActivity())
 
         initFragment(view)
@@ -43,17 +45,17 @@ class SelesaiFragment : Fragment(), SelesaiContract.View {
     override fun onStart() {
         super.onStart()
         if (prefsManager.prefsIsLogin) {
-            presenter.getPengajuanselesai(prefsManager.prefsId.toLong())
+            presenter.getPengajuanPelunasan(prefsManager.prefsId.toLong())
         }
     }
 
     override fun initFragment(view: View) {
 //        (activity as AppCompatActivity).supportActionBar!!.hide()
 
-        rcvSelesai = view.findViewById(R.id.rcvSelesai)
-        swipeSelesai = view.findViewById(R.id.swipeSelesai)
+        rcvPelunasan = view.findViewById(R.id.rcvPelunasan)
+        swipePelunasan = view.findViewById(R.id.swipePelunasan)
 
-        selesaiAdapter = SelesaiAdapter(requireActivity(), arrayListOf()){
+        pelunasanAdapter = DPAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
             Constant.PENGAJUAN_ID = datapengajuan.id!!
 
@@ -61,26 +63,26 @@ class SelesaiFragment : Fragment(), SelesaiContract.View {
 
         }
 
-        rcvSelesai.apply {
+        rcvPelunasan.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = selesaiAdapter
+            adapter = pelunasanAdapter
         }
 
-        swipeSelesai.setOnRefreshListener {
-            presenter.getPengajuanselesai(prefsManager.prefsId.toLong())
+        swipePelunasan.setOnRefreshListener {
+            presenter.getPengajuanPelunasan(prefsManager.prefsId.toLong())
         }
     }
 
-    override fun onLoadingPengajuanselesai(loading: Boolean) {
+    override fun onLoadingPengajuanpelunasan(loading: Boolean) {
         when (loading) {
-            true -> swipeSelesai.isRefreshing = true
-            false -> swipeSelesai.isRefreshing = false
+            true -> swipePelunasan.isRefreshing = true
+            false -> swipePelunasan.isRefreshing = false
         }
     }
 
-    override fun onResultPengajuanselesai(responsePengajuanList1: ResponsePengajuanList1) {
+    override fun onResultPengajuanpelunasan(responsePengajuanList1: ResponsePengajuanList1) {
         val pengajuan: List<DataPengajuan> = responsePengajuanList1.pengajuan
-        selesaiAdapter.setData(pengajuan)
+        pelunasanAdapter.setData(pengajuan)
     }
 
     override fun showMessage(message: String) {

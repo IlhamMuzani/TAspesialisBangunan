@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp">
+        android:paddingHorizontal="@dimen/_7sdp">
 
         <include
             layout="@layout/toolbarjasa"
@@ -32,191 +32,603 @@
         android:padding="20dp"
         >
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih jenis produk"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
-            <EditText
-                android:id="@+id/edtNameToko"
+            <!--            <Spinner-->
+            <!--                android:id="@+id/edtcategory"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:entries="@array/list_category"-->
+            <!--                android:padding="16dp" />-->
+
+            <Spinner
+                android:id="@+id/edtcategory"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="3dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
                 android:background="@color/white"
-                android:hint="Nama Toko"
+                android:hint="Categori"
                 android:inputType="text"
-                android:textSize="14dp" />
+                android:textSize="@dimen/_11sdp" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
-            <EditText
+            <Spinner
                 android:id="@+id/edtJenispembuatan"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="3dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
                 android:background="@color/white"
-                android:hint="Jenis Pembuatan"
+                android:hint="jenis"
                 android:inputType="text"
-                android:textSize="14dp" />
+                android:textSize="@dimen/_11sdp" />
+
+            <!--            <Spinner-->
+            <!--                android:id="@+id/edtJenispembuatan"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:entries="@array/list_jenispembuatan"-->
+            <!--                android:padding="16dp" />-->
 
         </RelativeLayout>
 
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/layoutjenislainya"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_39sdp"-->
+<!--            android:layout_marginStart="@dimen/_4sdp"-->
+<!--            android:layout_marginEnd="@dimen/_4sdp"-->
+<!--            android:layout_marginTop="@dimen/_7sdp"-->
+<!--            android:background="@drawable/bg_btn_lapisandongker">-->
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtJenispembuatanlainya"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_32sdp"-->
+<!--                android:layout_marginStart="@dimen/_15sdp"-->
+<!--                android:layout_marginTop="@dimen/_2sdp"-->
+<!--                android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                android:background="@color/white"-->
+<!--                android:hint="Jenis Lainya"-->
+<!--                android:inputType="text"-->
+<!--                android:textSize="@dimen/_11sdp" />-->
+
+<!--        </RelativeLayout>-->
+
         <RelativeLayout
+            android:id="@+id/layoutmodel"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
+
             <EditText
+                android:id="@+id/edtmodel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:background="@color/white"
+                android:hint="Model spesifik"
+                android:inputType="text"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/layoutlebar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_39sdp"-->
+<!--            android:layout_marginStart="@dimen/_4sdp"-->
+<!--            android:layout_marginEnd="@dimen/_4sdp"-->
+<!--            android:layout_marginTop="@dimen/_7sdp"-->
+<!--            android:background="@drawable/bg_btn_lapisandongker">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtukurancreate"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_32sdp"-->
+<!--                android:layout_marginStart="@dimen/_15sdp"-->
+<!--                android:layout_marginTop="@dimen/_2sdp"-->
+<!--                android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                android:background="@color/white"-->
+<!--                android:hint="Ukuran"-->
+<!--                android:inputType="text"-->
+<!--                android:textSize="@dimen/_11sdp" />-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/layoutberat"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_39sdp"-->
+<!--            android:layout_marginStart="@dimen/_4sdp"-->
+<!--            android:layout_marginEnd="@dimen/_4sdp"-->
+<!--            android:layout_marginTop="@dimen/_7sdp"-->
+<!--            android:background="@drawable/bg_btn_lapisandongker">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtberat"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_32sdp"-->
+<!--                android:layout_marginStart="@dimen/_15sdp"-->
+<!--                android:layout_marginTop="@dimen/_2sdp"-->
+<!--                android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                android:background="@color/white"-->
+<!--                android:hint="Berat"-->
+<!--                android:inputType="text"-->
+<!--                android:textSize="@dimen/_11sdp" />-->
+
+<!--        </RelativeLayout>-->
+
+<!--        <ScrollView-->
+<!--            android:id="@+id/layoutbahan"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_80sdp"-->
+<!--                android:layout_marginStart="@dimen/_4sdp"-->
+<!--                android:layout_marginEnd="@dimen/_4sdp"-->
+<!--                android:layout_marginTop="@dimen/_7sdp"-->
+<!--                android:padding="@dimen/_7sdp"-->
+<!--                android:background="@drawable/bg_btn_lapisandongker">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtbahancreate"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:hint="Bahan yang digunakan"-->
+<!--                    android:textSize="@dimen/_11sdp" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--        </ScrollView>-->
+
+        <LinearLayout
+            android:id="@+id/hargajasasaja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hargakanopi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Harga jasa pembuatan kanopi kisaran Rp 100.000 - Rp 200.0000 /m "/>
+
+        <TextView
+            android:id="@+id/hargapagar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Harga jasa pembuatan pagar permeter kisaran Rp 150.000 - Rp 200.000 m/ "/>
+
+        <TextView
+            android:id="@+id/hargatralis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Harga jasa pembuatan tralis permeter kisaran Rp 125.000 - 200.000 m/ "/>
+
+
+        <TextView
+            android:id="@+id/hargatangga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Harga jasa pembuatan tangga permeter kisaran Rp 150.000 - Rp 350.000 /m "/>
+
+        <TextView
+            android:id="@+id/hargahalaman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Harga jasa pembuatan halaman permeter kisaran Rp 100.000 - Rp 200.000 /m "/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hargajasadanmaterial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hargapagarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="Harga pembuatan pagar kisaran Rp 350.000 - RP 600.000 /m "/>
+
+            <TextView
+                android:id="@+id/hargakanopim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="Harga pembuatan kanopi kisaran Rp 300.000 - Rp 500.000 /m "/>
+
+            <TextView
+                android:id="@+id/hargatralism"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="Harga pembuatan tralis permeter kisaran Rp 250 - Rp 500 /m"/>
+
+
+            <TextView
+                android:id="@+id/hargatanggam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="Harga pembuatan tangga permeter kisaran Rp 950.000 - Rp 1200.000 /m "/>
+
+            <TextView
+                android:id="@+id/hargahalamanm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="Harga pembuatan halaman permeter kisaran Rp 200.000 - Rp 400.000 /m "/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/layoutukuran"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_39sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@drawable/bg_btn_lapisandongker">
+
+                <Spinner
+                    android:id="@+id/edtUkuran"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:hint="Harga"
+                    android:inputType="text"
+                    android:textSize="@dimen/_11sdp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_39sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@drawable/bg_btn_lapisandongker">
+
+                <Spinner
+                    android:id="@+id/edtHargaproduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:hint="Harga"
+                    android:inputType="text"
+                    android:textSize="@dimen/_11sdp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layouthargalainya"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@color/white"
+                    android:hint="Rp "
+                    android:inputType="number"
+                    android:textSize="@dimen/_11sdp" />
+
+            <EditText
+                android:id="@+id/edtHargalainya"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:background="@color/white"
+                android:hint="Masukkan harga"
+                android:inputType="number"
+                android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imvImages"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_add_image"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:padding="@dimen/_7sdp"
+                android:background="@drawable/bg_btn_lapisandongker">
+
+
+                <EditText
+                    android:id="@+id/edtDeskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="Deskripsi"
+                    android:textSize="@dimen/_11sdp" />
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@color/Abuabugelap" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Informasi Alamat"
+            android:layout_marginStart="@dimen/_4sdp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:background="@drawable/bg_btn_lapisandongker">
+
+            <Spinner
                 android:id="@+id/edtAlamateddres"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="3dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
                 android:background="@color/white"
                 android:hint="Alamat"
                 android:inputType="textEmailAddress"
-                android:textSize="14dp" />
+                android:textSize="@dimen/_11sdp" />
 
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
-
-            <EditText
-                android:id="@+id/edtPhone"
+            <Spinner
+                android:id="@+id/edtKelurahanedress"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="3dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
                 android:background="@color/white"
-                android:hint="No Telpone"
-                android:inputType="phone"
-                android:textSize="14dp" />
+                android:hint="jenis"
+                android:inputType="text"
+                android:textSize="@dimen/_11sdp" />
+
 
         </RelativeLayout>
-
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
+
             <EditText
-                android:id="@+id/edtHarga"
+                android:id="@+id/edtdetailalamat"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="3dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
                 android:background="@color/white"
-                android:hint="Harga"
-                android:inputType="number"
+                android:hint="Detail alamat rt rw"
+                android:inputType="text"
+                android:maxLength="13"
                 android:textSize="14dp" />
 
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnpilihlokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pilih lokasi"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorPrimaryDark"/>
 
         <RelativeLayout
             android:id="@+id/BtnLocation"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
             <ImageView
                 android:id="@+id/imvlokasi"
-                android:layout_width="30dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="15dp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:src="@drawable/ic_baseline_location_on_dongker" />
 
             <TextView
                 android:id="@+id/edtLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_toEndOf="@+id/imvlokasi"
                 android:text="Klik untuk lokasi" />
 
         </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imvImages"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_add_image"/>
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:background="@drawable/bg_btn_lapisandongker">
 
-            <EditText
-                android:id="@+id/edtDeskripsi"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
-                android:background="@color/white"
-                android:hint="Deskripsi"
-                android:inputType="textAutoComplete"
-                android:textSize="14dp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="+62"/>
+
+                <EditText
+                    android:id="@+id/edtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_toEndOf="@+id/imvphone"
+                    android:background="@color/white"
+                    android:hint="No Telpone"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
 
         </RelativeLayout>
+
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:text="Save"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Simpan"
             android:textColor="@color/white"
             app:backgroundTint="@color/colorPrimary" />
 
-        <ProgressBar
-            android:id="@+id/progress"
+        <Button
+            android:id="@+id/btnSavejasasaja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Simpan jasa"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/colorPrimary" />
+
 
     </LinearLayout>
 

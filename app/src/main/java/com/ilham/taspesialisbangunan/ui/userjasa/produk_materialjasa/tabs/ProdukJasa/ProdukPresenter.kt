@@ -2,6 +2,7 @@ package com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.Produ
 
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
+import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekList
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +28,6 @@ class ProdukPresenter (var view: ProdukContract.View) : ProdukContract.Presenter
             override fun onFailure(call: Call<ResponseProdukList>, t: Throwable) {
                 view.onLoadingProduk(false)
             }
-
         } )
     }
 
@@ -52,4 +52,23 @@ class ProdukPresenter (var view: ProdukContract.View) : ProdukContract.Presenter
         })
     }
 
+    override fun getTampilrek(kd_user: String) {
+        view.onLoadingProduk(true)
+        ApiConfig.endpoint.myproducttambahrek(kd_user).enqueue(object : Callback<ResponseTambahrekList>{
+            override fun onResponse(
+                call: Call<ResponseTambahrekList>,
+                response: Response<ResponseTambahrekList>
+            ) {
+                view.onLoadingProduk(false)
+                if (response.isSuccessful){
+                    val responseTambahrekList: ResponseTambahrekList? = response.body()
+                    view.onResultTampilRek( responseTambahrekList!!)
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseTambahrekList>, t: Throwable) {
+                view.onLoadingProduk(false)
+            }
+        })
+    }
 }

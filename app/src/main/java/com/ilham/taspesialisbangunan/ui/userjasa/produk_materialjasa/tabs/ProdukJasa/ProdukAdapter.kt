@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
-import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.produkjasadetail.ProdukjasadetailActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.produkjasadetail.ProdukjasadetailActivity
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import kotlinx.android.synthetic.main.adapter_produk.view.*
 import kotlinx.android.synthetic.main.adapter_produk.view.imvImage
@@ -31,7 +31,7 @@ class ProdukAdapter (val context: Context, var dataProduk: ArrayList<DataProduk>
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bing(dataProduk[position])
 
-        GlideHelper.setImage(context, "http://192.168.43.224/api_spesialisJB/public/storage/uploads/"+dataProduk[position].gambar!!, holder.view.imvImage)
+        GlideHelper.setImage(context, Constant.IP_IMAGE + dataProduk[position].gambar!!, holder.view.imvImage)
 
         holder.view.imvImage.setOnClickListener {
             Constant.PRODUK_ID = dataProduk[position].id!!
@@ -63,8 +63,8 @@ class ProdukAdapter (val context: Context, var dataProduk: ArrayList<DataProduk>
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val view = view
         fun bing(dataProduk: DataProduk) {
-            view.txvNamaToko.text = dataProduk.nama_toko
-            view.txvJenispembuatan.text = dataProduk.jenis_pembuatan
+            view.txvNamaToko.text = dataProduk.model
+            view.txvJenispembuatan.text = dataProduk.kelurahan
             view.harga.text = NumberFormat.getCurrencyInstance(Locale("in","ID")).format(Integer.valueOf(dataProduk.harga))
         }
     }

@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <item android:id="@+id/action_update"-->
+<!--    <item android:id="@+id/action_laporkan"-->
 <!--        android:orderInCategory="100"-->
-<!--        android:title="Edit"-->
+<!--        android:title="Laporkan"-->
 <!--        app:showAsAction="never"/>-->
 
-    <item android:id="@+id/action_deletepengajuan"
+    <item android:id="@+id/action_hapus"
         android:orderInCategory="100"
-        android:title="Batalkan Pesanan"
+        android:title="Hapus"
         app:showAsAction="never"/>
 
 

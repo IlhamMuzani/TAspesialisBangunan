@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.menunggu
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.menunggu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

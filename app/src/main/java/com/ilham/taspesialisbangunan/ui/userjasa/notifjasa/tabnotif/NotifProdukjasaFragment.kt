@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,14 +10,15 @@ import com.google.android.material.tabs.TabLayout
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.ViewPagerAdapter
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.bertemu.BertemujasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.dikonfirmasi.DikonfirmasijasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.diproses.DiprosesjasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.diterima.DiterimajasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.dp.DPjasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.menunggu.MenunggujasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.pelunasan.PelunasanjasaFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.selesai.SelesaijasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.bertemu.BertemujasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.dikonfirmasi.DikonfirmasijasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.diproses.DiprosesjasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.diterima.DiterimajasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.dp.DPjasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.menunggu.MenunggujasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.pelunasan.PelunasanjasaFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.selesai.SelesaijasaFragment
+import com.nex3z.notificationbadge.NotificationBadge
 
 class NotifProdukjasaFragment : Fragment(), NotifProdukJasaContract.View {
 
@@ -25,6 +26,7 @@ class NotifProdukjasaFragment : Fragment(), NotifProdukJasaContract.View {
 
     lateinit var viewpager : ViewPager
     lateinit var btn_tabs : TabLayout
+    lateinit var btnbadge : NotificationBadge
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

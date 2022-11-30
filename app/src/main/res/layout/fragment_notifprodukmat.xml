@@ -9,7 +9,7 @@
     tools:context=".ui.fragment.notifications.NotificationsFragment">
 
     <LinearLayout
-        android:id="@+id/layoutnotifproduk"
+        android:id="@+id/layoutnotifprodukmat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -41,7 +41,7 @@
                 android:background="@drawable/bg_btn_lapisanbiruungu">
 
                 <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/btn_tabsnotifproduk"
+                    android:id="@+id/btn_tabsnotifprodukmat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -54,7 +54,7 @@
         </RelativeLayout>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/btn_viepagerNotifproduk"
+            android:id="@+id/btn_viepagerNotifprodukmat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

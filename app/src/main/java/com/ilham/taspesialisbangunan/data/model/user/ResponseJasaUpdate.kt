@@ -6,5 +6,5 @@ import com.ilham.taspesialisbangunan.data.model.user.DataUser
 data class ResponseJasaUpdate (
     @SerializedName("status") val status: Boolean,
     @SerializedName("msg") val msg: String,
-    @SerializedName("user") val user: DataUser?
+//    @SerializedName("user") val user: DataUser?
 )

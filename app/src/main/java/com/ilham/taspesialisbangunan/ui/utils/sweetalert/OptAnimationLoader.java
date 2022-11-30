@@ -1,4 +1,4 @@
-package com.amar.sitambol.util.sweetalert;
+package com.ilham.taspesialisbangunan.ui.utils.sweetalert;
 
 import android.content.Context;
 import android.content.res.Resources;

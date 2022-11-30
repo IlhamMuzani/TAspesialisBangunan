@@ -24,9 +24,8 @@
         android:usesCleartextTraffic="true">
         <activity android:name="com.ilham.taspesialisbangunan.ui.MasukActivity"></activity>
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.tambahrek.TambahRekActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.NotifikasiPelangganActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.NotifikasiPelangganActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.pengajuan.PengajuanActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.material.materialdetail.MaterialDetailActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.updateprofil.UbahProfilActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity" />
         <activity android:name=".ui.pelanggan.register.RegisterPelangganActivity" />
@@ -46,13 +45,12 @@
         <activity
             android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.ProdukMapsActivity"
             android:label="@string/title_activity_produk_maps" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukMCreateActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity" />
-        <activity android:name=".ui.userjasa.profiljasa.AkunActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.loginjasa.LoginjasaActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.fragment.UserActivity">
+        <activity android:name="com.ilham.taspesialisbangunan.ui.fragment.UserActivity"/>
+            <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,14 +59,45 @@
         </activity>
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.tambahrek.create.TambahrekCreateActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.tambahrek.update.TambahrekUpdateActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.NotifikasiJasaActivity" />
-        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan.detail.DetailPelangganActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.detail_produknotif.DetailPelangganActivity" />
         <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.detail.DetailPengajuanActivity" />
         <activity android:name="com.ilham.taspesialisjasabangunan.ui.produkuser.ProdukMaterialJasaActivity" />
         <activity android:name=".ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity" />
-        <activity android:name=".ui.userjasa.produk_materialjasa.tabs.ProdukJasa.produkjasadetail.ProdukjasadetailActivity" />
-        <activity android:name=".ui.userjasa.produk_materialjasa.tabs.MaterialJasa.materialjasadetail.MaterialJasaDetailActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.produkjasadetail.ProdukjasadetailActivity" />
         <activity android:name=".ui.userjasa.updateprofiljasa.UbahProfiljasaActivity" />
+        <activity android:name=".ui.userjasa.detailalamat.DetailAlamatActivity" />
+        <activity android:name=".ui.pelanggan.produkuser_materialuser.tabs.produkmap.ProdukMapdetailActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.phoneferifi.PhoneVerifiActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.LihatTokoActivity" />
+        <activity android:name="com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.KategoriToko.Pembuatan.PembuatanActivity" />
+        <activity android:name=".ui.pelanggan.lupapassword.LupapasswordActivity" />
+        <activity android:name=".ui.pelanggan.passwordbaru.PasswordbaruActivity" />
+        <activity android:name=".ui.userjasa.lupapasswordjasa.LupapasswordJasaActivity" />
+        <activity android:name=".ui.pelanggan.updateprofil.perbaruipassword.PerbaruiPasswordActivity" />
+        <activity android:name=".ui.userjasa.updateprofiljasa.perbaruipasswordjasa.PerbaruiPasswordjasaActivity" />
+        <activity android:name=".ui.pelanggan.invoice.InvoiceActivity" />
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_foreground" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
     </application>
 
 </manifest>

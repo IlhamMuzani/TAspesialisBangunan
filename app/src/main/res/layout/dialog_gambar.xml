@@ -4,18 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content">
 
-    <ScrollView
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imvgambar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/layout_rekeninge"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/adapter_rekening"/>
-
-    </ScrollView>
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="10dp"
+        android:src="@drawable/img_add_image" />
 
 </LinearLayout>

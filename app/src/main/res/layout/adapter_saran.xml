@@ -1,87 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout
     android:id="@+id/crv_produkuser"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_margin="5dp"
     app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imvsaran"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/profiluser2"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:text="username"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:layout_marginTop="5dp">
+
+            <RatingBar
+                android:id="@+id/rating_barr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:isIndicator="false"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:layout_marginTop="3dp"
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="5dp"
-        android:background="@drawable/bg_btn_lapisanbiru"
+        android:background="@drawable/bg_btn_lapisanabu"
         >
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/imvImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="5dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/product"
-            app:riv_corner_radius="10dp" />
 
         <TextView
-            android:id="@+id/txvNameTokouser"
+            android:id="@+id/txvsaran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_toEndOf="@+id/imvImage"
-            android:text="Nama Toko"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:text="Komentar" />
 
-        <TextView
-            android:id="@+id/txvJenispembuatanuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txvNameTokouser"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_toEndOf="@+id/imvImage"
-            android:text="Jenis Pembuatan" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="45dp">
-
-            <TextView
-                android:id="@+id/txvHargauser"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginEnd="10dp"
-                android:text="Rp.0"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="70dp">
-
-
-            <Button
-                android:id="@+id/txvDetailuser"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:backgroundTint="#7CD1B8"
-                android:text="Details"
-                android:textSize="8dp" />
-
-
-        </LinearLayout>
 
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</LinearLayout>

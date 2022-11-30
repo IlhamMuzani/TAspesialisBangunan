@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.lihattoko.ProdukToko
+package com.ilham.taspesialisbangunan.ui.pelanggan.lihattoko.ProdukToko
 
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 

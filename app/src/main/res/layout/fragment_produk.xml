@@ -2,7 +2,7 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/swipe"
+    android:id="@+id/swipeProduct"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="52dp"
         android:orientation="vertical"
         >
 
@@ -28,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="1dp"
-                android:background="@drawable/bg_btn_lapisanbiru"
+                android:background="@drawable/bg_btn_lapisanabu"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -47,6 +48,7 @@
                     android:background="@android:color/transparent"
                     android:drawablePadding="10dp"
                     android:hint="Search Jasa"
+                    android:textSize="14dp"
                     android:imeOptions="actionSearch"
                     android:inputType="text"
                     android:maxLines="1" />
@@ -57,14 +59,58 @@
 
     </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp">
+
+            <Spinner
+                android:id="@+id/categorijenisproduk"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:background="@color/white"
+                android:hint="Categori"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="end"
+                >
+
+                <ImageView
+                    android:id="@+id/imvlocation"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/location"
+                    app:tint="@color/biru" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvProduk"
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
-
-
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

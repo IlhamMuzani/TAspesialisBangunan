@@ -1,6 +1,7 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step3.selesai
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.selesai
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,6 +24,27 @@ class SelesaiPresenter (var view: SelesaiContract.View) : SelesaiContract.Presen
             }
 
             override fun onFailure(call: Call<ResponsePengajuanList1>, t: Throwable) {
+                view.onLoadingPengajuanselesai(false)
+            }
+
+        })
+    }
+
+    override fun pengajuanselesaikehistori(id: Long) {
+        view.onLoadingPengajuanselesai(true)
+        ApiConfig.endpoint.pengajuanselesaikehistori(id, "PUT").enqueue(object : Callback<ResponsePengajuanUpdate>{
+            override fun onResponse(
+                call: Call<ResponsePengajuanUpdate>,
+                response: Response<ResponsePengajuanUpdate>
+            ) {
+                view.onLoadingPengajuanselesai(false)
+                if (response.isSuccessful) {
+                    val responsePengajuanUpdate: ResponsePengajuanUpdate? = response.body()
+                    view.onResultSelesaikeHistori(responsePengajuanUpdate!!)
+                }
+            }
+
+            override fun onFailure(call: Call<ResponsePengajuanUpdate>, t: Throwable) {
                 view.onLoadingPengajuanselesai(false)
             }
 

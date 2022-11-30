@@ -5,9 +5,13 @@ import com.ilham.taspesialisbangunan.data.model.user.DataUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.data.model.user.ResponsePelangganUpdate
 import com.ilham.taspesialisbangunan.network.ApiConfig
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 
 
 class UbahProfilPresenter (val view: UbahProfilContract.View) : UbahProfilContract.Presenter {
@@ -15,10 +19,11 @@ class UbahProfilPresenter (val view: UbahProfilContract.View) : UbahProfilContra
     init {
         view.initActivity()
         view.initListener()
+        view.onLoading(false)
     }
 
     override fun getDetailProfil(id: String) {
-        view.onLoading(true)
+        view.onLoading(true,"Mendapatkan Detail...")
         ApiConfig.endpoint.userDetail(id).enqueue( object :
             Callback<ResponseUserdetail> {
             override fun onResponse(
@@ -42,12 +47,27 @@ class UbahProfilPresenter (val view: UbahProfilContract.View) : UbahProfilContra
     override fun updateProfil(
         id: Long,
         username: String,
-        email: String,
         alamat: String,
         phone: String,
-    ) {
+        phone_baru: String,
+        gambar: File?,
+        ) {
+
+        val requestBody: RequestBody
+        val multipartBody: MultipartBody.Part
+
+        if (gambar != null) {
+            requestBody = RequestBody.create(MediaType.parse("image/*"), gambar)
+            multipartBody = MultipartBody.Part.createFormData("gambar",
+                gambar.name, requestBody)
+        } else {
+            requestBody = RequestBody.create(MediaType.parse("image/*"), "")
+            multipartBody= MultipartBody.Part.createFormData("gambar",
+                "", requestBody)
+        }
+
         view.onLoading(true)
-        ApiConfig.endpoint.updatePelanggan(id, username, email, alamat, phone,"PUT") .enqueue(object : Callback<ResponsePelangganUpdate> {
+        ApiConfig.endpoint.updatePelanggan(id, username, alamat, phone, phone_baru, multipartBody ,"PUT") .enqueue(object : Callback<ResponsePelangganUpdate> {
             override fun onResponse(
                 call: Call<ResponsePelangganUpdate>,
                 response: Response<ResponsePelangganUpdate>

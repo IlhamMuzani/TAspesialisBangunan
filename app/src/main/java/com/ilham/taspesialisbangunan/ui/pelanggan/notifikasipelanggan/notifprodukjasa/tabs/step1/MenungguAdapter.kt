@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.detailnotifprodukjasa.DetailPelangganActivity
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.detail_produknotif.DetailPelangganActivity
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
 import kotlinx.android.synthetic.main.adapter_menunggu.view.*
 import kotlin.collections.ArrayList
@@ -57,8 +57,9 @@ class MenungguAdapter (val context: Context, var dataPengajuan: ArrayList<DataPe
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
 //            view.txvDeskripsimenunggu.text = datapengajuan.deskripsi
-            view.txvJenisPem.text = datapengajuan.produk.jenis_pembuatan
-            view.txv__Status.text = datapengajuan.status
+//            view.txvJenisPem.text = datapengajuan.
+            view.txv__Status.text = datapengajuan.categori_pesanan
+            view.txvCategoriproduk.text = datapengajuan.produk.model
         }
         val imvPengajuanM = view.findViewById<ImageView>(R.id.imvPengajuanmenunggu)
     }

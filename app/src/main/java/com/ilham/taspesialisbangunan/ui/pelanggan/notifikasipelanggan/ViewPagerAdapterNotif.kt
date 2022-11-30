@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifpelanggan
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

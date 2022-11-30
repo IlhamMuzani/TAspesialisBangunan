@@ -1,4 +1,4 @@
-package com.amar.sitambol.util.sweetalert;
+package com.ilham.taspesialisbangunan.ui.utils.sweetalert;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,7 +9,7 @@ import android.util.TypedValue;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import com.amar.sitambol.R;
+import com.ilham.taspesialisbangunan.R;
 
 public class Rotate3dAnimation extends Animation {
     private int mPivotXType = ABSOLUTE;

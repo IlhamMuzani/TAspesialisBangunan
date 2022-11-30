@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.menunggu
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.dikonfirmasi
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,24 +19,24 @@ import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
 import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.MenungguAdapter
 
-class MenungguFragment : Fragment(), MenungguContract.View {
+class DikonfirmasiFragment : Fragment(), DikonfirmasiContract.View {
 
-    lateinit var presenter: MenungguPresenter
-    lateinit var menungguAdapter: MenungguAdapter
+    lateinit var presenter: DikonfirmasiPresenter
+    lateinit var dikonfirmasiAdapter: MenungguAdapter
     lateinit var datapengajuan: DataPengajuan
     lateinit var prefsManager: PrefsManager
 
-    lateinit var rcvMenunggu: RecyclerView
-    lateinit var swipeMenunggu: SwipeRefreshLayout
+    lateinit var rcvDikonfirmasi: RecyclerView
+    lateinit var swipeDikonfirmasi: SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_menunggu, container, false)
+        val view = inflater.inflate(R.layout.fragment_dikonfirmasi, container, false)
 
-        presenter = MenungguPresenter(this)
+        presenter = DikonfirmasiPresenter(this)
         prefsManager = PrefsManager(requireActivity())
 
         initFragment(view)
@@ -47,17 +47,17 @@ class MenungguFragment : Fragment(), MenungguContract.View {
     override fun onStart() {
         super.onStart()
         if (prefsManager.prefsIsLogin) {
-            presenter.getPengajuanmenunggu(prefsManager.prefsId.toLong())
+            presenter.getPengajuandikonfirmasi(prefsManager.prefsId.toLong())
         }
     }
 
     override fun initFragment(view: View) {
 //        (activity as AppCompatActivity).supportActionBar!!.hide()
 
-        rcvMenunggu = view.findViewById(R.id.rcvMenunggu)
-        swipeMenunggu = view.findViewById(R.id.swipeMenunggu)
+        rcvDikonfirmasi = view.findViewById(R.id.rcvDikonfirmasi)
+        swipeDikonfirmasi = view.findViewById(R.id.swipeDikonfirmasi)
 
-        menungguAdapter = MenungguAdapter(requireActivity(), arrayListOf()){
+        dikonfirmasiAdapter = MenungguAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
 //            Constant.PENGAJUAN_ID = datapengajuan.id!!
 
@@ -69,28 +69,28 @@ class MenungguFragment : Fragment(), MenungguContract.View {
 
         }
 
-        rcvMenunggu.apply {
+        rcvDikonfirmasi.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = menungguAdapter
+            adapter = dikonfirmasiAdapter
         }
 
-        swipeMenunggu.setOnRefreshListener {
+        swipeDikonfirmasi.setOnRefreshListener {
             if (prefsManager.prefsIsLogin) {
-                presenter.getPengajuanmenunggu(prefsManager.prefsId.toLong())
+                presenter.getPengajuandikonfirmasi(prefsManager.prefsId.toLong())
             }
         }
     }
 
-    override fun onLoadingPengajuanmenunggu(loading: Boolean) {
+    override fun onLoadingPengajuandikonfirmasi(loading: Boolean) {
         when (loading) {
-            true -> swipeMenunggu.isRefreshing = true
-            false -> swipeMenunggu.isRefreshing = false
+            true -> swipeDikonfirmasi.isRefreshing = true
+            false -> swipeDikonfirmasi.isRefreshing = false
         }
     }
 
-    override fun onResultPengajuanmenunggu(responsePengajuanList1: ResponsePengajuanList1) {
+    override fun onResultPengajuandikonfirmasi(responsePengajuanList1: ResponsePengajuanList1) {
         val pengajuan: List<DataPengajuan> = responsePengajuanList1.pengajuan
-        menungguAdapter.setData(pengajuan)
+        dikonfirmasiAdapter.setData(pengajuan)
     }
 
     override fun onResultDelete(responsePengajuanUpdate: ResponsePengajuanUpdate) {
@@ -103,8 +103,8 @@ class MenungguFragment : Fragment(), MenungguContract.View {
         dialog.setMessage("Hapus ${dataPengajuan.bukti}?")
 
         dialog.setPositiveButton ("Hapus") { dialog, which ->
-            presenter.deletePengajuanMenunggu(Constant.PENGAJUAN_ID)
-            menungguAdapter.removePengajuanmenunggu(position)
+            presenter.deletePengajuanDikonfirmasi(Constant.PENGAJUAN_ID)
+            dikonfirmasiAdapter.removePengajuanmenunggu(position)
             dialog.dismiss()
         }
 

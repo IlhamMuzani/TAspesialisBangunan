@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1.diterima
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.diterima
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -14,11 +15,13 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.MenungguAdapter
 
 class DiterimaFragment : Fragment(), DiterimaContract.View {
 
     lateinit var presenter: DiterimaPresenter
-    lateinit var diterimaAdapter: DiterimaAdapter
+    lateinit var diterimaAdapter: MenungguAdapter
     lateinit var datapengajuan: DataPengajuan
     lateinit var prefsManager: PrefsManager
 
@@ -42,7 +45,9 @@ class DiterimaFragment : Fragment(), DiterimaContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter.getPengajuanditerima(prefsManager.prefsId.toLong())
+        if (prefsManager.prefsIsLogin) {
+            presenter.getPengajuanditerima(prefsManager.prefsId.toLong())
+        }
     }
 
     override fun initFragment(view: View) {
@@ -51,17 +56,25 @@ class DiterimaFragment : Fragment(), DiterimaContract.View {
         rcvDiterima = view.findViewById(R.id.rcvDiterima)
         swipeDiterima = view.findViewById(R.id.swipeDiterima)
 
-        diterimaAdapter = DiterimaAdapter(requireActivity(), arrayListOf()){
+        diterimaAdapter = MenungguAdapter(requireActivity(), arrayListOf()){
                 dataPengajuan: DataPengajuan, position: Int, type: String ->
-            Constant.PENGAJUAN_ID = datapengajuan.id!!
+//            Constant.PENGAJUAN_ID = datapengajuan.id!!
 
             datapengajuan = dataPengajuan
+
+            when (type) {
+                "Delete" -> showDialogDelete( dataPengajuan, position )
+            }
 
         }
 
         rcvDiterima.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = diterimaAdapter
+        }
+
+        swipeDiterima.setOnRefreshListener {
+            presenter.getPengajuanditerima(prefsManager.prefsId.toLong())
         }
     }
 
@@ -75,6 +88,28 @@ class DiterimaFragment : Fragment(), DiterimaContract.View {
     override fun onResultPengajuanditerima(responsePengajuanList1: ResponsePengajuanList1) {
         val pengajuan: List<DataPengajuan> = responsePengajuanList1.pengajuan
         diterimaAdapter.setData(pengajuan)
+    }
+
+    override fun onResultDelete(responsePengajuanUpdate: ResponsePengajuanUpdate) {
+        showMessage( responsePengajuanUpdate.msg )
+    }
+
+    override fun showDialogDelete(dataPengajuan: DataPengajuan, position: Int) {
+        val dialog = AlertDialog.Builder(requireActivity())
+        dialog.setTitle("Konfirmasi")
+        dialog.setMessage("Hapus ${dataPengajuan.bukti}?")
+
+        dialog.setPositiveButton ("Hapus") { dialog, which ->
+            presenter.deletePengajuanDiterima(Constant.PENGAJUAN_ID)
+            diterimaAdapter.removePengajuanmenunggu(position)
+            dialog.dismiss()
+        }
+
+        dialog.setNegativeButton("Batal") { dialog, which ->
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     override fun showMessage(message: String) {

@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk
+package com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.produkdetail
 
 import android.content.Context
 import android.content.Intent
@@ -9,51 +9,48 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
+import com.ilham.taspesialisbangunan.data.model.saran.DataSaran
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.produkdetail.ProdukdetailActivity
 import com.ilham.taspesialisbangunan.ui.utils.GlideHelper
+import kotlinx.android.synthetic.main.activity_produkdetail.*
 import kotlinx.android.synthetic.main.adapter_produkuser.view.*
 import kotlinx.android.synthetic.main.adapter_produkuser.view.imvImage
+import kotlinx.android.synthetic.main.adapter_saran.view.*
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class ProdukuserAdapter (val context: Context, var dataProduk: ArrayList<DataProduk>,
-                         val clickListener: (DataProduk, Int, String) -> Unit ):
-        RecyclerView.Adapter<ProdukuserAdapter.ViewHolder>() {
+class SaranAdapter (val context: Context, var dataSaran: ArrayList<DataSaran>,
+                    val clickListener: (DataSaran, Int, String) -> Unit ):
+        RecyclerView.Adapter<SaranAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.adapter_produkuser, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.adapter_saran, parent, false)
     )
 
-    override fun getItemCount() = dataProduk.size
+    override fun getItemCount() = dataSaran.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bing(dataProduk[position])
+        holder.bing(dataSaran[position])
 
-        GlideHelper.setImage(context, Constant.IP_IMAGE +  dataProduk[position].gambar!!, holder.view.imvImage)
-
-        holder.view.txvDetailuser.setOnClickListener {
-            Constant.PRODUK_ID = dataProduk[position].id!!
-            context.startActivity(Intent(context, ProdukdetailActivity::class.java ))
-        }
+        GlideHelper.setImage( context,Constant.IP_IMAGE + dataSaran[position].user.gambar, holder.view.imvsaran)
 
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val view = view
-        fun bing(dataproduk: DataProduk) {
-            view.txvNameTokouser.text = dataproduk.nama_toko
-            view.txvJenispembuatanuser.text = dataproduk.jenis_pembuatan
-            view.txvHargauser.text =NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(dataproduk.harga))
-//            view.txvHargauser.text ="Rp."+dataproduk.harga
+        fun bing(dataSaran: DataSaran) {
+            view.username.text = dataSaran.user.username
+            view.txvsaran.text = dataSaran.deskripsi
+            view.rating_barr.rating = dataSaran.rating!!.toFloat()
 
         }
     }
 
-    fun setData(newDataProduk: List<DataProduk>) {
-        dataProduk.clear()
-        dataProduk.addAll(newDataProduk)
+    fun setData(newDataSaran: List<DataSaran>) {
+        dataSaran.clear()
+        dataSaran.addAll(newDataSaran)
         notifyDataSetChanged()
     }
 }

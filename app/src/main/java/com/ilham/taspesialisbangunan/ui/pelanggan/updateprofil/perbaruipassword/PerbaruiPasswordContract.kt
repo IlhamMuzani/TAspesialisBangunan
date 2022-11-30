@@ -9,7 +9,7 @@ import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
 import java.io.File
 
-interface PasswordbaruContract {
+interface PerbaruiPasswordContract {
 
     interface Presenter {
         fun Perbaruipassword(id: Long, password: String, password_confirmation : String)

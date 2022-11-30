@@ -1,60 +1,41 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.lupapassword
+package com.ilham.taspesialisbangunan.ui.pelanggan.passwordbaru
 
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.messaging.FirebaseMessaging
 import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
-import com.ilham.taspesialisbangunan.ui.fragment.UserActivity
-import com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserPresenter
-import com.ilham.taspesialisbangunan.ui.pelanggan.register.RegisterPelangganActivity
-import com.ilham.taspesialisbangunan.ui.pelanggan.register.phoneferifi.PhoneVerifiActivity
-import kotlinx.android.synthetic.main.activity_loginuser.*
-import kotlinx.android.synthetic.main.activity_lupapassword.*
+import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
+import kotlinx.android.synthetic.main.activity_passwordbaru.*
+import kotlinx.android.synthetic.main.activity_passwordbaru.btnPasswordbaru
+import kotlinx.android.synthetic.main.activity_perbaruipassword.*
 import kotlinx.android.synthetic.main.activity_register_pelanggan.*
 import java.util.concurrent.TimeUnit
 
-class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
+class PasswordbaruActivity : AppCompatActivity(), PasswordbaruContract.View {
 
-    lateinit var presenter: LupapasswordPresenter
-    lateinit var fcm:String
+    lateinit var presenter: PasswordbaruPresenter
 
     private lateinit var sLoading: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
     private lateinit var sSuccess: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
     private lateinit var sError: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
     private lateinit var sAlert: com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
 
-    // Firebase Phone
-    private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
-    private var storedVerificationId: String? = ""
-    private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
-    private var code: String? = null
-    lateinit var phone: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lupapassword)
-        presenter = LupapasswordPresenter(this)
+        setContentView(R.layout.activity_passwordbaru)
+        presenter = PasswordbaruPresenter(this)
 
     }
 
     override fun initActivity() {
-
-        callback()
 
         sLoading = com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog(this, com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog.PROGRESS_TYPE)
         sSuccess = com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog(this, com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog.SUCCESS_TYPE).setTitleText("Berhasil")
@@ -65,13 +46,12 @@ class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
 
     override fun initListener() {
 
-        btn_lupapassword.setOnClickListener {
-            phone = edt_phonelupapassword.text.toString().trim()
-            if (edt_phonelupapassword.text!!.isEmpty()){
-                edt_phonelupapassword.error = "Masukkan Nomor Telepon"
-                edt_phonelupapassword.requestFocus()
+        btnPasswordbaru.setOnClickListener {
+            if (edtPasswordbaru.text!!.isEmpty()){
+                edtPasswordbaru.error = "Masukkan Password"
+                edtPasswordbaru.requestFocus()
             }else
-                presenter.lupapassword_pelanggan(edt_phonelupapassword.text.toString(), "pelanggan")
+                presenter.passwordbaru_pelanggan(Constant.USERPELANGGAN_ID, edtPasswordbaru.text.toString())
         }
     }
 
@@ -82,14 +62,9 @@ class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
         }
     }
 
-    override fun onResult(responseUser: ResponseUser) {
-        if (responseUser.status) {
-            val user = responseUser.user
-            Constant.USERPELANGGAN_ID = user!!.id!!
-            startPhoneNumberVerification("+62$phone")
-        }else {
-            showMessage(responseUser.msg)
-        }
+    override fun onResult(responseUserUpdate: ResponseUserUpdate) {
+        showMessage(responseUserUpdate.msg)
+        finish()
     }
 
     override fun showMessage(message: String) {
@@ -100,45 +75,5 @@ class LupapasswordActivity : AppCompatActivity(), LupapasswordContract.View {
         finish()
         return super.onSupportNavigateUp()
     }
-
-    fun startPhoneNumberVerification(phone: String) {
-        sLoading.setTitleText("Loading...").show()
-        val options = PhoneAuthOptions.newBuilder(FirebaseAuth.getInstance())
-            .setPhoneNumber(phone)
-            .setTimeout(60L, TimeUnit.SECONDS)
-            .setActivity(this)
-            .setCallbacks(callbacks)
-            .build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
-    }
-
-    fun callback() {
-        callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                code = credential.smsCode
-            }
-
-            override fun onVerificationFailed(e: FirebaseException) {
-                sLoading.dismiss()
-                Toast.makeText(applicationContext, e.message!!, Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onCodeSent(
-                verificationId: String,
-                token: PhoneAuthProvider.ForceResendingToken
-            ) {
-                sLoading.dismiss()
-                storedVerificationId = verificationId
-                resendToken = token
-                Toast.makeText(applicationContext, "Pendaftaran berhasil, silakan lakukan verifikasi untuk melanjutkan", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this@LupapasswordActivity, PhoneVerifiActivity::class.java)
-                intent.putExtra("phone", "+62$phone")
-                intent.putExtra("verificationId", storedVerificationId)
-                startActivity(intent)
-            }
-        }
-    }
-
 
 }

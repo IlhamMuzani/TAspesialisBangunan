@@ -7,9 +7,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ProdukuserPresenter (var view: ProdukuserContract.View) : ProdukuserContract.Presenter {
+
     override fun getProduk() {
         view.onLoadingProduk(true)
-        ApiConfig.endpoint.getProduk().enqueue(object : Callback<ResponseProdukList> {
+        ApiConfig.endpoint.mytampilprodukuser().enqueue(object : Callback<ResponseProdukList> {
             override fun onResponse(
                 call: Call<ResponseProdukList>,
                 response: Response<ResponseProdukList>

@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.register.phoneferifi
+package com.ilham.taspesialisbangunan.ui.pelanggan.phoneferifi
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.widget.Toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -17,6 +16,7 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
+import com.ilham.taspesialisbangunan.ui.fragment.Akun.AkunFragment
 import com.ilham.taspesialisbangunan.ui.pelanggan.login.LoginuserActivity
 import com.ilham.taspesialisbangunan.ui.pelanggan.passwordbaru.PasswordbaruActivity
 import com.ilham.taspesialisbangunan.ui.userjasa.loginjasa.LoginjasaActivity
@@ -246,10 +246,13 @@ class PhoneVerifiActivity : AppCompatActivity(), PhoneverifiContract.View {
     override fun onResultDatauserupdate(responseUserdetail: ResponseUserdetail) {
         if (responseUserdetail.status) {
             if (responseUserdetail.user.status == "pelanggan"){
-                startActivity(Intent(this, LoginuserActivity::class.java))
+//                startActivity(Intent(this, LoginuserActivity::class.java))
+                finish()
             } else
-                startActivity(Intent(this, LoginjasaActivity::class.java))
+                finish()
+//                startActivity(Intent(this, LoginjasaActivity::class.java))
         }
+        Toast.makeText(applicationContext, "Pendaftaran Berhasil", Toast.LENGTH_SHORT).show()
     }
 
     override fun onResultphonebaru(responseUserUpdate: ResponseUserUpdate) {
@@ -286,6 +289,7 @@ class PhoneVerifiActivity : AppCompatActivity(), PhoneverifiContract.View {
                             presenter.phone_baru(Constant.USERPELANGGAN_ID, phone!!)
                         } else {
                             presenter.getverifi(Constant.USERPELANGGAN_ID)
+                            presenter.getverifi(Constant.USERJASA_ID)
                         }
                     }
                 } else {

@@ -29,6 +29,7 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var lastLocation: Location
     private val marker = MarkerOptions()
+    private lateinit var currentLatLng : LatLng
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,14 +91,17 @@ class ProdukMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         fusedLocationClient.lastLocation.addOnSuccessListener(this){location ->
             if(location != null) {
                 lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                googleMap1 .animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
+                if (Constant.LATITUDE.isEmpty()) {
+                    currentLatLng = LatLng(location.latitude, location.longitude)
+                    googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
 
-                Constant.LATITUDE = location.latitude.toString()
-                Constant.LONGITUDE = location.longitude.toString()
-
-                Log.d("ProdukMapsActivity", "Lat ${Constant.LATITUDE} Lng ${Constant.LONGITUDE}")
-
+                    Constant.LATITUDE = location.latitude.toString()
+                    Constant.LONGITUDE = location.longitude.toString()
+                } else {
+                    currentLatLng =
+                        LatLng(Constant.LATITUDE.toDouble(), Constant.LONGITUDE.toDouble())
+                    googleMap1.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
+                }
 
                 marker.position(currentLatLng)
                 googleMap1.addMarker(marker)

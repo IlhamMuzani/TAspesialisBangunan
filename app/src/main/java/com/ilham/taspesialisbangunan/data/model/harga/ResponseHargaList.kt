@@ -1,10 +1,11 @@
-package com.ilham.taspesialisbangunan.data.model.bahanproduk
+package com.ilham.taspesialisbangunan.data.model.harga
 
 import com.google.gson.annotations.SerializedName
+import com.ilham.taspesialisbangunan.data.model.alamat.DataAlamat
 
 
-data class ResponseBahanprodukList(
+data class ResponseHargaList(
     @SerializedName("status") val status: Boolean,
     @SerializedName("msg") val msg: String,
-    @SerializedName("bahanproduk") val bahanproduk: List<DataBahanproduk>
+    @SerializedName("harga") val dataHarga: List<DataHarga>
 )

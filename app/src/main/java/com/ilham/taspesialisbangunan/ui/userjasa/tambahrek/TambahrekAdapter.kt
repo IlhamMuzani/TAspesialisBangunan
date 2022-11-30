@@ -24,15 +24,6 @@ class TambahrekAdapter (val context: Context, var dataTambahrek: ArrayList<DataT
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bing(dataTambahrek[position])
 
-//        GlideHelper.setImage(context, "http://192.168.43.224/api_spesialisJB/public/"+  dataTambahrek[position].gambar!!, holder.view.imvImageM)
-
-//        Glide.with(context)
-//            .load(dataMaterial[position].gambar)
-//            .centerCrop()
-//            .placeholder(R.drawable.img_no_image)
-//            .error(R.drawable.img_no_image)
-//            .into(holder.view.imvImageM)
-
         holder.view.txvOptionstambahrek.setOnClickListener {
             val popupMenu = PopupMenu(context, holder.view.txvOptionstambahrek)
             popupMenu.inflate(R.menu.menu_options)
@@ -53,18 +44,6 @@ class TambahrekAdapter (val context: Context, var dataTambahrek: ArrayList<DataT
         }
     }
 
-//    holder.txvNamaTokoM.text =dataMaterial[position].nama_toko
-//        holder.txvLocationM.text =dataMaterial[position].alamat
-
-//        val gambar = "http://192.168.43.224/penjualanapp/public/uploads/material/"+ dataMaterial[position].gambar
-//        Picasso.get()
-//            .load("http://192.168.43.224/api_spesialisJB/public/uploads/material/"+ dataMaterial[position].gambar)
-//            .placeholder(R.drawable.product)
-//            .error(R.drawable.img_no_image)
-//            .resize(325,300)
-//            .into(holder.imgProduk)
-//
-
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val view = view
         fun bing(dataTambahrek: DataTambahrek) {
@@ -73,9 +52,6 @@ class TambahrekAdapter (val context: Context, var dataTambahrek: ArrayList<DataT
             view.txv_atasnama.text = dataTambahrek.nama
         }
     }
-//        val txvNamaTokoM = view.findViewById<TextView>(R.id.txvNamaTokoM)
-//        val txvLocationM = view.findViewById<TextView>(R.id.txvLocationM)
-//        val imgProduk = view.findViewById<ImageView>(R.id.imvImageM)
 
     fun setData(newDataTambahrek: List<DataTambahrek>) {
         dataTambahrek.clear()

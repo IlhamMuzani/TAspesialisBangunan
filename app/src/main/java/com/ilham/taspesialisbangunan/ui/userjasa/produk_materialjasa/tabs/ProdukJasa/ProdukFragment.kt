@@ -1,12 +1,14 @@
 package com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -25,9 +27,14 @@ import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.produk.DataProduk
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukList
 import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukUpdate
+import com.ilham.taspesialisbangunan.data.model.tambahrek.DataTambahrek
+import com.ilham.taspesialisbangunan.data.model.tambahrek.ResponseTambahrekList
 import com.ilham.taspesialisbangunan.data.model.user.DataUser
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.create_produk.ProdukCreateActivity
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.update.ProdukUpdateActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.tambahrek.TambahRekActivity
+import com.ilham.taspesialisbangunan.ui.userjasa.tambahrek.TambahrekAdapter
+import com.ilham.taspesialisbangunan.ui.userjasa.tambahrek.update.TambahrekUpdateActivity
 import com.ilham.taspesialisbangunan.ui.utils.MapsHelper
 
 class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
@@ -35,12 +42,15 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
     lateinit var presenter: ProdukPresenter
     lateinit var produkAdapter: ProdukAdapter
     lateinit var produk: DataProduk
+    lateinit var tampilrekadapater: TambahrekAdapter
+    lateinit var datarekening: DataTambahrek
+    lateinit var datarekening2: List<DataTambahrek>
     lateinit var prefsManager: PrefsManager
 
     lateinit var rcvProdukjasa: RecyclerView
     lateinit var swipejasa: SwipeRefreshLayout
 //    lateinit var Fab: FloatingActionButton
-    lateinit var Fab: Button
+    lateinit var Fab: RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,28 +69,36 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
 
     override fun onStart() {
         super.onStart()
-
         if(prefsManager.prefsIsLogin) {
             presenter.getProduk(prefsManager.prefsId.toLong())
+            presenter.getTampilrek(prefsManager.prefsId)
         }
+
     }
 
     override fun initFragment(view: View) {
 //        (activity as AppCompatActivity).supportActionBar!!.hide()
-        MapsHelper.permissionMap(requireContext(),requireActivity())
+        MapsHelper.permissionMap(requireContext(), requireActivity())
 
-        rcvProdukjasa = view.findViewById(R.id.rcvProduk)
-        swipejasa = view.findViewById(R.id.swipe)
+        rcvProdukjasa = view.findViewById(R.id.rcvProdukjasa)
+        swipejasa = view.findViewById(R.id.swipeD)
         Fab = view.findViewById(R.id.fabjasa)
 
-        produkAdapter = ProdukAdapter(requireActivity(), arrayListOf()) {
-                dataProduk: DataProduk, position: Int, type: String ->
+        produkAdapter = ProdukAdapter(
+            requireActivity(),
+            arrayListOf()
+        ) { dataProduk: DataProduk, position: Int, type: String ->
 
             produk = dataProduk
 
             when (type) {
-                "Update" -> startActivity(Intent(requireActivity(), ProdukUpdateActivity::class.java))
-                "Delete" -> showDialogDelete( dataProduk, position )
+                "Update" -> startActivity(
+                    Intent(
+                        requireActivity(),
+                        ProdukUpdateActivity::class.java
+                    )
+                )
+                "Delete" -> showDialogDelete(dataProduk, position)
             }
         }
 
@@ -89,12 +107,24 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
             adapter = produkAdapter
         }
 
+        tampilrekadapater = TambahrekAdapter(
+            requireContext(),
+            arrayListOf()
+        ) { dataTambahrek: DataTambahrek, position: Int, type: String ->
+
+            datarekening = dataTambahrek
+        }
+
         swipejasa.setOnRefreshListener {
             presenter.getProduk(prefsManager.prefsId.toLong())
         }
 
         Fab.setOnClickListener { view ->
-            startActivity(Intent(requireActivity(), ProdukCreateActivity::class.java))
+            if (datarekening2.isEmpty()) {
+                startActivity(Intent(requireActivity(), TambahRekActivity::class.java))
+            } else {
+                startActivity(Intent(requireActivity(), ProdukCreateActivity::class.java))
+            }
         }
     }
 
@@ -117,7 +147,7 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
     override fun showDialogDelete(dataProduk: DataProduk, position: Int) {
         val dialog = AlertDialog.Builder(requireActivity())
         dialog.setTitle( "Konfirmasi" )
-        dialog.setMessage( "Hapus ${produk.nama_toko}?" )
+        dialog.setMessage( "Hapus ${produk.user.nama_toko}?" )
 
         dialog.setPositiveButton("Hapus") { dialog, which ->
             presenter.deleteProduk( Constant.PRODUK_ID )
@@ -132,9 +162,13 @@ class ProdukFragment : Fragment(), ProdukContract.View, OnMapReadyCallback {
         dialog.show()
     }
 
+    override fun onResultTampilRek(responseTambahrekList: ResponseTambahrekList) {
+        datarekening2 = responseTambahrekList.dataTambahrek
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         val latLng = LatLng (produk.latitude!!.toDouble(), produk.longitude!!.toDouble())
-        googleMap.addMarker ( MarkerOptions(). position(latLng).title( produk.nama_toko ))
+        googleMap.addMarker ( MarkerOptions(). position(latLng).title( produk.user.nama_toko ))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
     }
 

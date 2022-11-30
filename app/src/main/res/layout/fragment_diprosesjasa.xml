@@ -10,13 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="52dp"
         android:orientation="vertical"
         >
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pesanan Diproses"
+        android:text="Pesanan Dikerjakan"
         android:layout_marginStart="10dp"
         android:textColor="@color/black"
         />

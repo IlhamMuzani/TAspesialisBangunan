@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.updateprofil.perbaruipassword
+package com.ilham.taspesialisbangunan.ui.userjasa.updateprofiljasa.perbaruipasswordjasa
 
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
 import com.ilham.taspesialisbangunan.network.ApiConfig
@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PerbaruiPasswordPresenter(val view: PerbaruiPasswordContract.View) : PerbaruiPasswordContract.Presenter {
+class PerbaruiPasswordjasaPresenter(val view: PerbaruiPasswordjasaContract.View) : PerbaruiPasswordjasaContract.Presenter {
 
     init {
         view.initActivity()
@@ -14,7 +14,7 @@ class PerbaruiPasswordPresenter(val view: PerbaruiPasswordContract.View) : Perba
         view.onLoading(false)
     }
 
-    override fun Perbaruipassword(id: Long,password: String, password_confirmation: String) {
+    override fun Perbaruipasswordjasa(id: Long,password: String, password_confirmation: String) {
         view.onLoading(true, "Loading...")
         ApiConfig.endpoint.Perbaruipassword(id,password, password_confirmation,"PUT")
             .enqueue(object : Callback<ResponseUserUpdate> {

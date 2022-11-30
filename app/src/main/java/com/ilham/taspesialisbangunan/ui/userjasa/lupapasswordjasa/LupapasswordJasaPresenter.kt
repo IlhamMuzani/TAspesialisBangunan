@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.lupapassword
+package com.ilham.taspesialisbangunan.ui.userjasa.lupapasswordjasa
 
 import android.widget.Toast
 import com.ilham.taspesialisbangunan.data.model.alamat.ResponseALamatList
@@ -15,7 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 
-class LupapasswordPresenter(val view: LupapasswordContract.View) : LupapasswordContract.Presenter {
+class LupapasswordJasaPresenter(val view: LupapasswordJasaContract.View) : LupapasswordJasaContract.Presenter {
 
     init {
         view.initActivity()
@@ -24,9 +24,9 @@ class LupapasswordPresenter(val view: LupapasswordContract.View) : LupapasswordC
 
     }
 
-    override fun lupapassword_pelanggan(phone: String, status: String) {
+    override fun lupapassword_jasa(phone: String, status: String) {
         view.onLoading(true, "Loading...")
-        ApiConfig.endpoint.lupapassword_pelanggan(phone, status)
+        ApiConfig.endpoint.lupapassword_jasa(phone, status)
             .enqueue(object : Callback<ResponseUser> {
                 override fun onResponse(
                     call: Call<ResponseUser>,

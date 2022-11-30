@@ -2,7 +2,7 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/swipeDikonfirmasi"
+    android:id="@+id/swipeBertemu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -18,11 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="Pesanan Dikonfirmasi"
+            android:text="Bertemu Pemilik Usaha"
             />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvDikonfirmasi"
+        android:id="@+id/rcvBertemu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"/>

@@ -1,6 +1,7 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1.diterima
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.diterima
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,6 +24,27 @@ class DiterimaPresenter (var view: DiterimaContract.View) : DiterimaContract.Pre
             }
 
             override fun onFailure(call: Call<ResponsePengajuanList1>, t: Throwable) {
+                view.onLoadingPengajuanditerima(false)
+            }
+
+        })
+    }
+
+    override fun deletePengajuanDiterima(id: Long) {
+        view.onLoadingPengajuanditerima(true)
+        ApiConfig.endpoint.deletePengajuanmenunggu(id).enqueue(object : Callback<ResponsePengajuanUpdate>{
+            override fun onResponse(
+                call: Call<ResponsePengajuanUpdate>,
+                response: Response<ResponsePengajuanUpdate>
+            ) {
+                view.onLoadingPengajuanditerima(false)
+                if (response.isSuccessful) {
+                    val responsePengajuanUpdate: ResponsePengajuanUpdate? = response.body()
+                    view.onResultDelete( responsePengajuanUpdate!! )
+                }
+            }
+
+            override fun onFailure(call: Call<ResponsePengajuanUpdate>, t: Throwable) {
                 view.onLoadingPengajuanditerima(false)
             }
 

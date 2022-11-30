@@ -35,7 +35,7 @@
                     android:layout_height="125dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="50dp"
-                    android:src="@drawable/profiluser2" />
+                    android:src="@drawable/img_no_image" />
 
                 <TextView
                     android:id="@+id/txvAkunuser"
@@ -59,7 +59,7 @@
                     android:layout_marginTop="100dp"
                     android:layout_marginEnd="50dp"
                     android:background="@color/white"
-                    android:text=" Info Profile"
+                    android:text=" Info Profil"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -73,30 +73,31 @@
                     android:layout_marginTop="25dp"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="50dp"
-                        android:background="@drawable/bg_btn_lapisanbirucantik">
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="50dp"-->
+<!--                        android:background="@drawable/bg_btn_lapisanbirucantik">-->
 
-                        <ImageView
-                            android:id="@+id/imvEmailuser"
-                            android:layout_width="30dp"
-                            android:layout_height="45dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_person_24" />
+<!--                        <ImageView-->
+<!--                            android:id="@+id/imvEmailuser"-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="45dp"-->
+<!--                            android:layout_marginStart="10dp"-->
+<!--                            android:layout_marginEnd="15dp"-->
+<!--                            android:src="@drawable/ic_baseline_person_24"-->
+<!--                            app:tint="@color/birucantik" />-->
 
-                        <TextView
-                            android:id="@+id/txvEmailuser"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="13dp"
-                            android:layout_toEndOf="@+id/imvEmailuser"
-                            android:text="Email Anda"
-                            android:textColor="@color/black" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/txvEmailuser"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="13dp"-->
+<!--                            android:layout_toEndOf="@+id/imvEmailuser"-->
+<!--                            android:text="Email Anda"-->
+<!--                            android:textColor="@color/black" />-->
 
-                    </RelativeLayout>
+<!--                    </RelativeLayout>-->
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -111,7 +112,8 @@
                             android:layout_height="45dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_location_on_24" />
+                            android:src="@drawable/ic_baseline_location_on_24"
+                            app:tint="@color/birucantik" />
 
                         <TextView
                             android:id="@+id/txvAlamatuser"
@@ -137,18 +139,73 @@
                             android:layout_height="45dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_perm_phone" />
+                            android:src="@drawable/ic_baseline_perm_phone"
+                            app:tint="@color/birucantik" />
 
-                        <TextView
-                            android:id="@+id/txvPhoneuser"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="13dp"
                             android:layout_toEndOf="@+id/imvPhoneuser"
-                            android:text="Nomer Telepone"
-                            android:textColor="@color/black" />
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:layout_toEndOf="@+id/imvPhoneuser"
+                                android:text="+62"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/txvPhoneuser"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:layout_toEndOf="@+id/imvPhoneuser"
+                                android:text="Nomer Telepone"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
 
                     </RelativeLayout>
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:id="@+id/btn_historitran"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="15dp"-->
+                    <!--                        android:layout_marginEnd="50dp"-->
+                    <!--                        android:background="@drawable/bg_btn_lapisanbirucantik">-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:layout_width="25dp"-->
+                    <!--                            android:layout_height="45dp"-->
+                    <!--                            android:layout_alignParentEnd="true"-->
+                    <!--                            android:layout_marginEnd="15dp"-->
+                    <!--                            android:src="@drawable/ic_baseline_keyboard_dongker"-->
+                    <!--                            app:tint="@color/biru" />-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:id="@+id/imvhistoritran"-->
+                    <!--                            android:layout_width="30dp"-->
+                    <!--                            android:layout_height="45dp"-->
+                    <!--                            android:layout_marginStart="10dp"-->
+                    <!--                            android:layout_marginEnd="15dp"-->
+                    <!--                            android:src="@drawable/ic_baseline_history_24"-->
+                    <!--                            app:tint="@color/biru" />-->
+
+                    <!--                        <TextView-->
+                    <!--                            android:id="@+id/Labelhistoritran"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginTop="10dp"-->
+                    <!--                            android:layout_toEndOf="@+id/imvhistoritran"-->
+                    <!--                            android:text="History Transaksi"-->
+                    <!--                            android:textColor="@color/black" />-->
+
+                    <!--                    </RelativeLayout>-->
+
 
                     <RelativeLayout
                         android:id="@+id/btn_ubahProfil"
@@ -163,7 +220,8 @@
                             android:layout_height="45dp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_keyboard_" />
+                            android:src="@drawable/ic_baseline_keyboard_"
+                            app:tint="@color/birucantik" />
 
                         <ImageView
                             android:id="@+id/imvUbahProfil"
@@ -171,7 +229,8 @@
                             android:layout_height="45dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_pulpen" />
+                            android:src="@drawable/ic_baseline_pulpen"
+                            app:tint="@color/birucantik" />
 
                         <TextView
                             android:id="@+id/LabelUbahProfil"
@@ -179,7 +238,43 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="13dp"
                             android:layout_toEndOf="@+id/imvUbahProfil"
-                            android:text="Update Profile"
+                            android:text="Perbarui Profil"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_ubahpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@drawable/bg_btn_lapisanbirucantik">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_keyboard_"
+                            app:tint="@color/birucantik" />
+
+                        <ImageView
+                            android:id="@+id/imvUbahPasswrd"
+                            android:layout_width="30dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_lock_black_dongker"
+                            app:tint="@color/birucantik" />
+
+                        <TextView
+                            android:id="@+id/Edtpasswordbarup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:layout_toEndOf="@+id/imvUbahPasswrd"
+                            android:text="Perbarui Password"
                             android:textColor="@color/black" />
 
                     </RelativeLayout>
@@ -187,24 +282,23 @@
 
                 </LinearLayout>
 
-
                 <TextView
                     android:id="@+id/txvLogoutuser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/linJasa"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:text="Logout"
                     android:textStyle="bold" />
 
-                <ProgressBar
-                    android:id="@+id/progressakun"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/linJasa"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"/>
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progressakun"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/linJasa"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="10dp" />-->
 
             </RelativeLayout>
 
@@ -214,7 +308,9 @@
             android:id="@+id/layout_profilJASA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
             android:orientation="vertical">
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -232,7 +328,7 @@
                     android:layout_height="125dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="50dp"
-                    android:src="@drawable/profiluser2" />
+                    android:src="@drawable/img_no_image" />
 
                 <TextView
                     android:id="@+id/txvAkunjasa"
@@ -255,7 +351,7 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="100dp"
                     android:layout_marginEnd="50dp"
-                    android:text=" Info Profile"
+                    android:text=" Info Profil"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -266,7 +362,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txvInfojasa"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -276,49 +372,95 @@
                         android:background="@drawable/bg_btn_lapisandongker">
 
                         <ImageView
-                            android:id="@+id/imvEmailjasa"
+                            android:id="@+id/imvToko"
                             android:layout_width="30dp"
                             android:layout_height="45dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_person_black" />
+                            android:src="@drawable/ic_baseline_store_24"
+                            app:tint="@color/colorPrimaryDark" />
 
                         <TextView
-                            android:id="@+id/txvEmailjasa"
+                            android:id="@+id/txtNamatoko"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:layout_toEndOf="@+id/imvEmailjasa"
-                            android:text="Email Anda"
+                            android:layout_toEndOf="@+id/imvToko"
+                            android:text="Nama Toko"
                             android:textColor="@color/dark" />
 
                     </RelativeLayout>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="50dp"
-                        android:background="@drawable/bg_btn_lapisandongker">
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="15dp"-->
+<!--                        android:layout_marginEnd="50dp"-->
+<!--                        android:background="@drawable/bg_btn_lapisandongker">-->
 
-                        <ImageView
-                            android:id="@+id/imvAlamatjasa"
-                            android:layout_width="30dp"
-                            android:layout_height="45dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_baseline_location_on_dongker" />
 
-                        <TextView
-                            android:id="@+id/txvAlamatjasa"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_toEndOf="@+id/imvAlamatjasa"
-                            android:text="Alamat"
-                            android:textColor="@color/black" />
+<!--                        <ImageView-->
+<!--                            android:id="@+id/imvEmailjasa"-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="45dp"-->
+<!--                            android:layout_marginStart="10dp"-->
+<!--                            android:layout_marginEnd="15dp"-->
+<!--                            android:src="@drawable/ic_baseline_person_black" />-->
 
-                    </RelativeLayout>
+<!--                        <TextView-->
+<!--                            android:id="@+id/txvEmailjasa"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:layout_toEndOf="@+id/imvEmailjasa"-->
+<!--                            android:text="Email Anda"-->
+<!--                            android:textColor="@color/dark" />-->
+
+<!--                    </RelativeLayout>-->
+
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="15dp"-->
+                    <!--                        android:layout_marginEnd="50dp"-->
+                    <!--                        android:background="@drawable/bg_btn_lapisandongker">-->
+
+                    <!--                        <ImageView-->
+                    <!--                            android:id="@+id/imvAlamatjasa"-->
+                    <!--                            android:layout_width="30dp"-->
+                    <!--                            android:layout_height="45dp"-->
+                    <!--                            android:layout_marginStart="10dp"-->
+                    <!--                            android:layout_marginEnd="15dp"-->
+                    <!--                            android:src="@drawable/ic_baseline_location_on_dongker" />-->
+
+                    <!--                        <LinearLayout-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_toEndOf="@+id/imvAlamatjasa"-->
+                    <!--                            android:orientation="horizontal">-->
+
+                    <!--                            <TextView-->
+                    <!--                                android:id="@+id/txvAlamatjasa"-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_marginTop="10dp"-->
+                    <!--                                android:layout_toEndOf="@+id/imvAlamatjasa"-->
+                    <!--                                android:text="Kecamatan"-->
+                    <!--                                android:textColor="@color/black" />-->
+
+                    <!--                            <TextView-->
+                    <!--                                android:id="@+id/txvKelurahan"-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_marginTop="10dp"-->
+                    <!--                                android:layout_toEndOf="@+id/imvAlamatjasa"-->
+                    <!--                                android:text="kelurahan"-->
+                    <!--                                android:textColor="@color/black" />-->
+
+                    <!--                        </LinearLayout>-->
+
+
+                    <!--                    </RelativeLayout>-->
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -335,16 +477,67 @@
                             android:layout_marginEnd="15dp"
                             android:src="@drawable/ic_baseline_perm_phone_dongker" />
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/imvPhonejasa"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_toEndOf="@+id/imvPhonejasa"
+                                android:text="+62"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/txvPhonejasa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_toEndOf="@+id/imvPhonejasa"
+                                android:text="Nomer Telepone"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_detailalamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@drawable/bg_btn_lapisandongker">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_keyboard_dongker" />
+
+                        <ImageView
+                            android:id="@+id/imvdetailalamat"
+                            android:layout_width="30dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_location_on_dongker" />
+
                         <TextView
-                            android:id="@+id/txvPhonejasa"
+                            android:id="@+id/Labeldetailalamat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:layout_toEndOf="@+id/imvPhonejasa"
-                            android:text="Nomer Telepone"
+                            android:layout_toEndOf="@+id/imvdetailalamat"
+                            android:text="Detail Alamat"
                             android:textColor="@color/black" />
 
                     </RelativeLayout>
+
 
                     <RelativeLayout
                         android:id="@+id/btn_ubahProfiljasa"
@@ -375,10 +568,47 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_toEndOf="@+id/imvUbahProfiljasa"
-                            android:text="Update Profile"
+                            android:text="Perbarui Profil"
                             android:textColor="@color/black" />
 
                     </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_ubahpasswordjasa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@drawable/bg_btn_lapisandongker">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_baseline_keyboard_"
+                            app:tint="@color/colorPrimary" />
+
+                        <ImageView
+                            android:id="@+id/imvUbahPasswrdjasa"
+                            android:layout_width="30dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_lock_black_dongker"
+                            app:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/Edtpasswordbarujasap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:layout_toEndOf="@+id/imvUbahPasswrdjasa"
+                            android:text="Perbarui Password"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
 
                     <RelativeLayout
                         android:id="@+id/btn_tambahrek"
@@ -399,8 +629,8 @@
                             android:id="@+id/imvPesananjasa"
                             android:layout_width="30dp"
                             android:layout_height="45dp"
-                            android:layout_marginEnd="15dp"
                             android:layout_marginStart="10dp"
+                            android:layout_marginEnd="15dp"
                             android:src="@drawable/ic_baseline_tambahrek" />
 
                         <TextView
@@ -409,7 +639,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_toEndOf="@+id/imvPesananjasa"
-                            android:text="Create No Rekening"
+                            android:text="Tambah No Rekening"
                             android:textColor="@color/black" />
 
                     </RelativeLayout>
@@ -423,10 +653,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/linUserjasa"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="Logout"
                     android:textSize="14dp"
                     android:textStyle="bold" />
+
 
             </RelativeLayout>
 

@@ -14,7 +14,7 @@ interface TambahrekUpdateContract {
     interface View {
         fun initActivity()
         fun initListener()
-        fun onLoading(loading: Boolean)
+        fun onLoading(loading: Boolean, message: String? = "Loading...")
         fun onResultDetailTambahrek(responseTambahrekDetail: ResponseTambahrekDetail)
         fun onResultUpdateTambahrek(responseTambahrekUpdate: ResponseTambahrekUpdate)
         fun showMessage(message: String)

@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1.menunggu
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.menunggu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,9 +14,10 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
+import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanDetail
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanUpdate
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step1.MenungguAdapter
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step1.MenungguAdapter
 
 class MenungguFragment : Fragment(), MenungguContract.View {
 
@@ -45,7 +46,9 @@ class MenungguFragment : Fragment(), MenungguContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter.getPengajuanmenunggu(prefsManager.prefsId.toLong())
+        if (prefsManager.prefsIsLogin) {
+            presenter.getPengajuanmenunggu(prefsManager.prefsId.toLong())
+        }
     }
 
     override fun initFragment(view: View) {
@@ -69,6 +72,12 @@ class MenungguFragment : Fragment(), MenungguContract.View {
         rcvMenunggu.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = menungguAdapter
+        }
+
+        swipeMenunggu.setOnRefreshListener {
+            if (prefsManager.prefsIsLogin) {
+                presenter.getPengajuanmenunggu(prefsManager.prefsId.toLong())
+            }
         }
     }
 

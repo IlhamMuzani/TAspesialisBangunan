@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step2.dp
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.dp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.Constant
 import com.ilham.taspesialisbangunan.data.model.pengajuan.DataPengajuan
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
-import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step2.DPAdapter
+import com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.DPAdapter
 
 class DPFragment : Fragment(), DPContract.View {
 
@@ -43,7 +43,9 @@ class DPFragment : Fragment(), DPContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter.getPengajuandp(prefsManager.prefsId.toLong())
+        if (prefsManager.prefsIsLogin) {
+            presenter.getPengajuandp(prefsManager.prefsId.toLong())
+        }
     }
 
     override fun initFragment(view: View) {
@@ -63,6 +65,10 @@ class DPFragment : Fragment(), DPContract.View {
         rcvDP.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = dpAdapter
+        }
+
+        swipeDP.setOnRefreshListener {
+            presenter.getPengajuandp(prefsManager.prefsId.toLong())
         }
     }
 

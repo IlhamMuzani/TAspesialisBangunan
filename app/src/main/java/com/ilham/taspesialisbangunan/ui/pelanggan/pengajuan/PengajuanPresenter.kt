@@ -1,6 +1,7 @@
 package com.ilham.taspesialisbangunan.ui.pelanggan.pengajuan
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanInsert
+import com.ilham.taspesialisbangunan.data.model.produk.ResponseProdukDetail
 import com.ilham.taspesialisbangunan.network.ApiConfig
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -18,15 +19,24 @@ class PengajuanPresenter (val view: PengajuanContract.View) : PengajuanContract.
         view.onLoading(false)
     }
 
-    override fun insertPengajuan(kd_produk: String, kd_user: String, gambar: File,
-                                 deskripsi: String, status: String, latitude: String, longitude: String) {
+    override fun insertPengajuan(kd_produk: String,
+                                 kd_user: String,
+                                 gambar: File,
+                                 deskripsi: String,
+                                 status: String,
+                                 alamat: String,
+                                 categori_pesanan: String,
+                                 phone: String,
+                                 latitude: String,
+                                 longitude: String,
+                                 category: String) {
 
         val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"), gambar)
         val multipartBody: MultipartBody.Part? = MultipartBody. Part.createFormData("gambar",
             gambar.name, requestBody)
 
-        view.onLoading(true)
-        ApiConfig.endpoint.insertPengajuan(kd_produk, kd_user, multipartBody!!, deskripsi, status, latitude, longitude).enqueue(object: Callback<ResponsePengajuanInsert>{
+        view.onLoading(true,"Loading...")
+        ApiConfig.endpoint.insertPengajuan(kd_produk, kd_user, multipartBody!!, deskripsi, status, categori_pesanan, alamat, phone, latitude, longitude, category).enqueue(object: Callback<ResponsePengajuanInsert>{
             override fun onResponse(
                 call: Call<ResponsePengajuanInsert>,
                 response: Response<ResponsePengajuanInsert>
@@ -44,6 +54,64 @@ class PengajuanPresenter (val view: PengajuanContract.View) : PengajuanContract.
             }
 
         })
+    }
+
+    override fun insertPengajuanjasadanmaterial(
+        kd_produk: String,
+        kd_user: String,
+        gambar: File,
+        deskripsi: String,
+        status: String,
+        alamat: String,
+        categori_pesanan: String,
+        phone: String,
+        latitude: String,
+        longitude: String,
+        category: String
+    ) {
+        val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"), gambar)
+        val multipartBody: MultipartBody.Part? = MultipartBody. Part.createFormData("gambar",
+            gambar.name, requestBody)
+
+        view.onLoading(true,"Loading...")
+        ApiConfig.endpoint.insertPengajuanjasadanmaterial(kd_produk, kd_user, multipartBody!!, deskripsi, status, categori_pesanan, alamat, phone, latitude, longitude, category).enqueue(object: Callback<ResponsePengajuanInsert>{
+            override fun onResponse(
+                call: Call<ResponsePengajuanInsert>,
+                response: Response<ResponsePengajuanInsert>
+            ) {
+
+                view.onLoading(true)
+                if (response.isSuccessful) {
+                    val responsePengajuanInsert: ResponsePengajuanInsert? = response.body()
+                    view.onResultPengajuan(responsePengajuanInsert!!)
+                }
+            }
+
+            override fun onFailure(call: Call<ResponsePengajuanInsert>, t: Throwable) {
+                view.onLoading(true)
+            }
+
+        })
+    }
+
+    override fun getProdukdetailpengajuan(id: Long) {
+        view.onLoading(true,"Loading...")
+        ApiConfig.endpoint.produkDetail(id).enqueue(object : Callback<ResponseProdukDetail>{
+            override fun onResponse(
+                call: Call<ResponseProdukDetail>,
+                response: Response<ResponseProdukDetail>
+            ) {
+                view.onLoading(false)
+                if (response.isSuccessful) {
+                    val responseProdukDetail: ResponseProdukDetail? = response.body()
+                    view.onResultProdukdetailpengajuan( responseProdukDetail!!)
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseProdukDetail>, t: Throwable) {
+                view.onLoading(false)
+            }
+        } )
     }
 
 }

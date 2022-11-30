@@ -6,48 +6,64 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="5dp"
     app:cardCornerRadius="10dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:background="@drawable/profiluser2"/>
-
-    <TextView
-        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="username"/>
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imvsaranjasa"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/profiluser2"/>
+
+            <TextView
+                android:id="@+id/usernamejasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:text="username"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:layout_marginTop="5dp">
+
+            <RatingBar
+                android:id="@+id/rating_barr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:isIndicator="false"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5" />
+        </LinearLayout>
+
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginTop="3dp"
-        android:layout_centerInParent="true"
+        android:padding="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginHorizontal="5dp"
         android:background="@drawable/bg_btn_lapisanabu"
         >
 
-
         <TextView
-            android:id="@+id/txvsaran"
+            android:id="@+id/txvsaranjasa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="3dp"
             android:text="Komentar" />
-
 
 
     </RelativeLayout>

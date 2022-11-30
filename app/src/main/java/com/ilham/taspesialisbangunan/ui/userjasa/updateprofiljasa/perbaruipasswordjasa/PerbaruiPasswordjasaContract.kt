@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.updateprofil.perbaruipassword
+package com.ilham.taspesialisbangunan.ui.userjasa.updateprofiljasa.perbaruipasswordjasa
 
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.alamat.ResponseALamatList
@@ -9,10 +9,10 @@ import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserUpdate
 import java.io.File
 
-interface PerbaruiPasswordContract {
+interface PerbaruiPasswordjasaContract {
 
     interface Presenter {
-        fun Perbaruipassword(id: Long, password: String, password_confirmation : String)
+        fun Perbaruipasswordjasa(id: Long, password: String, password_confirmation : String)
     }
 
     interface View {

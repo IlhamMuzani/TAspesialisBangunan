@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.lupapassword
+package com.ilham.taspesialisbangunan.ui.userjasa.lupapasswordjasa
 
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.alamat.ResponseALamatList
@@ -8,10 +8,10 @@ import com.ilham.taspesialisbangunan.data.model.user.DataUser
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUser
 import java.io.File
 
-interface LupapasswordContract {
+interface LupapasswordJasaContract {
 
     interface Presenter {
-        fun lupapassword_pelanggan(phone: String, status: String)
+        fun lupapassword_jasa(phone: String, status: String)
     }
 
     interface View {

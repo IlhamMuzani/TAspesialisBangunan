@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif
 
 interface NotifProdukJasaContract {
 

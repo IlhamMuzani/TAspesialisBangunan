@@ -1,12 +1,12 @@
 package com.ilham.taspesialisbangunan.ui.fragment.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
@@ -14,16 +14,17 @@ import com.ilham.taspesialisbangunan.R
 import com.ilham.taspesialisbangunan.data.database.PrefsManager
 import com.ilham.taspesialisbangunan.data.model.user.ResponseUserdetail
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.ViewPagerAdapter
-import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.material.MaterialuserFragment
 import com.ilham.taspesialisbangunan.ui.pelanggan.produkuser_materialuser.tabs.produk.ProdukuserFragment
-import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.MaterialJasa.MaterialFragment
+import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.Kategori.KategoriFragment
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ProdukJasa.ProdukFragment
 import com.ilham.taspesialisbangunan.ui.userjasa.produk_materialjasa.tabs.ViewPagerAdapterProduk
+import com.ilham.taspesialisbangunan.ui.utils.sweetalert.SweetAlertDialog
 
 class HomeFragment : Fragment(), HomeContract.View {
 
     lateinit var prefsManager: PrefsManager
     lateinit var presenter: HomePresenter
+    lateinit var sLoading: SweetAlertDialog
 
     lateinit var layoutPelanggan: LinearLayout
     lateinit var btnviewpager: ViewPager
@@ -50,7 +51,10 @@ class HomeFragment : Fragment(), HomeContract.View {
         return view
     }
 
+    @SuppressLint("SetTextI18n")
     override fun initFragment(view: View) {
+
+        sLoading = SweetAlertDialog(requireActivity(), SweetAlertDialog.PROGRESS_TYPE)
 
         //User
         btnviewpager = view.findViewById(R.id.btn_viepager)
@@ -58,10 +62,11 @@ class HomeFragment : Fragment(), HomeContract.View {
         layoutPelanggan = view.findViewById(R.id.layout_pelanggan)
 
         val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(ProdukuserFragment(), "Product")
-        adapter.addFragment(MaterialuserFragment(), "Materials")
+        adapter.addFragment(ProdukuserFragment(), "Sedia Layanan Bangunan")
         btnviewpager.adapter = adapter
         btntabs.setupWithViewPager(btnviewpager)
+
+        btntabs.getTabAt(0)!!.setIcon(R.drawable.jasa)
 
         //Jasa
         btnviewpagerjasa = view.findViewById(R.id.btn_viepagerjasa)
@@ -69,13 +74,12 @@ class HomeFragment : Fragment(), HomeContract.View {
         layoutJasa = view.findViewById(R.id.layout_jasa)
 
         val adapterjasa = ViewPagerAdapterProduk(requireActivity().supportFragmentManager)
-        adapterjasa.addFragment(ProdukFragment(), "Product")
-        adapterjasa.addFragment(MaterialFragment(), "Materials")
+//        adapterjasa.addFragment(ProdukFragment(), "Toko Saya")
+        adapterjasa.addFragment(ProdukFragment(), "Produk")
+//        adapterjasa.addFragment(KategoriFragment(), "Kategori")
         btnviewpagerjasa.adapter = adapterjasa
         btntabsjasa.setupWithViewPager(btnviewpagerjasa)
-
-
-
+        
     }
 
     override fun onStart() {
@@ -87,8 +91,11 @@ class HomeFragment : Fragment(), HomeContract.View {
         Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onLoading(loading: Boolean) {
-
+    override fun onLoading(loading: Boolean, message: String?) {
+        when (loading) {
+            true -> sLoading.setTitleText(message).show()
+            false -> sLoading.dismiss()
+        }
     }
 
     override fun onResult(responseUserdetail: ResponseUserdetail) {

@@ -1,23 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:id="@+id/swipeD"
     tools:context=".ui.userjasa.produk_materialjasa.tabs.ProdukJasa.">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="52dp"
+        android:orientation="vertical">
 
-        <Button
+<!--    <Button-->
+<!--            android:id="@+id/fabjasa"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Tambah"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:backgroundTint="@color/birucantik"-->
+<!--            android:src="@drawable/ic_baseline_add_plus" />-->
+
+
+        <RelativeLayout
             android:id="@+id/fabjasa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create"
-            android:layout_marginTop="10dp"
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
-            android:backgroundTint="@color/birucantik"
-            android:src="@drawable/ic_baseline_add_plus" />
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/bg_birucantik">
 
+            <ImageView
+                android:id="@+id/imvUbahProfil"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_baseline_add_plus"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/LabelUbahProfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/imvUbahProfil"
+                android:text="TAMBAH"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -30,18 +64,14 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_produk" />
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/fabjasa"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center|end"-->
-<!--            android:layout_margin="@dimen/fab_margin"-->
-<!--            android:backgroundTint="@color/birucantik"-->
-<!--            android:src="@drawable/ic_baseline_add_plus" />-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvProdukjasa"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    </LinearLayout>
 
-</LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

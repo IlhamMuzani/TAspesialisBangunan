@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseUserUpdate (
     @SerializedName("status") val status: Boolean,
-    @SerializedName("msg") val msg: String
+    @SerializedName("msg") val msg: String,
 )

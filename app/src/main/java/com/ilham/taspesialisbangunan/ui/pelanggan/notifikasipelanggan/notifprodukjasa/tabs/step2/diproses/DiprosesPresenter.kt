@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.tabsprodukjasa.step2.diproses
+package com.ilham.taspesialisbangunan.ui.pelanggan.notifikasipelanggan.notifprodukjasa.tabs.step2.diproses
 
 import com.ilham.taspesialisbangunan.data.model.pengajuan.ResponsePengajuanList1
 import com.ilham.taspesialisbangunan.network.ApiConfig
@@ -11,7 +11,7 @@ class DiprosesPresenter (var view: DiprosesContract.View) : DiprosesContract.Pre
 
     override fun getPengajuandiproses(kd_userpelenggan: Long) {
         view.onLoadingPengajuandiproses(true)
-        ApiConfig.endpoint.Pengajuanuserditerima(kd_userpelenggan).enqueue(object : Callback<ResponsePengajuanList1> {
+        ApiConfig.endpoint.Pengajuanuserdiproses(kd_userpelenggan).enqueue(object : Callback<ResponsePengajuanList1> {
             override fun onResponse(
                 call: Call<ResponsePengajuanList1>,
                 response: Response<ResponsePengajuanList1>

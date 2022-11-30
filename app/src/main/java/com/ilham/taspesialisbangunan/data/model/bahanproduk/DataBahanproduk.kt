@@ -1,10 +1,10 @@
-package com.ilham.taspesialisbangunan.data.model.alamat
+package com.ilham.taspesialisbangunan.data.model.bahanproduk
 
 import com.google.gson.annotations.SerializedName
 
-data class DataAlamat (
+data class DataBahanproduk (
 
     @SerializedName( "id") val id: Long?,
     @SerializedName( "status") val status: String?,
-    @SerializedName( "kelurahan") val kelurahan: String?
+    @SerializedName( "jenis") val jenis: String?
 )

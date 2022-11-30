@@ -22,6 +22,10 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,8 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="27dp"
-            android:text="Register Jasa"
-            android:layout_marginTop="90dp"
+            android:text="Register Pemilik Usaha"
+            android:layout_marginTop="40dp"
             android:textSize="20dp"
             android:textStyle="bold"/>
 
@@ -53,8 +57,6 @@
             android:layout_height="wrap_content"
             app:startIconDrawable="@drawable/ic_account_circle_black_24dp"
             app:startIconContentDescription="@string/content_description_end_icon"
-            app:helperText="@string/Required"
-            app:helperTextTextColor="@color/merah"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -65,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:lines="1"
                 android:inputType="textEmailAddress"
-                android:hint="@string/Username"/>
+                android:hint="@string/Nama_Lengkap"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,78 +75,220 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             app:startIconDrawable="@drawable/ic_email_black_24dp"
             app:startIconContentDescription="@string/content_description_end_icon"
-            app:helperText="@string/Required"
-            app:helperTextTextColor="@color/merah"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
+                android:id="@+id/edt_namatoko"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lines="1"
                 android:inputType="textEmailAddress"
-                android:hint="@string/Email"/>
+                android:hint="@string/Nama_Toko"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            app:startIconDrawable="@drawable/ic_email_black_24dp"-->
+<!--            app:startIconContentDescription="@string/content_description_end_icon"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/edt_email"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:lines="1"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:hint="@string/Email"/>-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <LinearLayout
+            android:id="@+id/layoutcategoriproduk"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_btn_lapisanabu"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/category2"
+                app:tint="@color/Abuabuhitam" />
+
+
+            <Spinner
+                android:id="@+id/edt_kecamatan"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="3dp"
+                android:layout_toEndOf="@+id/imv"
+                android:background="@color/white"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_btn_lapisanabu"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/category2"
+                app:tint="@color/Abuabuhitam" />
+
+
+            <Spinner
+                android:id="@+id/edt_kelurahan"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_toEndOf="@+id/imv"
+                android:background="@color/white"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+
+        </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutdetailalamat"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             app:startIconDrawable="@drawable/ic_baseline_location_on_24"
             app:startIconContentDescription="@string/content_description_end_icon"
-            app:helperText="@string/Required"
-            app:helperTextTextColor="@color/merah"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_alamat"
+                android:id="@+id/edt_alamatjasa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lines="1"
-                android:inputType="textEmailAddress"
-                android:hint="@string/Alamat"/>
+                android:maxLength="13"
+                android:inputType="text"
+                android:hint="@string/DetailAlamat"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnpilihlokasi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pilih lokasi"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorPrimaryDark"/>
+
+        <RelativeLayout
+            android:id="@+id/BtnLocation2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn_lapisanabu">
+
+            <ImageView
+                android:id="@+id/imvlokasi"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_baseline_location_on_dongker"
+                app:tint="@color/Abuabuhitam" />
+
+            <TextView
+                android:id="@+id/edtLocation2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/imvlokasi"
+                android:text="Klik untuk lokasi" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="+62" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconContentDescription="@string/content_description_end_icon"
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/Telpone"
+                    android:inputType="phone"
+                    android:lines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/ic_phone_android_black_24dp"
-            app:startIconContentDescription="@string/content_description_end_icon"
-            app:helperText="@string/Required"
-            app:helperTextTextColor="@color/merah"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:inputType="phone"
-                android:hint="@string/Telpone"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             app:startIconDrawable="@drawable/ic_lock_black_24dp"
             app:startIconContentDescription="@string/content_description_end_icon"
-            app:helperText="@string/Required"
             app:counterEnabled="true"
             app:counterMaxLength="16"
-            app:helperTextTextColor="@color/merah"
             app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,16 +312,22 @@
             android:background="@drawable/bg_btn_lapisandongker"
             android:text="Register"
             android:textColor="@color/white"
-            app:backgroundTint="@color/colorPrimary" />
+            app:backgroundTint="@color/colorPrimary"
+            android:layout_marginBottom="@dimen/_40sdp"/>
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/pb"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginBottom="@dimen/_50sdp"/>-->
+
 
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/pb"
-        android:layout_width="40dp"
-        android:layout_gravity="center"
-        android:layout_height="40dp"/>
-
     </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

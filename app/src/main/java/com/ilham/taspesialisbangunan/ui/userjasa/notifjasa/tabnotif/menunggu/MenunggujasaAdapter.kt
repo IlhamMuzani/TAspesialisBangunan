@@ -1,4 +1,4 @@
-package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.produkjasa.tabjasa.menunggu
+package com.ilham.taspesialisbangunan.ui.userjasa.notifjasa.tabnotif.menunggu
 
 import android.content.Context
 import android.content.Intent
@@ -40,7 +40,7 @@ class MenunggujasaAdapter (val context: Context, var dataPengajuan: ArrayList<Da
         val view = view
         fun bing(datapengajuan: DataPengajuan) {
             view.txvNamajasa.text = datapengajuan.user.username
-            view.txvjenis.text = datapengajuan.produk.jenis_pembuatan
+            view.txvjenis.text = datapengajuan.produk.model
             view.txvcategoripesanan.text = datapengajuan.categori_pesanan
         }
         val imvPengajuan = view.findViewById<ImageView>(R.id.imvPengajuanmenunggu)
